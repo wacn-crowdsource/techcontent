@@ -81,6 +81,49 @@
 		
 		Remove-AzureRedisCache -Name $movieCache.Name -ResourceGroupName $movieCache.ResourceGroupName  -Force 
 
+如果您使用的是最新版的Azure Powershell，请使用以下命令：
+		Add-AzureRmAccount
+		$VerbosePreference = "Continue"
+
+	        # Create a new cache with date string to make name unique. 
+		$cacheName = "MovieCache" + $(Get-Date -Format ('ddhhmm')) 
+		$location = "China North"
+		$resourceGroupName = "Default-Web-WestUS"
+		
+		$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
+
+		# Wait until the Cache service is provisioned.
+
+		for ($i = 0; $i -le 60; $i++)
+		{
+		    Start-Sleep -s 30
+			$cacheGet = Get-AzureRmRedisCache -ResourceGroupName $resourceGroupName -Name $cacheName
+		    if ([string]::Compare("succeeded", $cacheGet[0].ProvisioningState, $True) -eq 0)
+		    {       
+		        break
+		    }
+		    If($i -eq 60)
+		    {
+		        exit
+		    }
+		}
+
+		# Update the access keys.
+
+		Write-Verbose "PrimaryKey: $($movieCache.PrimaryKey)"
+		New-AzureRmRedisCacheKey -KeyType "Primary" -Name $cacheName  -ResourceGroupName $resourceGroupName -Force
+		$cacheKeys = Get-AzureRmRedisCacheKey -ResourceGroupName $resourceGroupName  -Name $cacheName         
+		Write-Verbose "PrimaryKey: $($cacheKeys.PrimaryKey)"
+		
+		# Use Set-AzureRmRedisCache to set Redis cache updatable parameters.
+		# Set the memory policy to Least Recently Used.
+		
+		Set-AzureRmRedisCache -MaxMemoryPolicy AllKeysLRU -Name $cacheName -ResourceGroupName $resourceGroupName
+		
+		# Delete the cache.
+		
+		Remove-AzureRmRedisCache -Name $movieCache.Name -ResourceGroupName $movieCache.ResourceGroupName  -Force 
+
 ## 后续步骤
 
 若要了解有关将 Windows PowerShell 与 Azure 配合使用的详细信息，请参阅以下资源：
