@@ -2,14 +2,14 @@
 
 <tags ms.service="virtual-machines" ms.date="12/18/2015" wacn.date="12/18/2015"/>
 
-# 为 Azure 准备 Aisanux Linux 虚拟机
+# 为 Azure 准备 Aisanuxr 虚拟机
 
 - [为 Azure 准备 Aisanux 4 虚拟机](#asianux4)
 
 
 ##先决条件##
 
-本文假定你已在虚拟硬盘中安装了 Oracle Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
+本文假定你已在虚拟硬盘中安装了 [Asianux4 操作系统](http://www.redflag-linux.com/d/iso/1000001233.html)。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
 
 
 **Asianux 安装说明**
