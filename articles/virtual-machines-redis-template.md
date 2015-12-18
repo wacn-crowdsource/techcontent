@@ -338,7 +338,7 @@ New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -T
                     3.0.0 -c 3 -m 3 -s 0 -p 10.0.0.1 -l
 	...
 
-部署期间以及部署之后，你可以检查预配期间发出的所有要求，包括发生的任何错误。
+部署期间以及部署之后，你可以检查初始化配置阶段发出的所有要求，包括发生的任何错误。
 
 为此，请转到 [Azure 门户](https://manage.windowsazure.cn)并执行以下操作：
 
