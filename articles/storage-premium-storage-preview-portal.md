@@ -205,7 +205,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
 <tbody>
 <tr>
-	<td><strong>分发版</strong></td>
+	<td><strong>发行版</strong></td>
 	<td><strong>版本</strong></td>
 	<td><strong>支持的内核</strong></td>
 	<td><strong>支持的映像</strong></td>

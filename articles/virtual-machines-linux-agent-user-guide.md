@@ -65,7 +65,7 @@ Azure Linux 代理 (/usr/sbin/waagent) 管理虚拟机与 Azure 结构控制器�
 ## 要求
 下列系统已经过测试并确认兼容 Azure Linux 代理。**请注意，此列表可能不同于 Windows Azure 平台所支持系统的官方列表**，详见以下网站：[http://support.microsoft.com/kb/2805216](http://support.microsoft.com/kb/2805216)
 
-###支持的 Linux 分发
+###支持的 Linux 发行版
 
 * CoreOS
 * CentOS 6.2+

@@ -29,7 +29,7 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序是 Microsoft 直接�
 
 Azure Linux 代理已预安装在 Azure 库映像中，并通常可从分发的包存储库中获得。源代码可在 [GitHub](https://github.com/azure/walinuxagent) 上找到。
 
-分发|版本|驱动程序|代理
+发行版|版本|驱动程序|代理
 ---|---|---|---
 Canonical Ubuntu|Ubuntu 12.04、14.04、14.10 和 15.04|在内核中|包：在“walinuxagent”下的存储库中<p><p>源：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
 CentOS by OpenLogic |CentOS 6.3+、7.0+| CentOS 6.3：[LIS 下载](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4+：在内核中|包：在“WALinuxAgent”下的 <a href="http://olcentgbl.trafficmanager.cn/openlogic/6/openlogic/x86_64/RPMS/">OpenLogic 存储库中<p><p>源：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
