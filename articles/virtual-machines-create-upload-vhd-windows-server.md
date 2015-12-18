@@ -16,7 +16,7 @@
 
 # 创建 Windows Server VHD 并将其上载到 Azure#
 
-本文介绍如何上载包含操作系统的虚拟硬盘 (VHD)，以便可以使用它作为映像来基于该映像创建虚拟机。有关 Windows Azure 中的磁盘和 VHD 的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)。
+本文介绍如何上载包含操作系统的虚拟硬盘 (VHD)，以便可以使用它作为镜像来基于该镜像创建虚拟机。有关 Windows Azure 中的磁盘和 VHD 的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)。
 
 ## 先决条件##
 
@@ -32,7 +32,7 @@
 
 ## 步骤 1：准备 VHD ##
 
-在将 VHD 上载到 Azure 之前，需要使用 Sysprep 工具对 VHD 进行一般化。这样就可以将 VHD 作为映像使用。有关 Sysprep 的详细信息，请参阅[如何使用 Sysprep：简介](http://technet.microsoft.com/zh-cn/library/bb457073.aspx)。
+在将 VHD 上载到 Azure 之前，需要使用 Sysprep 工具对 VHD 进行一般化。这样就可以将 VHD 作为镜像使用。有关 Sysprep 的详细信息，请参阅[如何使用 Sysprep：简介](http://technet.microsoft.com/zh-cn/library/bb457073.aspx)。
 
 在操作系统已安装到的虚拟机中，完成以下过程：
 
@@ -144,7 +144,7 @@
 
 	其中：
 	- **BlobStorageURL** 是存储帐户的 URL 
-	- **YourImagesFolder** 是要在其中存储映像的 Blob 存储中的容器 
+	- **YourImagesFolder** 是要在其中存储镜像的 Blob 存储中的容器 
 	- **VHDName** 是你希望在门户中显示以确定虚拟硬盘的名称 
 	- **PathToVHDFile** 是 .vhd 文件的完整路径和名称
 
@@ -152,21 +152,21 @@
 
 	有关 Add-AzureVhd cmdlet 的详细信息，请参阅 [Add-AzureVhd](http://msdn.microsoft.com/zh-cn/library/dn495173.aspx)。
 
-## 步骤 5：将映像添加到自定义映像列表
+## 步骤 5：将镜像添加到自定义镜像列表
 
-> [AZURE.TIP]若要使用 Azure PowerShell（而不是门户）来添加映像，请使用 **Add-AzureVMImage** cmdlet。例如：
+> [AZURE.TIP]若要使用 Azure PowerShell（而不是门户）来添加镜像，请使用 **Add-AzureVMImage** cmdlet。例如：
 
 >	`Add-AzureVMImage -ImageName <ImageName> -MediaLocation <VHDLocation> -OS <OSType>`
 
 1. 在门户中的**“所有项目”**下单击**“虚拟机”**。
 
-2. 在“虚拟机”下，单击**“映像”**。
+2. 在“虚拟机”下，单击**“镜像”**。
 
-3. 单击**“创建映像”**。
+3. 单击**“创建镜像”**。
 
 	![PowerShell Add-AzureVHD](./media/virtual-machines-create-upload-vhd-windows-server/Create_Image.png)
 
-4. 在“从 VHD 创建映像”窗口：
+4. 在“从 VHD 创建镜像”窗口：
 
 	- 指定“名称”。
 
@@ -176,19 +176,19 @@
 
     ![选择 VHD](./media/virtual-machines-create-upload-vhd-windows-server/Select_VHD.png)
 
-5.	在“从 VHD 创建映像”窗口中，在“操作系统系列”下，选择你的操作系统。选中“我已在与此 VHD 关联的虚拟机上运行 Sysprep”，确认你已对操作系统进行一般化，然后单击“确定”。
+5.	在“从 VHD 创建镜像”窗口中，在“操作系统系列”下，选择你的操作系统。选中“我已在与此 VHD 关联的虚拟机上运行 Sysprep”，确认你已对操作系统进行一般化，然后单击“确定”。
 
-    ![添加映像](./media/virtual-machines-create-upload-vhd-windows-server/Create_Image_From_VHD.png)
+    ![添加镜像](./media/virtual-machines-create-upload-vhd-windows-server/Create_Image_From_VHD.png)
 
-6. 完成前面的步骤后，当你选择**“映像”**选项卡时，将列出新映像。
+6. 完成前面的步骤后，当你选择**“镜像”**选项卡时，将列出新镜像。
 
-	![自定义映像](./media/virtual-machines-create-upload-vhd-windows-server/vm_custom_image.png)
+	![自定义镜像](./media/virtual-machines-create-upload-vhd-windows-server/vm_custom_image.png)
 
-	现在，当你创建虚拟机时，此新映像将在**“我的映像”**下提供。有关说明，请参阅[如何创建运行 Windows 的自定义虚拟机](/documentation/articles/virtual-machines-windows-create-custom)。
+	现在，当你创建虚拟机时，此新镜像将在**“我的镜像”**下提供。有关说明，请参阅[如何创建运行 Windows 的自定义虚拟机](/documentation/articles/virtual-machines-windows-create-custom)。
 
-	![从自定义映像创建虚拟机](./media/virtual-machines-create-upload-vhd-windows-server/create_vm_custom_image.png)
+	![从自定义镜像创建虚拟机](./media/virtual-machines-create-upload-vhd-windows-server/create_vm_custom_image.png)
 
-	> [AZURE.TIP]如果在你尝试创建 VM 时，收到带有此错误消息的错误：“VHD https://XXXXX.. 具有不支持的虚拟大小(YYYY 字节)。大小必须是整数(以 MB 为单位)”，这意味着你的 VHD 不是整数个 MB，需要为固定大小的 VHD。请尝试使用 **Add-AzureVMImage** PowerShell cmdlet（而不是门户）来添加映像（请参见上面的步骤 5）。Azure cmdlet 可确保 VHD 满足 Azure 要求。
+	> [AZURE.TIP]如果在你尝试创建 VM 时，收到带有此错误消息的错误：“VHD https://XXXXX.. 具有不支持的虚拟大小(YYYY 字节)。大小必须是整数(以 MB 为单位)”，这意味着你的 VHD 不是整数个 MB，需要为固定大小的 VHD。请尝试使用 **Add-AzureVMImage** PowerShell cmdlet（而不是门户）来添加镜像（请参见上面的步骤 5）。Azure cmdlet 可确保 VHD 满足 Azure 要求。
 
 ## 后续步骤 ##
 

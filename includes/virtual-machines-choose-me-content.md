@@ -14,14 +14,14 @@
 - **将你自己的数据中心扩展到公有云。** 利用 Azure 虚拟网络，你的组织可以创建一个虚拟网络 (VNET) 作为自有本地网络的扩展，然后将 VM 添加到该 VNET。这样，便可以在 Azure VM 上运行 [SharePoint](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)、[SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services) 和其他应用程序。与在自有数据中心的 VM 上运行这些应用程序相比，这种做法可能更易于部署，或者可以降低成本。   
 - **灾难恢复。** 基于 IaaS 灾难恢复使您可以只在真正需要计算资源时才为所需的计算资源付费，而不用不停地为很少使用的备份数据中心付费。例如，如果您的主数据中心出现故障，您可以创建在 Azure 上运行的 VM 来运行至关重要的应用程序，然后在不再需要时关闭它们。
 
-与其他虚拟机一样，Azure 中的 VM 具有操作系统、存储和网络功能，并可以运行各种应用程序。你可以使用 Azure 或其合作伙伴之一提供的映像，或使用自己的映像。示例包含以下产品的各个版本和配置：
+与其他虚拟机一样，Azure 中的 VM 具有操作系统、存储和网络功能，并可以运行各种应用程序。你可以使用 Azure 或其合作伙伴之一提供的镜像，或使用自己的镜像。示例包含以下产品的各个版本和配置：
  
 -	Windows Server 
 -	Linux 服务器，例如 Suse、Ubuntu 和 CentOS
 -	SQL Server
 -	SharePoint Server
 
-虚拟机使用虚拟硬盘 (VHD) 来存储其操作系统 (OS) 和数据。VHD 还可用于存储映像，你可以选择某个映像来安装 OS。下图显示了这项特性，以及用于创建和管理 VM 的两个工具。
+虚拟机使用虚拟硬盘 (VHD) 来存储其操作系统 (OS) 和数据。VHD 还可用于存储镜像，你可以选择某个镜像来安装 OS。下图显示了这项特性，以及用于创建和管理 VM 的两个工具。
 
 <a name="fig_createvms"></a> ![vm\_diagram](./media/virtual-machines-choose-me-content/diagram.png)
 

@@ -1716,7 +1716,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	vm sizes [options]
 
-**捕获用作 OS 映像或 VM 映像的 VM**
+**捕获用作 OS 镜像或 VM 镜像的 VM**
 
 	vm capture [options] <resource-group> <name> <vhd-name-prefix>
 
@@ -1751,7 +1751,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	vm docker create [options] <resource-group> <name> <location> <os-type>
 
-**用于管理 VM 映像的命令**
+**用于管理 VM 镜像的命令**
 
 	vm image list-publishers [options] <location>
 	vm image list-offers [options] <location> <publisher>

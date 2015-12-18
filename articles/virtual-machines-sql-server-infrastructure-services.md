@@ -26,9 +26,9 @@
 
 ### 在单个 VM 上部署 SQL Server 实例
 
-注册订阅后，在 Azure 中部署 SQL Server 虚拟机的最简单方法是[在 Azure 管理门户中预配 SQL Server 计算机库映像](/documentation/articles/virtual-machines-provision-sql-server)。这些映像包括 VM 定价中的 SQL Server 许可。
+注册订阅后，在 Azure 中部署 SQL Server 虚拟机的最简单方法是[在 Azure 管理门户中预配 SQL Server 计算机库镜像](/documentation/articles/virtual-machines-provision-sql-server)。这些镜像包括 VM 定价中的 SQL Server 许可。
 
-下表提供了虚拟机库中提供的 SQL Server 映像的矩阵。
+下表提供了虚拟机库中提供的 SQL Server 镜像的矩阵。
 
 |SQL Server 版本|操作系统|SQL Server 版本|
 |---|---|---|
@@ -40,9 +40,9 @@
 |SQL Server 2014 SP1|Windows Server 2012 R2|Enterprise、Standard、Web|
 |SQL Server 2016 CTP|Windows Server 2012 R2|计算|
 
->[AZURE.NOTE]用于数据仓库和事务工作负荷的虚拟机库映像（未显示在上面）已弃用并且将很快从库中删除。<!--请使用上表中的标准映像，并按照 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)中的建议优化特定工作负荷的性能。-->
+>[AZURE.NOTE]用于数据仓库和事务工作负荷的虚拟机库镜像（未显示在上面）已弃用并且将很快从库中删除。<!--请使用上表中的标准镜像，并按照 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)中的建议优化特定工作负荷的性能。-->
 
-除了这些预配置的映像外，你还可以[创建不预装 SQL Server 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。可以安装你有许可证的 SQL Server 的任何实例。可使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)将许可证迁移到 Azure，以便在 Azure 虚拟机中运行 SQL Server。在这种情况下，你只需为与虚拟机关联的 Azure 计算和存储[成本](/pricing/details/virtual-machines)付费。
+除了这些预配置的镜像外，你还可以[创建不预装 SQL Server 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。可以安装你有许可证的 SQL Server 的任何实例。可使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)将许可证迁移到 Azure，以便在 Azure 虚拟机中运行 SQL Server。在这种情况下，你只需为与虚拟机关联的 Azure 计算和存储[成本](/pricing/details/virtual-machines)付费。
 
 在这些早期预配和配置阶段，常见的任务包括：
 
@@ -71,13 +71,13 @@
 
 [SQL Server 备份到 URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx) 将 Azure 备份文件存储在 Azure Blob 存储中。[SQL Server 托管备份](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx)允许你在 Azure 中计划备份和保留期。这些服务可用于本地 SQL Server 实例或 Azure VM 上运行的 SQL Server。Azure VM 还可以利用 SQL Server 的[自动备份](/documentation/articles/virtual-machines-sql-server-automated-backup)和[自动修补](/documentation/articles/virtual-machines-sql-server-automated-patching)。
 
-## SQL Server VM 映像配置详细信息
+## SQL Server VM 镜像配置详细信息
 
-下表描述了平台提供的 SQL Server 虚拟机映像的配置。
+下表描述了平台提供的 SQL Server 虚拟机镜像的配置。
 
 ### Windows Server
 
-平台映像中的 Windows Server 安装包含以下配置设置和组件：
+平台镜像中的 Windows Server 安装包含以下配置设置和组件：
 
 |功能|配置
 |---|---|
@@ -92,7 +92,7 @@
 
 ### SQL Server
 
-平台映像中的 SQL Server 安装包含以下配置设置和组件：
+平台镜像中的 SQL Server 安装包含以下配置设置和组件：
 
 |功能|配置|
 |---|---|
@@ -106,7 +106,7 @@
 |Data Quality Services|已安装（仅限 SQL Server 2012 或更高版本）|
 |Master Data Services|已安装（仅限 SQL Server 2012 或更高版本）。需要[其他配置和组件](https://msdn.microsoft.com/zh-cn/library/ee633752.aspx)
 |PowerPivot for SharePoint|可用（仅限 SQL Server 2012 或更高版本）。需要其他配置和组件（包括 SharePoint）|
-|分布式重播客户端|可用（仅限 SQL Server 2012 或更高版本），但未安装。请参阅[从平台提供的 SQL Server 映像运行 SQL Server 安装程序](#run-sql-server-setup-from-the-platform-provided-sql-server-image)|
+|分布式重播客户端|可用（仅限 SQL Server 2012 或更高版本），但未安装。请参阅[从平台提供的 SQL Server 镜像运行 SQL Server 安装程序](#run-sql-server-setup-from-the-platform-provided-sql-server-image)|
 |工具|所有工具，其中包括 SQL Server Management Studio、SQL Server 配置管理器、Business Intelligence Development Studio、SQL Server 安装程序、客户端工具连接、客户端工具 SDK 和 SQL 客户端连接 SDK，以及升级和迁移工具，如数据层应用程序 (DAC)、备份、还原、附加和分离|
 |SQL Server 联机丛书|已安装，但需要使用帮助查看器配置|
 
@@ -126,13 +126,13 @@
 
 ### 客户体验改善计划 (CEIP)
 
-[客户体验改善计划 (CEIP)](https://technet.microsoft.com/zh-cn/library/cc730757.aspx) 已启用。可以通过使用“SQL Server 错误和使用情况报告”实用工具来禁用 CEIP。若要启动“SQL Server 错误和使用情况报告”实用工具，请在“开始”菜单上依次单击“所有程序”、Microsoft SQL Server 版本、“配置工具”和“SQL Server 错误和使用情况报告”。如果你不想使用已启用 CEIP 的 SQL Server 实例，则还可以考虑将你自己的虚拟机映像部署到 Azure。 有关详细信息，请参阅[创建和上载包含 Windows Server 操作系统的虚拟硬盘](/documentation/articles/virtual-machines-create-upload-vhd-windows-server)。
+[客户体验改善计划 (CEIP)](https://technet.microsoft.com/zh-cn/library/cc730757.aspx) 已启用。可以通过使用“SQL Server 错误和使用情况报告”实用工具来禁用 CEIP。若要启动“SQL Server 错误和使用情况报告”实用工具，请在“开始”菜单上依次单击“所有程序”、Microsoft SQL Server 版本、“配置工具”和“SQL Server 错误和使用情况报告”。如果你不想使用已启用 CEIP 的 SQL Server 实例，则还可以考虑将你自己的虚拟机镜像部署到 Azure。 有关详细信息，请参阅[创建和上载包含 Windows Server 操作系统的虚拟硬盘](/documentation/articles/virtual-machines-create-upload-vhd-windows-server)。
 
-## 从平台提供的 SQL Server 映像运行 SQL Server 安装程序
+## 从平台提供的 SQL Server 镜像运行 SQL Server 安装程序
 
-如果你通过使用平台提供的 SQL Server 映像创建虚拟机，可以在虚拟机上的 **C:\\SqlServer\_SQLMajorVersion.SQLMinorVersion\_Full** 目录中找到保存的 SQL Server 安装介质。你可以从该目录运行安装程序以执行任何安装操作，包括添加或删除功能、添加新实例或修复实例（如果磁盘空间允许）。
+如果你通过使用平台提供的 SQL Server 镜像创建虚拟机，可以在虚拟机上的 **C:\\SqlServer\_SQLMajorVersion.SQLMinorVersion\_Full** 目录中找到保存的 SQL Server 安装介质。你可以从该目录运行安装程序以执行任何安装操作，包括添加或删除功能、添加新实例或修复实例（如果磁盘空间允许）。
 
->[AZURE.NOTE]Azure 在门户中提供了多个版本的 SQL Server 映像。如果平台提供的 SQL Server 映像的版本发布日期是 2014 年 5 月 15 日或以后的日期，则它在默认情况下包含产品密钥。如果你使用在此日期之前发布的平台提供的 SQL Server 映像预配虚拟机，则该 VM 不包含产品密钥。最佳做法是，建议你在预配新 VM 时始终选择最新的映像版本。
+>[AZURE.NOTE]Azure 在门户中提供了多个版本的 SQL Server 镜像。如果平台提供的 SQL Server 镜像的版本发布日期是 2014 年 5 月 15 日或以后的日期，则它在默认情况下包含产品密钥。如果你使用在此日期之前发布的平台提供的 SQL Server 镜像预配虚拟机，则该 VM 不包含产品密钥。最佳做法是，建议你在预配新 VM 时始终选择最新的镜像版本。
 
 ## 资源
 

@@ -17,10 +17,10 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
-**重要提示**：仅当使用某个[认可的分发](virtual-machines-../linux-endorsed-distributions.md)时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台映像库中提供的所有 Linux 分发都是具有所需配置的认可的分发。
+**重要提示**：仅当使用某个[认可的分发](virtual-machines-../linux-endorsed-distributions.md)时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台镜像库中提供的所有 Linux 分发都是具有所需配置的认可的分发。
 
 - [Azure 上的 Linux - 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distributions)
-- [Windows Azure 中对 Linux 映像的支持](http://support2.microsoft.com/kb/2941892)
+- [Windows Azure 中对 Linux 镜像的支持](http://support2.microsoft.com/kb/2941892)
 
 所有正在 Azure 上运行的分发都需要满足多个先决条件才能在平台上正常运行。本文并未涵盖所有信息，因为每个分发都是不同的；即使你满足以下所有条件，你也可能仍需显著调整你的 Linux 系统以确保其在平台上正常运行。
 
@@ -49,11 +49,11 @@
 
 ### 安装不带 Hyper-V 的 Linux ###
 
-在某些情况下，Linux 安装程序可能无法在初始 ramdisk（initrd 或 initramfs）中包含 Hyper-V 驱动程序，除非它检测到它正在运行 Hyper-V 环境。使用不同虚拟化系统（即 Virtualbox、KVM 等）来准备 Linux 映像时，可能需要重新生成 initrd 以确保至少 `hv_vmbus` 和 `hv_storvsc` 内核模块可在初始 ramdisk 上使用。至少在基于上游 Red Hat 分发的系统上这是一个已知问题。
+在某些情况下，Linux 安装程序可能无法在初始 ramdisk（initrd 或 initramfs）中包含 Hyper-V 驱动程序，除非它检测到它正在运行 Hyper-V 环境。使用不同虚拟化系统（即 Virtualbox、KVM 等）来准备 Linux 镜像时，可能需要重新生成 initrd 以确保至少 `hv_vmbus` 和 `hv_storvsc` 内核模块可在初始 ramdisk 上使用。至少在基于上游 Red Hat 分发的系统上这是一个已知问题。
 
-重新生成 initrd 或 initramfs 映像的机制可能会因分发而有所不同。请查阅分发的文档或相应过程的支持。下面是有关如何使用 `mkinitrd` 实用工具重新生成 initrd 的示例：
+重新生成 initrd 或 initramfs 镜像的机制可能会因分发而有所不同。请查阅分发的文档或相应过程的支持。下面是有关如何使用 `mkinitrd` 实用工具重新生成 initrd 的示例：
 
-首先，备份现有 initrd 映像：
+首先，备份现有 initrd 镜像：
 
 	# cd /boot
 	# sudo cp initrd-`uname -r`.img  initrd-`uname -r`.img.bak
@@ -65,7 +65,7 @@
 
 ### 调整 VHD 大小 ###
 
-Azure 上的 VHD 映像必须已将虚拟大小调整为 1MB。通常情况下，使用 Hyper-V 创建的 VHD 应已正确调整。如果未正确调整 VHD，则在你尝试基于 VHD 创建*映像*时，可能会收到如下错误消息：
+Azure 上的 VHD 镜像必须已将虚拟大小调整为 1MB。通常情况下，使用 Hyper-V 创建的 VHD 应已正确调整。如果未正确调整 VHD，则在你尝试基于 VHD 创建*镜像*时，可能会收到如下错误消息：
 
 	"The VHD http://<mystorageaccount>.blob.core.chinacloudapi.cn/vhds/MyLinuxVM.vhd has an unsupported virtual size of 21475270656 bytes. The size must be a whole number (in MBs).”
 
@@ -73,11 +73,11 @@ Azure 上的 VHD 映像必须已将虚拟大小调整为 1MB。通常情况下�
 
 如果你未在 Windows 环境中运行，则建议使用 qemu-img 转换（如果需要）并调整 VHD 大小：
 
- 1. 直接使用工具（如 `qemu-img` 或 `vbox-manage`）调整 VHD 大小可能会生成无法启动的 VHD。因此，建议先将 VHD 转换为 RAW 磁盘映像。如果已将 VM 映像创建为 RAW 磁盘映像（对于 KVM 等某些虚拟机监控程序，这是默认设置），则可以跳过此步骤：
+ 1. 直接使用工具（如 `qemu-img` 或 `vbox-manage`）调整 VHD 大小可能会生成无法启动的 VHD。因此，建议先将 VHD 转换为 RAW 磁盘镜像。如果已将 VM 镜像创建为 RAW 磁盘镜像（对于 KVM 等某些虚拟机监控程序，这是默认设置），则可以跳过此步骤：
 
 		# qemu-img convert -f vpc -O raw MyLinuxVM.vhd MyLinuxVM.raw
 
- 2. 计算磁盘映像所需的大小，以确保虚拟大小已调整为 1MB。以下 bash shell 脚本可以对此有帮助。此脚本使用“`qemu-img info`”来确定磁盘映像的虚拟大小，然后将大小计算到下个 1MB：
+ 2. 计算磁盘镜像所需的大小，以确保虚拟大小已调整为 1MB。以下 bash shell 脚本可以对此有帮助。此脚本使用“`qemu-img info`”来确定磁盘镜像的虚拟大小，然后将大小计算到下个 1MB：
 
 		rawdisk="MyLinuxVM.raw"
 		vhddisk="MyLinuxVM.vhd"
@@ -160,7 +160,7 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 
 - 安装 Azure Linux 代理
 
-	Azure Linux 代理是在 Azure 上设置 Linux 映像所必需的。许多分发将该代理提供为 RPM 或 Deb 包（该包通常称为“WALinuxAgent”或“walinuxagent”）。还可以按照 [Linux 代理指南](/documentation/articles/virtual-machines-linux-agent-user-guide)中的步骤手动安装该代理。
+	Azure Linux 代理是在 Azure 上设置 Linux 镜像所必需的。许多分发将该代理提供为 RPM 或 Deb 包（该包通常称为“WALinuxAgent”或“walinuxagent”）。还可以按照 [Linux 代理指南](/documentation/articles/virtual-machines-linux-agent-user-guide)中的步骤手动安装该代理。
 
 - 请确保已安装 SSH 服务器且已将其配置为在引导时启动。这通常是默认设置。
 

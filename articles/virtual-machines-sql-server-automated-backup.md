@@ -15,7 +15,7 @@
 
 自动备份将在运行 SQL Server 2014 Standard 或 Enterprise 的 Azure VM 上，自动为所有现有数据库和新数据库配置[向 Windows Azure 的托管备份](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx)。这样，你便可以配置使用持久 Azure Blob 存储的定期数据库备份。
 
->[AZURE.NOTE]自动备份依赖 SQL Server IaaS 代理。要安装和配置该代理，必须在目标虚拟机上运行 Azure VM 代理。较新的虚拟机库映像已默认启用此选项，但现有 VM 可能缺少 Azure VM 代理。如果使用你自己的 VM 映像，也需要安装 SQL Server IaaS 代理。有关详细信息，请参阅 [VM 代理和扩展](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/)。
+>[AZURE.NOTE]自动备份依赖 SQL Server IaaS 代理。要安装和配置该代理，必须在目标虚拟机上运行 Azure VM 代理。较新的虚拟机库镜像已默认启用此选项，但现有 VM 可能缺少 Azure VM 代理。如果使用你自己的 VM 镜像，也需要安装 SQL Server IaaS 代理。有关详细信息，请参阅 [VM 代理和扩展](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/)。
 
 ## 自动备份设置
 

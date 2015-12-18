@@ -23,7 +23,7 @@ Microsoft HPC Pack 可提供在 Windows Azure 虚拟机群集上运行各种大�
 
 ## 先决条件
 
-* **具有 Linux 计算节点的 HPC Pack 群集** - 请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)，了解使用 Azure PowerShell 脚本和 Azure 应用商店中的 HPC Pack 映像，在 Azure 上部署 HPC Pack 群集与 Linux 计算节点的先决条件和步骤。
+* **具有 Linux 计算节点的 HPC Pack 群集** - 请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)，了解使用 Azure PowerShell 脚本和 Azure 应用商店中的 HPC Pack 镜像，在 Azure 上部署 HPC Pack 群集与 Linux 计算节点的先决条件和步骤。
 
     下面是一个示例 XML 配置文件，可以与脚本配合使用以部署基于 Azure 的 HPC Pack 群集，群集中包含一个 Windows Server 2012 R2 头节点和 4 个大型 (A3) CentOS 6.6 计算节点。请将订阅和服务名称替换为相应值。
 

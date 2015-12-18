@@ -126,7 +126,7 @@ Windows Azure 中的托管服务由一个设计为在托管服务中运行的应
 * 发行 HTTPS 端点证书时
 * 使用 Windows Azure 诊断（诊断使用 Windows Azure 存储）时
 * 使用设计为在 Windows Azure 上运行的工具和服务（这些工具和服务具有其自己的配置文件或服务定义文件）时
-* 使用 CSUPLOAD 工具为 VM 角色上传映像
+* 使用 CSUPLOAD 工具为 VM 角色上传镜像
 
 ##<a name="endpointmap"></a>端点映射<a name="endpointmap"></a>
 

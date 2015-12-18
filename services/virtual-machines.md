@@ -1,4 +1,4 @@
-<properties linkid="dev-net-virtual-machine" urlDisplayName="Windows Azure 虚拟机" pageTitle="虚拟机技术 - Azure 微软云" metaKeywords="Virtual Machine,虚拟机,设置,迁移,管理,Visual Studio,映像,镜像,image,VHD,磁盘管理,镜像管理,面向开发,面向企业,SQL Server,sharepoint,SDK下载,虚拟机常见问题,开发,测试,.Net,NuGet,虚拟机可用性,SDK下载" description="本文是用户了解微软云提供的虚拟机服务的入口页面，无论是虚拟机新手、开发人员，还是企业用户，都可以在本文中找到如何设置、迁移和管理虚拟机的相关文档链接。还可以透过本页下载微软提供的丰富的SDK供开发者使用。使用虚拟机可在你需要灵活的资源时配置可缩放的按需计算基础结构。创建运行 Windows、Linux 和企业应用程序的 VM。或者，捕获你自己的映像以便创建自定义虚拟机。" metaCanonical="" services="Virtual Machine" documentationCenter="Services" title="虚拟机技术的相关指南" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-virtual-machine" urlDisplayName="Windows Azure 虚拟机" pageTitle="虚拟机技术 - Azure 微软云" metaKeywords="Virtual Machine,虚拟机,设置,迁移,管理,Visual Studio,镜像,镜像,image,VHD,磁盘管理,镜像管理,面向开发,面向企业,SQL Server,sharepoint,SDK下载,虚拟机常见问题,开发,测试,.Net,NuGet,虚拟机可用性,SDK下载" description="本文是用户了解微软云提供的虚拟机服务的入口页面，无论是虚拟机新手、开发人员，还是企业用户，都可以在本文中找到如何设置、迁移和管理虚拟机的相关文档链接。还可以透过本页下载微软提供的丰富的SDK供开发者使用。使用虚拟机可在你需要灵活的资源时配置可缩放的按需计算基础结构。创建运行 Windows、Linux 和企业应用程序的 VM。或者，捕获你自己的镜像以便创建自定义虚拟机。" metaCanonical="" services="Virtual Machine" documentationCenter="Services" title="虚拟机技术的相关指南" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Virtual Machine"
     ms.date=""
     wacn.date="07/23/2015"
@@ -8,7 +8,7 @@
 
 ##设置、迁移和管理虚拟机
 
-使用虚拟机可在你需要灵活的资源时配置可缩放的按需计算基础结构。创建运行 Windows、Linux 和企业应用程序的 VM。或者，捕获你自己的映像以便创建自定义虚拟机。
+使用虚拟机可在你需要灵活的资源时配置可缩放的按需计算基础结构。创建运行 Windows、Linux 和企业应用程序的 VM。或者，捕获你自己的镜像以便创建自定义虚拟机。
 
 ##快速链接
 
@@ -25,9 +25,9 @@
 
 由于计划或非计划维护而重新启动 VM 时如何避免出现问题 - 这些有关可用性集的最佳实践可帮助您应对维护事件带来的影响。
 
-####[管理磁盘和映像](http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx)
+####[管理磁盘和镜像](http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx)
 
-了解如何管理磁盘、虚拟硬盘 (VHD) 和 Azure 虚拟机中的映像。
+了解如何管理磁盘、虚拟硬盘 (VHD) 和 Azure 虚拟机中的镜像。
 
 ####[Windows PowerShell 中的 Azure cmdlet 入门](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)
 
@@ -81,7 +81,7 @@ Cerebrata 团队说明他们如何以及为何决定使用 Azure 虚拟机进行
 -   [管理库 (NuGet)](http://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Libraries)
 -   [服务管理 (REST)：虚拟机操作](http://msdn.microsoft.com/zh-cn/library/azure/jj157206.aspx)
 -   [服务管理 (REST)：虚拟机磁盘操作](http://msdn.microsoft.com/zh-cn/library/azure/jj157188.aspx)
--   [服务管理 (REST)：操作系统映像操作](http://msdn.microsoft.com/zh-cn/library/azure/jj157175.aspx)
+-   [服务管理 (REST)：操作系统镜像操作](http://msdn.microsoft.com/zh-cn/library/azure/jj157175.aspx)
 -   [服务管理客户端库（计算）](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.management.compute.aspx)
 
 ##面向企业
@@ -112,7 +112,7 @@ Cerebrata 团队说明他们如何以及为何决定使用 Azure 虚拟机进行
 
 ####[在 Azure 基础结构服务上配置和部署 SharePoint 2013 场](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview)
 
-在一组虚拟机上配置和部署 SharePoint 场。在本教程中，您将使用市场中的映像创建一组虚拟机，然后将创建一个域。之后，您将计算机加入该域中并运行 SharePoint 配置向导。最后，您将了解如何启用 SQL Server AlwaysOn 功能以实现高可用性。
+在一组虚拟机上配置和部署 SharePoint 场。在本教程中，您将使用市场中的镜像创建一组虚拟机，然后将创建一个域。之后，您将计算机加入该域中并运行 SharePoint 配置向导。最后，您将了解如何启用 SQL Server AlwaysOn 功能以实现高可用性。
 
 ##更多
 

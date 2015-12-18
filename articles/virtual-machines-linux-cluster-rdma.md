@@ -32,7 +32,7 @@
 
 ## 在 Azure 服务管理中使用 Azure CLI 脚本进行部署
 
-以下步骤将帮助你使用 Azure CLI 部署 SLES 12 VM、安装 Intel MPI 库和其他自定义项、创建自定义 VM 映像，然后编写脚本部署 A8 或 A9 VM 的群集。
+以下步骤将帮助你使用 Azure CLI 部署 SLES 12 VM、安装 Intel MPI 库和其他自定义项、创建自定义 VM 镜像，然后编写脚本部署 A8 或 A9 VM 的群集。
 
 ### 先决条件
 
@@ -65,15 +65,15 @@ azure account list
 azure account set <subscription-number>
 ```
 
-若要查看 Azure 中公开提供的 SLES 12 HPC 映像，请运行如下命令（如果你的 shell 环境支持 **grep**）：
+若要查看 Azure 中公开提供的 SLES 12 HPC 镜像，请运行如下命令（如果你的 shell 环境支持 **grep**）：
 
 ```
 azure vm image list | grep "suse.*hpc"
 ```
 
->[AZURE.NOTE]已为 SLES 12 HPC 映像预配置了必需的用于 Azure 的 Linux RDMA 驱动程序。
+>[AZURE.NOTE]已为 SLES 12 HPC 镜像预配置了必需的用于 Azure 的 Linux RDMA 驱动程序。
 
-现在，通过运行如下命令使用提供的 SLES 12 HPC 映像预配 A9 大小 VM：
+现在，通过运行如下命令使用提供的 SLES 12 HPC 镜像预配 A9 大小 VM：
 
 ```
 azure vm create -g <username> -p <password> -c <cloud-service-name> -l <location> -z A9 -n <vm-name> -e 10004 b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708
@@ -87,7 +87,7 @@ azure vm create -g <username> -p <password> -c <cloud-service-name> -l <location
 
 * 将在 location 指定的 Azure 区域中创建新的云服务；请指定提供 A8 和 A9 实例的位置，例如“West US”
 
-* 映像名称当前可以是`b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708`（免费）或 `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-priority-v20150708`（用于 SUSE 优先支持，将付费）
+* 镜像名称当前可以是`b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708`（免费）或 `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-priority-v20150708`（用于 SUSE 优先支持，将付费）
 
 ### 自定义 VM
 
@@ -153,17 +153,17 @@ host 10.32.0.3
 
 >[AZURE.NOTE]如果未按上面所示指定特定 IP 地址或范围，配置 `StrictHostKeyChecking no` 就会产生潜在的安全风险。
 
-**应用程序** - 在捕获映像之前，将所需的所有应用程序复制到此 VM 上或执行其他自定义设置。
+**应用程序** - 在捕获镜像之前，将所需的所有应用程序复制到此 VM 上或执行其他自定义设置。
 
-### 捕获映像
+### 捕获镜像
 
-若要捕获映像，首先在 Linux VM 中运行以下命令：
+若要捕获镜像，首先在 Linux VM 中运行以下命令：
 
 ```
 $ sudo waagent -deprovision
 ```
 
-然后，从客户端计算机运行以下 Azure CLI 命令，以捕获映像。有关详细信息，请参阅[如何捕获 Linux 虚拟机以用作模板](/documentation/articles/virtual-machines-linux-capture-image)。
+然后，从客户端计算机运行以下 Azure CLI 命令，以捕获镜像。有关详细信息，请参阅[如何捕获 Linux 虚拟机以用作模板](/documentation/articles/virtual-machines-linux-capture-image)。
 
 ```
 azure vm shutdown <vm-name>
@@ -172,9 +172,9 @@ azure vm capture -t <vm-name> <image-name>
 
 ```
 
-运行这些命令之后，将捕获 VM 映像供你使用并将删除 VM。现已准备好用于部署群集的自定义映像。
+运行这些命令之后，将捕获 VM 镜像供你使用并将删除 VM。现已准备好用于部署群集的自定义镜像。
 
-### 使用映像部署群集
+### 使用镜像部署群集
 
 使用你环境的相应值修改以下脚本，并从客户端计算机运行它。由于 ASM 部署方法将依次部署 VM，因此将需要几分钟时间才能部署此脚本中建议的 8 个 A9 VM。
 

@@ -218,7 +218,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 1.	在开发计算机上启动 Visual Studio 2013。
 2.	在 Visual Studio 服务器资源管理器中，展开“Azure”，右键单击“虚拟机”然后选择“创建虚拟机”。
 3.	在“选择订阅”对话框中选择你的 Azure 订阅，然后单击“下一步”。
-4.	在“选择虚拟机映像”对话框中选择“Windows Server 2012 R2 Datacenter 2014 年 11 月版”，然后单击“下一步”。
+4.	在“选择虚拟机镜像”对话框中选择“Windows Server 2012 R2 Datacenter 2014 年 11 月版”，然后单击“下一步”。
 5.	在“虚拟机基本设置”中，将虚拟机名称设置为“wadexample”。设置管理员用户名和密码，然后单击“下一步”。
 6.	在“云服务设置”对话框中，创建名为“wadexampleVM”的新云服务。创建一个名为“wadexample”的新存储帐户，然后单击“下一步”。
 7.	单击“创建”。

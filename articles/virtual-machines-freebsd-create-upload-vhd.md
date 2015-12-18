@@ -1,5 +1,5 @@
 <properties
-   pageTitle="创建和上载 FreeBSD VM 映像 | Windows Azure"
+   pageTitle="创建和上载 FreeBSD VM 镜像 | Windows Azure"
    description="了解如何创建和上载包含 FreeBSD 操作系统的虚拟硬盘 (VHD) 以创建 Azure 虚拟机。"
    services="virtual-machines"
    documentationCenter=""
@@ -15,7 +15,7 @@
 
 # 创建 FreeBSD VHD 并将其上载到 Azure
 
-本文介绍如何创建和上载包含 FreeBSD 操作系统的虚拟硬盘 (VHD)，以便可以使用它作为自己的映像在 Azure 中创建虚拟机 (VM)。
+本文介绍如何创建和上载包含 FreeBSD 操作系统的虚拟硬盘 (VHD)，以便可以使用它作为自己的镜像在 Azure 中创建虚拟机 (VM)。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
@@ -32,7 +32,7 @@
 
 此任务包括以下五个步骤。
 
-## 步骤 1：准备要上载的映像 ##
+## 步骤 1：准备要上载的镜像 ##
 
 关于 Hyper-v 上的 FreeBSD 安装，可在[此处](http://blogs.msdn.com/b/kylie/archive/2014/12/25/running-freebsd-on-hyper-v.aspx)获取教程。
 
@@ -176,7 +176,7 @@
 
 ## 步骤 4：上载 .vhd 文件 ##
 
-在上载 .vhd 文件时，你可以将 .vhd 文件放置在 Blob 存储中的任何位置。在以下命令示例中，**BlobStorageURL** 是你在步骤 2 中创建的存储帐户的 URL，**YourImagesFolder** 是要在其中存储映像的 Blob 存储中的容器。**VHDName** 是显示在管理门户中用于标识虚拟硬盘的标签。**PathToVHDFile** 是 .vhd 文件的完整路径和名称。
+在上载 .vhd 文件时，你可以将 .vhd 文件放置在 Blob 存储中的任何位置。在以下命令示例中，**BlobStorageURL** 是你在步骤 2 中创建的存储帐户的 URL，**YourImagesFolder** 是要在其中存储镜像的 Blob 存储中的容器。**VHDName** 是显示在管理门户中用于标识虚拟硬盘的标签。**PathToVHDFile** 是 .vhd 文件的完整路径和名称。
 
 
 1. 从你在上一步中使用的 Azure PowerShell 窗口中，键入：
@@ -184,7 +184,7 @@
 		Add-AzureVhd -Destination "<BlobStorageURL>/<YourImagesFolder>/<VHDName>.vhd" -LocalFilePath <PathToVHDFile>		
 
 ## 步骤 5：使用上载的 VHD 创建 VM ##
-上载 .vhd 后，你可以将其作为映像添加到与订阅关联的自定义映像列表，并使用此自定义映像创建虚拟机。
+上载 .vhd 后，你可以将其作为镜像添加到与订阅关联的自定义镜像列表，并使用此自定义镜像创建虚拟机。
 
 1. 从你在上一步中使用的 Azure PowerShell 窗口中，键入：
 
@@ -192,17 +192,17 @@
 
     **重要说明**：现在请使用 Linux 作为 OS 类型，因为当前 Azure PowerShell 版本只接受“Linux”或“Windows”作为参数。
 
-2. 完成前面的步骤后，当你在 Azure 管理门户上选择“映像”选项卡时，将列出新映像。
+2. 完成前面的步骤后，当你在 Azure 管理门户上选择“镜像”选项卡时，将列出新镜像。
 
-    ![添加映像](./media/virtual-machines-freebsd-create-upload-vhd/addfreebsdimage.png)
+    ![添加镜像](./media/virtual-machines-freebsd-create-upload-vhd/addfreebsdimage.png)
 
-3. 从库中创建虚拟机。此新映像现在将显示在“我的映像”下。选择该新映像，并按照提示完成设置主机名、密码/SSH 密钥等操作。
+3. 从库中创建虚拟机。此新镜像现在将显示在“我的镜像”下。选择该新镜像，并按照提示完成设置主机名、密码/SSH 密钥等操作。
 
-	![自定义映像](./media/virtual-machines-freebsd-create-upload-vhd/createfreebsdimageinazure.png)
+	![自定义镜像](./media/virtual-machines-freebsd-create-upload-vhd/createfreebsdimageinazure.png)
 
 4. 完成设置后，你将看到你的 FreeBSD VM 在 Azure 中运行。
 
-	![azure 中的 freebsd 映像](./media/virtual-machines-freebsd-create-upload-vhd/freebsdimageinazure.png)
+	![azure 中的 freebsd 镜像](./media/virtual-machines-freebsd-create-upload-vhd/freebsdimageinazure.png)
  
 
 <!---HONumber=79-->

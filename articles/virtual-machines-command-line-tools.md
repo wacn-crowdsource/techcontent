@@ -216,14 +216,14 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 **-e, --ssh** 添加到 Windows 虚拟机的 SSH 连接。<br /> 
 **-t, --ssh-cert** 指定 SSH 证书。<br /> 
 **-s** 订阅。<br /> 
-**-o, --community** 指定的映像是社区映像。<br /> 
+**-o, --community** 指定的镜像是社区镜像。<br /> 
 **-w** 虚拟网络名称。<br/> 
 **-l, --location** 指定位置（例如，“North Central China”）。<br /> 
 **-a, --affinity-group** 指定地缘组。<br /> 
 **-w, --virtual-network-name** 指定要在其中添加新虚拟机的虚拟网络。可从 Azure 门户设置和管理虚拟网络。<br /> 
 **-b, --subnet-names** 指定要分配虚拟机的子网名称。
 
-在此示例中，MSFT\__Win2K8R2SP1-120514-1520-141205-01-zh-CN-30GB 是该平台提供的映像。有关操作系统映像的详细信息，请参阅 VM 映像列表。
+在此示例中，MSFT\__Win2K8R2SP1-120514-1520-141205-01-zh-CN-30GB 是该平台提供的镜像。有关操作系统镜像的详细信息，请参阅 VM 镜像列表。
 
 	~$ azure vm create my-vm-name MSFT__Windows-Server-2008-R2-SP1.11-29-2011 username --location "West US" -r
 	info:   Executing command vm create
@@ -325,9 +325,9 @@ info:   vm shutdown command OK
 
 **vm capture &lt;vm-name> &lt;target-image-name>**
 
-此命令捕获 Azure 虚拟机映像。
+此命令捕获 Azure 虚拟机镜像。
 
-只有当虚拟机状态为**已停止**时，才能捕获虚拟机映像。请关闭虚拟机，然后再继续操作。
+只有当虚拟机状态为**已停止**时，才能捕获虚拟机镜像。请关闭虚拟机，然后再继续操作。
 
 	~$ azure.cmd vm capture my-vm mycaptureimagename --delete
 	info:   Executing command vm capture
@@ -337,7 +337,7 @@ info:   vm shutdown command OK
 
 **vm export [options] &lt;vm-name> &lt;file-path>**
 
-此命令将一个 Azure 虚拟机映像导出到文件
+此命令将一个 Azure 虚拟机镜像导出到文件
 
 	~$ azure vm export "myvm" "C:"
 	info:    Executing command vm export
@@ -424,13 +424,13 @@ info:   vm shutdown command OK
 	data:    Network Endpoints 2 Vip "168.61.9.97"
 	info:    vm endpoint show command OK
 
-## 用于管理 Azure 虚拟机映像的命令
+## 用于管理 Azure 虚拟机镜像的命令
 
-虚拟机映像是所捕获的、可根据需要进行复制的已配置虚拟机。
+虚拟机镜像是所捕获的、可根据需要进行复制的已配置虚拟机。
 
 **vm image list [options]**
 
-此命令获取虚拟机映像的列表。有三种类型的映像：Microsoft 创建的映像（以“MSFT”作为前缀）、第三方创建的映像（通常以供应商的名称作为前缀）以及你创建的映像。若要创建映像，你可以捕获现有虚拟机或从上载到 Blob 存储的自定义 .vhd 创建映像。有关使用自定义 .vhd 的更多信息，请参见 VM 映像创建。--json 选项指定以原始 JSON 格式返回结果。
+此命令获取虚拟机镜像的列表。有三种类型的镜像：Microsoft 创建的镜像（以“MSFT”作为前缀）、第三方创建的镜像（通常以供应商的名称作为前缀）以及你创建的镜像。若要创建镜像，你可以捕获现有虚拟机或从上载到 Blob 存储的自定义 .vhd 创建镜像。有关使用自定义 .vhd 的更多信息，请参见 VM 镜像创建。--json 选项指定以原始 JSON 格式返回结果。
 
 	~$ azure vm image list
 	data:   Name                                                                   Category   OS
@@ -449,7 +449,7 @@ info:   vm shutdown command OK
 
 **vm image show [options] &lt;name>**
 
-此命令显示虚拟机映像的详细信息。
+此命令显示虚拟机镜像的详细信息。
 
 	~$ azure vm image show MSFT__Windows-Server-2008-R2-SP1.11-29-2011
 	+ Fetching VM image
@@ -468,7 +468,7 @@ info:   vm shutdown command OK
 
 **vm image delete [options] &lt;name>**
 
-此命令删除虚拟机映像。
+此命令删除虚拟机镜像。
 
 	~$ azure vm image delete my-vm-image
 	info:   Executing command vm image delete
@@ -477,7 +477,7 @@ info:   vm shutdown command OK
 
 **vm image create &lt;name> [source-path]**
 
-此命令创建虚拟机映像。你的自定义 .vhd 文件将上载到 Blob 存储，然后从该位置创建虚拟机映像。然后可使用此虚拟机映像创建虚拟机。Location 和 OS 参数是必需的。
+此命令创建虚拟机镜像。你的自定义 .vhd 文件将上载到 Blob 存储，然后从该位置创建虚拟机镜像。然后可使用此虚拟机镜像创建虚拟机。Location 和 OS 参数是必需的。
 
 某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。你可以使用 -p &lt;number> 参数再次运行此命令，以减小最大并行上载数。默认的最大并行上载数为 96。
 
@@ -550,7 +550,7 @@ info:   vm shutdown command OK
 
 **vm disk create &lt;name> [source-path]**
 
-此命令将上载并注册 Azure 磁盘。必须指定 --blob-url、--location 或 --affinity-group。如果将此命令与 [source-path] 结合使用，将上载指定的 .vhd 文件并创建新映像。然后你可以使用 vm disk attach 将此映像附加到虚拟机。
+此命令将上载并注册 Azure 磁盘。必须指定 --blob-url、--location 或 --affinity-group。如果将此命令与 [source-path] 结合使用，将上载指定的 .vhd 文件并创建新镜像。然后你可以使用 vm disk attach 将此镜像附加到虚拟机。
 
 某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。你可以使用 -p &lt;number> 参数再次运行此命令，以减小最大并行上载数。默认的最大并行上载数为 96。
 

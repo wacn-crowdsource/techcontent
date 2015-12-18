@@ -77,7 +77,7 @@ Azure 虚拟机 (VM) 可帮助数据库管理员降低高可用性 SQL Server �
 	
 	- 为变量 **$affinityGroupName** 和 **$virtualNetworkName** 指定的名称（在稍后将使用的虚拟网络配置文档中配置）。
 	
-	- **$sqlImageName** 指定包含 SQL Server 2012 Service Pack 1 Enterprise Edition 的 VM 映像的更新名称。
+	- **$sqlImageName** 指定包含 SQL Server 2012 Service Pack 1 Enterprise Edition 的 VM 镜像的更新名称。
 	
 	- 为简单起见，在整个教程中使用同一密码 **Contoso!000**。
 
@@ -357,7 +357,7 @@ Azure 虚拟机 (VM) 可帮助数据库管理员降低高可用性 SQL Server �
 
 	注意与上述命令相关的以下几点：
 
-	- **New-AzureVMConfig** 使用与 DC 服务器相同的可用性集名称，并使用虚拟机库中的 SQL Server 2012 Service Pack 1 Enterprise Edition 映像。它还将操作系统磁盘设置为只读缓存（无写缓存）。建议将这些数据库文件迁移到一个附加到 VM 的独立数据磁盘中，并将其配置为无读或写缓存。不过，次优建议是移除操作系统磁盘上的写缓存，因为无法移除操作系统磁盘上的读缓存。
+	- **New-AzureVMConfig** 使用与 DC 服务器相同的可用性集名称，并使用虚拟机库中的 SQL Server 2012 Service Pack 1 Enterprise Edition 镜像。它还将操作系统磁盘设置为只读缓存（无写缓存）。建议将这些数据库文件迁移到一个附加到 VM 的独立数据磁盘中，并将其配置为无读或写缓存。不过，次优建议是移除操作系统磁盘上的写缓存，因为无法移除操作系统磁盘上的读缓存。
 	
 	- **Add-AzureProvisioningConfig** 将 VM 加入创建的 Active Directory 域中。
 	

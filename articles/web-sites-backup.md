@@ -125,7 +125,7 @@
 
 有时你不想备份网站中的所有内容。以下是一些示例：
 
--	你[设置每周备份](/documentation/articles/web-sites-backup#configure-automated-backups)网站，其中包含永远不会更改的静态内容，例如旧的博客文章或映像。
+-	你[设置每周备份](/documentation/articles/web-sites-backup#configure-automated-backups)网站，其中包含永远不会更改的静态内容，例如旧的博客文章或镜像。
 -网站的内容超过 10GB（这是一次可以备份的最大数量）。
 -	你不想备份日志文件。
 
@@ -135,9 +135,9 @@
 
 若要从备份中排除文件和文件夹，在网站的 wwwroot 文件夹中创建 `_backup.filter` 文件，并指定想要在这里排除的文件和文件夹列表。通过 [Kudu 控制台](https://github.com/projectkudu/kudu/wiki/Kudu-console)，即可轻松访问它。
 
-假设你的网站中包含永远不会更改的历年的日志文件和静态映像。你已有包括旧映像的网站的完整备份。现在你想要每天都备份网站，但不想为永远不会更改的存储日志文件或静态映像文件支付费用。
+假设你的网站中包含永远不会更改的历年的日志文件和静态镜像。你已有包括旧镜像的网站的完整备份。现在你想要每天都备份网站，但不想为永远不会更改的存储日志文件或静态镜像文件支付费用。
 
-![日志文件夹][LogsFolder] ![映像文件夹][ImagesFolder]
+![日志文件夹][LogsFolder] ![镜像文件夹][ImagesFolder]
 	
 以下步骤展示了如何从备份中排除这些文件。
 
@@ -159,7 +159,7 @@
 
 4. 采用通常使用的相同方式运行备份，即[手动](#create-a-manual-backup)或[自动](#configure-automated-backups)。
 
-现在，`_backup.filter` 中指定的所有文件和文件夹都会从备份中排除。在此示例中，日志文件和 2013 年以及 2014 年的映像文件以及 brand.png 将不再进行备份。
+现在，`_backup.filter` 中指定的所有文件和文件夹都会从备份中排除。在此示例中，日志文件和 2013 年以及 2014 年的镜像文件以及 brand.png 将不再进行备份。
 
 >[AZURE.NOTE]采用[还原定期备份](/documentation/articles/web-sites-restore)的相同方式还原站点的部分备份。还原过程会执行正确的操作。
 >

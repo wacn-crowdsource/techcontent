@@ -31,7 +31,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 ## 虚拟机与容器之间的区别
 
-虚拟机是在[虚拟机监控程序](http://zh.wikipedia.org/wiki/Hypervisor)提供的单独硬件虚拟化环境中运行。在 Azure 中，[虚拟机](http://www.windowsazure.cn/home/features/virtual-machines/)服务可为你处理所有事务：你只需选择操作系统并将其配置为按你所需方式运行（或上载你自己的自定义 VM 映像），由此创建虚拟机即可。虚拟机是经过时间考验、“久经沙场”的技术，可使用许多工具来管理操作系统并配置你所安装和运行的应用程序。虚拟机中运行的所有内容对主机操作系统隐藏，而且从虚拟机内运行的应用程序或用户的角度来看，虚拟机似乎是一个自治物理计算机。
+虚拟机是在[虚拟机监控程序](http://zh.wikipedia.org/wiki/Hypervisor)提供的单独硬件虚拟化环境中运行。在 Azure 中，[虚拟机](http://www.windowsazure.cn/home/features/virtual-machines/)服务可为你处理所有事务：你只需选择操作系统并将其配置为按你所需方式运行（或上载你自己的自定义 VM 镜像），由此创建虚拟机即可。虚拟机是经过时间考验、“久经沙场”的技术，可使用许多工具来管理操作系统并配置你所安装和运行的应用程序。虚拟机中运行的所有内容对主机操作系统隐藏，而且从虚拟机内运行的应用程序或用户的角度来看，虚拟机似乎是一个自治物理计算机。
 
 [Linux 容器](http://zh.wikipedia.org/wiki/LXC)中包括使用 docker 工具创建和托管的对象以及其他方法，不需要或不使用虚拟机监控程序来提供隔离。相反，容器主机会利用 Linux 内核的流程和文件系统隔离功能，仅向容器（及其应用程序）显示特定的内核功能和其自己的隔离文件系统（最低程度上）。从容器内运行的应用程序的角度来看，该容器似乎是一个独特的操作系统实例。包含在容器内的应用程序无法查看该容器以外的流程或其他任何资源。
 
@@ -39,7 +39,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 这一点很厉害。
 
-对于在 Windows 上运行的应用程序，[Windows Server 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)可提供与 Linux 容器相同的好处。Windows Server 容器支持 docker 映像格式和 docker API。因此，使用 Windows Server 容器的应用程序都可使用与 Mac 和 Linux 上相似的命令进行开发、发布、检索和部署。这是除了 [Microsoft Visual Studio 中的新 docker 支持](https://visualstudiogallery.msdn.microsoft.com/6f638067-027d-4817-bcc7-aa94163338f0)以外的另一好处。更大的[容器生态系统](https://msdn.microsoft.com/virtualization/windowscontainers/about/container_ecosystem)将使每个人都有合适的工具可对容器执行所需的操作。
+对于在 Windows 上运行的应用程序，[Windows Server 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)可提供与 Linux 容器相同的好处。Windows Server 容器支持 docker 镜像格式和 docker API。因此，使用 Windows Server 容器的应用程序都可使用与 Mac 和 Linux 上相似的命令进行开发、发布、检索和部署。这是除了 [Microsoft Visual Studio 中的新 docker 支持](https://visualstudiogallery.msdn.microsoft.com/6f638067-027d-4817-bcc7-aa94163338f0)以外的另一好处。更大的[容器生态系统](https://msdn.microsoft.com/virtualization/windowscontainers/about/container_ecosystem)将使每个人都有合适的工具可对容器执行所需的操作。
 
 这一点也很厉害。
 
@@ -71,10 +71,10 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 开发人员很快就会开始喜欢 Docker 容器，因为首先它有助于轻松使用 Linux 容器：
 
-- 他们可以使用简单的增量命令来创建易于部署的固定映像，并可使用 dockerfile 自动构建这些映像。
-- 通过对[公有](https://registry.hub.docker.com/)或[私有 docker 注册表](/documentation/articles/virtual-machines-docker-registry-on-azure-blob-storage)使用简单的 [Git](https://git-scm.com/) 式推送和拉取命令，就可对这些映像进行共享。 
+- 他们可以使用简单的增量命令来创建易于部署的固定镜像，并可使用 dockerfile 自动构建这些镜像。
+- 通过对[公有](https://registry.hub.docker.com/)或[私有 docker 注册表](/documentation/articles/virtual-machines-docker-registry-on-azure-blob-storage)使用简单的 [Git](https://git-scm.com/) 式推送和拉取命令，就可对这些镜像进行共享。 
 - 他们可以考虑用单独的应用程序组件来代替计算机
-- 他们可以使用大量适合于 docker 容器的工具以及不同的基础映像。
+- 他们可以使用大量适合于 docker 容器的工具以及不同的基础镜像。
 
 ### 容器可为运营和 IT 专业人士带来的好处
 
@@ -106,8 +106,8 @@ IT 和运营专家还可以从容器与虚拟机的组合中获益。
 | “默认”安全支持 | 达到更高程度 | 程度略低 |
 | 所需的磁盘内存 | 完整操作系统加上应用 | 仅限应用要求 |
 | 启动所需时间 | 明显更长：操作系统引导和应用程序加载 | 明显短很多：仅应用程序需要启动，因为内核已经在运行 |
-| 可移植性 | 通过适当的准备实现可移植 | 在映像格式内可移植；通常更小 | 
-| 映像自动化 | 相差很大，具体取决于操作系统和应用程序 | [Docker 注册表](https://registry.hub.docker.com/)；其他
+| 可移植性 | 通过适当的准备实现可移植 | 在镜像格式内可移植；通常更小 | 
+| 镜像自动化 | 相差很大，具体取决于操作系统和应用程序 | [Docker 注册表](https://registry.hub.docker.com/)；其他
 
 ## 创建和管理多组 VM 和容器
 

@@ -62,7 +62,7 @@
 	- **-w（或 --virtual-network-name）**。将在其中创建 VM 的 VNet 的名称。 
 	- **-S（或 --static-ip）**。VM 的静态专用 IP 地址。
 	- **TestService**。将在其中创建 VM 的云服务的名称。
-	- **bd507d3a70934695bc2128e3e5a255ba\_\_RightImage-Windows-2012R2-x64-v14.2**。用于创建 VM 的映像。
+	- **bd507d3a70934695bc2128e3e5a255ba\_\_RightImage-Windows-2012R2-x64-v14.2**。用于创建 VM 的镜像。
 	- **adminuser**。Windows VM 的本地管理员。
 	- **AdminP@ssw0rd**。Windows VM 的本地管理员密码。
 

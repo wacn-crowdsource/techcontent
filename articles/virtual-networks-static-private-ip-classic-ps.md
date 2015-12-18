@@ -39,7 +39,7 @@
 	OperationStatus      : Succeeded
 
 ## 如何在创建 VM 时指定静态专用 IP 地址
-下面的 PowerShell 脚本将创建名为 *TestService* 的全新云服务，然后从 Azure 中检索映像，在新的云服务中使用检索到的映像创建名为 *DNS01* 的 VM，对该 VM 进行设置，使之位于名为 *FrontEnd* 的子网中，最后再将 *192.168.1.7* 设置为该 VM 的静态专用 IP 地址：
+下面的 PowerShell 脚本将创建名为 *TestService* 的全新云服务，然后从 Azure 中检索镜像，在新的云服务中使用检索到的镜像创建名为 *DNS01* 的 VM，对该 VM 进行设置，使之位于名为 *FrontEnd* 的子网中，最后再将 *192.168.1.7* 设置为该 VM 的静态专用 IP 地址：
 
 	New-AzureService -ServiceName TestService -Location "China North"
 	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}

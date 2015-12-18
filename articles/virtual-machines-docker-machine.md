@@ -15,7 +15,7 @@
 
 # 如何将 docker-machine 与 Azure 一起使用
 
-本主题介绍如何将 [Docker](https://www.docker.com/) 与[计算机](https://github.com/docker/machine)和 [Azure CLI](https://github.com/Azure/azure-xplat-cli) 结合使用来创建 Azure 虚拟机，以便快速轻松地从运行 Ubuntu 的计算机管理 Linux 容器。为了演示，本教程将说明如何同时部署 [busybox Docker Hub 映像](https://registry.hub.docker.com/_/busybox/)和 [nginx Docker Hub 映像](https://registry.hub.docker.com/_/nginx/)，并配置容器将 Web 请求路由到 nginx 容器。（Docker **计算机**文档介绍如何针对其他平台修改这些说明。）
+本主题介绍如何将 [Docker](https://www.docker.com/) 与[计算机](https://github.com/docker/machine)和 [Azure CLI](https://github.com/Azure/azure-xplat-cli) 结合使用来创建 Azure 虚拟机，以便快速轻松地从运行 Ubuntu 的计算机管理 Linux 容器。为了演示，本教程将说明如何同时部署 [busybox Docker Hub 镜像](https://registry.hub.docker.com/_/busybox/)和 [nginx Docker Hub 镜像](https://registry.hub.docker.com/_/nginx/)，并配置容器将 Web 请求路由到 nginx 容器。（Docker **计算机**文档介绍如何针对其他平台修改这些说明。）
 
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
@@ -31,7 +31,7 @@
 
 ## 获取 docker-machine - 或生成它
 
-熟悉 **docker-machine** 的最快方法是直接从[版本共享](https://github.com/docker/machine/releases)下载相应的发行版。本教程中的客户端计算机在 x64 计算机上运行 Ubuntu，因此 **docker-machine_linux amd64** 映像是所使用的那一个。
+熟悉 **docker-machine** 的最快方法是直接从[版本共享](https://github.com/docker/machine/releases)下载相应的发行版。本教程中的客户端计算机在 x64 计算机上运行 Ubuntu，因此 **docker-machine_linux amd64** 镜像是所使用的那一个。
 
 你还可以按照[提供给虚拟机](https://github.com/docker/machine#contributing)的步骤自己构建 **docker-machine**。为执行此生成你应准备好下载多达 1 GB 或更多的内容，但通过这样做你可以按所需方式准确地自定义自己的体验。
 
@@ -138,7 +138,7 @@
 
 > [AZURE.NOTE]本教程演示创建一个 VM 的 **docker-machine**。但是，你可以重复执行这些步骤创建所需的任意数量的虚拟机。如果这样做，则使用 docker 切换 VM 的最佳方式是以内联方式使用 **env** 命令，以便为每个单独的命令设置 **docker** 环境变量。例如，若要对不同 VM 使用 **docker info**，可以键入 `docker $(docker-machine env <VM name>) info`，**env** 命令会填写要用于该 VM 的 docker 连接信息。
 
-## 至此已完成。让我们来使用 docker 和 Docker Hub 映像远程运行一些应用程序。
+## 至此已完成。让我们来使用 docker 和 Docker Hub 镜像远程运行一些应用程序。
 
 现在可以以正常方式使用 docker 在容器中创建应用程序。最容易演示的是 [busybox](https://registry.hub.docker.com/_/busybox/)：
 
@@ -154,7 +154,7 @@
 
 但是，你可能想要创建可立即在 Internet 上看到的应用程序，例如 [Docker Hub](https://registry.hub.docker.com/) 中的 [nginx](https://registry.hub.docker.com/_/nginx/)。
 
-> [AZURE.NOTE]请记住使用 **-P** 选项让 **docker** 随机将端口分配给该映像，并使用 **-d** 以确保该容器在后台继续运行。（如果你忘记，你将启动 nginx，然后它将立即关闭。不要忘记！）
+> [AZURE.NOTE]请记住使用 **-P** 选项让 **docker** 随机将端口分配给该镜像，并使用 **-d** 以确保该容器在后台继续运行。（如果你忘记，你将启动 nginx，然后它将立即关闭。不要忘记！）
 
 	$ docker run --name machinenginx -P -d nginx
     Unable to find image 'nginx:latest' locally

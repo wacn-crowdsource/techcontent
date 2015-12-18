@@ -18,11 +18,11 @@
 <h3>教程：<a href="/documentation/articles/virtual-machines-linux-tutorial-portal-rm/">创建运行 Linux 的虚拟机</a></h3>
 <p>在本教程中，您将了解如何使用 Azure 管理门户创建运行 Linux 的自定义虚拟机。在创建虚拟机后，您将向新虚拟机中附加数据磁盘，然后与该虚拟机建立通信。</p>
 <h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-create-upload-vhd/">如何为 Azure 准备的 Linux 分发</a></h3>
-<p>了解如何为合作伙伴已测试的各种分发自定义并创建映像。</p>
-<h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-capture-image/">如何捕获运行 Linux 的虚拟机的映像</a></h3>
-<p>了解如何使用映像市场中的映像轻松创建虚拟机，或者如何捕获和使用自己的映像来创建自定义虚拟机。如果您想要创建以相同方式设置的多台虚拟机，则可以捕获已配置虚拟机的映像并使用该映像作为模板。</p>
+<p>了解如何为合作伙伴已测试的各种分发自定义并创建镜像。</p>
+<h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-capture-image/">如何捕获运行 Linux 的虚拟机的镜像</a></h3>
+<p>了解如何使用镜像市场中的镜像轻松创建虚拟机，或者如何捕获和使用自己的镜像来创建自定义虚拟机。如果您想要创建以相同方式设置的多台虚拟机，则可以捕获已配置虚拟机的镜像并使用该镜像作为模板。</p>
 <h3>如何：<a href="/documentation/articles/virtual-machines-linux-create-upload-vhd/">创建并上传包含 Linux 操作系统的虚拟硬盘</a></h3>
-<p>了解如何在您的服务器上安装 Hyper-V，创建映像，然后将该映像上载到 Azure。</p>
+<p>了解如何在您的服务器上安装 Hyper-V，创建镜像，然后将该镜像上载到 Azure。</p>
 <h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-agent-user-guide/">Azure Linux 代理用户指南</a></h3>
 <p>了解如何使用 Azure Linux 代理管理虚拟机与 Azure 结构控制器的交互。</p>
 <h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-how-to-attach-disk/">如何将数据磁盘附加到虚拟机</a></h3>
@@ -35,7 +35,7 @@
 <h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-how-to-log-on/">如何登录到运行 Linux 的虚拟机</a></h3>
 <p>了解如何安装并和使用安全外壳 (SSH) 客户端以登录到运行 Linux 操作系统的虚拟机。</p>
 <h3>如何：<a href="/documentation/articles/linux-create-management-cert/">创建 Linux 的管理证书</a></h3>
-<p>了解如何创建并上载管理证书，只要您需要使用服务管理 API 以便与 Azure 映像平台进行交互，就需要此证书。</p>
+<p>了解如何创建并上载管理证书，只要您需要使用服务管理 API 以便与 Azure 镜像平台进行交互，就需要此证书。</p>
 <h3>如何：<a href="/documentation/articles/virtual-machines-linux-use-root-privileges/">在 Azure 中使用 Linux 虚拟机的根权限</a></h3>
 <p>了解如何通过上载 SSH 密钥或仅使用用户名和密码获取 Linux 虚拟机的根权限。</p>
 <h3>功能指南：<a href="/documentation/articles/linux-use-ssh-key/">如何在 Azure 中将 SSH 用于 Linux</a></h3>

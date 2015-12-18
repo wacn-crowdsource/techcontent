@@ -22,7 +22,7 @@ pageTitle="数据服务 - Azure 微软云" metakeywords=""
 <p>Blob 是存储大量非结构化文本或二进制数据（如视频、音频和图像）的最简单方式。Blob 是经 ISO 27001 认证的托管服务，可自动扩展以存储多达 100 TB 的数据。几乎可从任何位置通过 REST 和客户端 API 访问这些 Blob。</p>
 <h3>功能指南：<a href="/documentation/articles/storage-java-how-to-use-table-storage/">表服务</a></h3>
 <p>表为需要存储大量非结构化数据的应用程序提供 NoSQL 容量。表是经 ISO 27001 认证的托管服务，可自动扩展以存储多达 100 TB 的数据。几乎可从任何位置通过 REST 和托管 API 访问这些表。</p>
-<h3>教程：<a href="/documentation/articles/storage-java-use-blob-storage-on-premises-app/">创建使用 Blob 存储的映像市场</a></h3>
+<h3>教程：<a href="/documentation/articles/storage-java-use-blob-storage-on-premises-app/">创建使用 Blob 存储的镜像市场</a></h3>
 <p>创建可在 Azure Blob 存储中存储图像的应用程序。您将了解如何使用针对 Java 的 Azure 客户端库以及如何使用 Azure 存储。</p>
 <h3>如何：<a href="/documentation/articles/storage-custom-domain-name/">将自定义域用于 Blob 存储</a></h3>
 <p>将存储帐户配置为将自定义域映射到 Blob 服务终结点，以便让用户在应用程序的 URL 中看到域名。</p>

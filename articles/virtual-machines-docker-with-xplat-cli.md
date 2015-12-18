@@ -55,19 +55,19 @@
 ### 安装 Docker 并对 Azure 使用 Docker VM 扩展
 遵循 [Docker 安装说明](https://docs.docker.com/installation/#installation)在计算机本地安装 Docker。
 
-若要将 Docker 与 Azure 虚拟机配合使用，VM 使用的 Linux 映像上必须已安装 [Azure Linux VM 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)。目前，只有两种类型的映像提供此代理：
+若要将 Docker 与 Azure 虚拟机配合使用，VM 使用的 Linux 镜像上必须已安装 [Azure Linux VM 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)。目前，只有两种类型的镜像提供此代理：
 
-+ Azure 映像库中的 Ubuntu 映像，或
++ Azure 镜像库中的 Ubuntu 镜像，或
 
-+ 使用已安装并配置的 Azure Linux VM 代理创建的自定义 Linux 映像。有关如何使用 Azure VM 代理构建自定义 Linux VM 的详细信息，请参阅 [Azure Linux VM 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)。
++ 使用已安装并配置的 Azure Linux VM 代理创建的自定义 Linux 镜像。有关如何使用 Azure VM 代理构建自定义 Linux VM 的详细信息，请参阅 [Azure Linux VM 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)。
 
-### 使用 Azure 映像库
+### 使用 Azure 镜像库
 
-从 Bash 或终端会话键入以下 Azure CLI 命令找到 VM 映像库中要使用的最新 Ubuntu 映像
+从 Bash 或终端会话键入以下 Azure CLI 命令找到 VM 镜像库中要使用的最新 Ubuntu 镜像
 
 `azure vm image list | grep Ubuntu-14_04`
 
-选择其中一个映像名称（例如 `b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140606.1-en-us-30GB`），然后使用以下命令创建使用该映像的新 VM。
+选择其中一个镜像名称（例如 `b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140606.1-en-us-30GB`），然后使用以下命令创建使用该镜像的新 VM。
 
 ```
 azure vm docker create -e 22 -l "China North" <vm-cloudservice name> "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140606.1-en-us-30GB" <username> <password>

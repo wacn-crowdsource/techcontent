@@ -278,7 +278,7 @@ $nicName 字符串必须是资源组中唯一的字符串。最佳实践是将�
 	$vhdURI=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + $diskName  + ".vhd"
 	Add-AzureRmVMDataDisk -VM $vm -Name $diskLabel -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
 
-接下来，必须确定虚拟机的发布者、产品名称以及映像的 SKU。以下是基于 Windows 的常用映像表。
+接下来，必须确定虚拟机的发布者、产品名称以及镜像的 SKU。以下是基于 Windows 的常用镜像表。
 
 |发布者名称 | 产品名称 | SKU 名称
 |:---------------------------------|:-------------------------------------------|:---------------------------------|
@@ -323,7 +323,7 @@ $nicName 字符串必须是资源组中唯一的字符串。最佳实践是将�
 我需要 PowerShell 命令集来为基于 Web 的业务线工作负荷创建其他虚拟机，该工作负荷：
 
 - 位于现有的 LOBServers 资源组中
-- 使用 Windows Server 2012 R2 Datacenter 映像
+- 使用 Windows Server 2012 R2 Datacenter 镜像
 - 名称为 LOB07，且位于现有的 WEB\_AS 可用性集中
 - 在现有 AZDatacenter 虚拟网络的前端子网（子网索引 0）中具有采用公共 IP 地址的 NIC
 - 具有 200 GB 的附加数据磁盘

@@ -45,7 +45,7 @@
 
 ## 步骤 3：确定 ImageFamily
 
-接下来，你需要确定与要创建的 Azure 虚拟机对应的特定映像的 ImageFamily 或 Label 值。你可以使用此命令获取可用 ImageFamily 值的列表。
+接下来，你需要确定与要创建的 Azure 虚拟机对应的特定镜像的 ImageFamily 或 Label 值。你可以使用此命令获取可用 ImageFamily 值的列表。
 
 	Get-AzureVMImage | select ImageFamily -Unique
 
@@ -56,16 +56,16 @@
 - Windows Server Technical Preview
 - Windows Server 2012 上的 SQL Server 2102 SP1 Enterprise
 
-如果你找到要查找的映像，请打开所选文本编辑器的一个新实例或 PowerShell 集成脚本环境 (ISE)。将以下内容复制到新的文本文件或 PowerShell ISE，并替换 ImageFamily 值。
+如果你找到要查找的镜像，请打开所选文本编辑器的一个新实例或 PowerShell 集成脚本环境 (ISE)。将以下内容复制到新的文本文件或 PowerShell ISE，并替换 ImageFamily 值。
 
 	$family="<ImageFamily value>"
 	$image=Get-AzureVMImage | where { $_.ImageFamily -eq $family } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 
-在某些情况下，映像名称在 Label 属性中而不是 ImageFamily 值。如果你使用 ImageFamily 属性找不到要查找的映像，请使用此命令按映像的 Label 属性列出映像。
+在某些情况下，镜像名称在 Label 属性中而不是 ImageFamily 值。如果你使用 ImageFamily 属性找不到要查找的镜像，请使用此命令按镜像的 Label 属性列出镜像。
 
 	Get-AzureVMImage | select Label -Unique
 
-如果使用此命令找到正确的映像，请打开所选文本编辑器的一个新实例或 PowerShell ISE。将以下内容复制到新的文本文件或 PowerShell ISE，并替换 Label 值。
+如果使用此命令找到正确的镜像，请打开所选文本编辑器的一个新实例或 PowerShell ISE。将以下内容复制到新的文本文件或 PowerShell ISE，并替换 Label 值。
 
 	$label="<Label value>"
 	$image = Get-AzureVMImage | where { $_.Label -eq $label } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
@@ -175,7 +175,7 @@
 
 我需要 PowerShell 命令集来为 Active Directory 域控制器创建满足以下条件的初始虚拟机：
 
-- 使用 Windows Server 2012 R2 Datacenter 映像。
+- 使用 Windows Server 2012 R2 Datacenter 镜像。
 - 具有名称 AZDC1。
 - 是独立计算机。
 - 具有 20 GB 的附加数据磁盘。
@@ -212,7 +212,7 @@
 
 我需要 PowerShell 命令集来为业务线服务器创建虚拟机：
 
-- 使用 Windows Server 2012 R2 Datacenter 映像。
+- 使用 Windows Server 2012 R2 Datacenter 镜像。
 - 具有名称 LOB1。
 - 是 corp.contoso.com 域的成员。
 - 具有 200 GB 的附加数据磁盘。

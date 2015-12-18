@@ -15,7 +15,7 @@
 
 # SQL Server IaaS 代理扩展
 
-通过此扩展能够使 Azure 虚拟机中的 SQL Server 利用本文章中列出的某些服务，这些服务仅在安装此扩展的情况下使用。为 Azure 预览门户中的 SQL Server 库映像会自动安装此扩展。它可以在 Azure 中的任何 SQL Server VM 上进行安装，该 VM 已安装 Azure VM 来宾代理。
+通过此扩展能够使 Azure 虚拟机中的 SQL Server 利用本文章中列出的某些服务，这些服务仅在安装此扩展的情况下使用。为 Azure 预览门户中的 SQL Server 库镜像会自动安装此扩展。它可以在 Azure 中的任何 SQL Server VM 上进行安装，该 VM 已安装 Azure VM 来宾代理。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
  

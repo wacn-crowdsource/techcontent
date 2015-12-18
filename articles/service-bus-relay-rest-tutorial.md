@@ -216,7 +216,7 @@ namespace Microsoft.ServiceBus.Samples
 	}
 	```
 
-7. 直接在上一代码后面，在 **ImageService** 类中添加以下 **GetImage** 方法，以返回包含该映像的 HTTP 消息。
+7. 直接在上一代码后面，在 **ImageService** 类中添加以下 **GetImage** 方法，以返回包含该镜像的 HTTP 消息。
 
 	```
 	public Stream GetImage()
@@ -231,7 +231,7 @@ namespace Microsoft.ServiceBus.Samples
 	}
 	```
   
-	此实现使用 **MemoryStream** 检索映像并准备将其流式传输到浏览器。它将流位置设置为从零开始，将流内容声明为 jpeg，然后流式传输信息。
+	此实现使用 **MemoryStream** 检索镜像并准备将其流式传输到浏览器。它将流位置设置为从零开始，将流内容声明为 jpeg，然后流式传输信息。
 
 8. 在“生成”菜单中，单击“生成解决方案”。
 

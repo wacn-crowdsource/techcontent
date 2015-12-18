@@ -13,7 +13,7 @@
 
 当您不再需要附加到虚拟机的数据磁盘时，您可以轻松地分离它。这将从虚拟机中删除磁盘，但不会从存储中删除它。若果您希望再次使用磁盘上的现有数据，可以将其重新附加到相同的虚拟机或另一个虚拟机。  
 
-> [WACOM.NOTE] Azure 中的虚拟机使用不同类型的磁盘 - 操作系统磁盘、本地临时磁盘和可选数据磁盘。数据磁盘是为虚拟机存储数据的推荐方法。有关磁盘的详细信息，请参阅[关于磁盘和映像][]。有关说明，请参阅[如何将数据磁盘附加到虚拟机][attachdisk]。
+> [WACOM.NOTE] Azure 中的虚拟机使用不同类型的磁盘 - 操作系统磁盘、本地临时磁盘和可选数据磁盘。数据磁盘是为虚拟机存储数据的推荐方法。有关磁盘的详细信息，请参阅[关于磁盘和镜像][]。有关说明，请参阅[如何将数据磁盘附加到虚拟机][attachdisk]。
 
 ## <a id="finddisks"> </a>步骤 1：找到磁盘##
 
@@ -48,5 +48,5 @@
 
 
 [attachdisk]: /documentation/articles/storage-windows-attach-disk
-[关于磁盘和映像]:https://msdn.microsoft.com/zh-cn/library/dd163896
+[关于磁盘和镜像]:https://msdn.microsoft.com/zh-cn/library/dd163896
 <!--HONumber=41-->

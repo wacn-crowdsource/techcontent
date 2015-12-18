@@ -58,13 +58,13 @@
 
 ### 获取“将 SQL Server 数据库部署到 Windows Azure VM”向导的最新版本
 
-使用 Microsoft SQL Server Management Studio for SQL Server 的最新版本，以确保具有“将 SQL Server 数据库部署到 Windows Azure VM”向导的最新版本。此向导的最新版本包含对 Azure 门户的最新更新，并且支持库中最新的 Azure VM 映像（向导的较旧版本可能不支持）。若要获取 Microsoft SQL Server Management Studio for SQL Server 的最新版本，请[下载它](http://go.microsoft.com/fwlink/?LinkId=616025)并将其安装在与计划迁移的数据库和 Internet 建立了连接的客户端计算机上。
+使用 Microsoft SQL Server Management Studio for SQL Server 的最新版本，以确保具有“将 SQL Server 数据库部署到 Windows Azure VM”向导的最新版本。此向导的最新版本包含对 Azure 门户的最新更新，并且支持库中最新的 Azure VM 镜像（向导的较旧版本可能不支持）。若要获取 Microsoft SQL Server Management Studio for SQL Server 的最新版本，请[下载它](http://go.microsoft.com/fwlink/?LinkId=616025)并将其安装在与计划迁移的数据库和 Internet 建立了连接的客户端计算机上。
 
 ### 配置现有的 Azure 虚拟机和 SQL Server 实例（如果适用）
 
 如果要迁移到现有的 Azure VM，则需执行下列配置步骤：
 
-- 按照<!--[-->预配 Azure 上的 SQL Server 虚拟机<!--](/documentation/articles/virtual-machines-provision-sql-server#SSMS)-->的“在另一台计算机上从 SSMS 连接到 SQL Server VM 实例”一节中的步骤操作，将 Azure VM 和 SQL Server 实例配置为支持来自另一台计算机的连接。只有使用向导进行迁移时，才支持库中的 SQL Server 2014 和 SQL Server 2016 映像。
+- 按照<!--[-->预配 Azure 上的 SQL Server 虚拟机<!--](/documentation/articles/virtual-machines-provision-sql-server#SSMS)-->的“在另一台计算机上从 SSMS 连接到 SQL Server VM 实例”一节中的步骤操作，将 Azure VM 和 SQL Server 实例配置为支持来自另一台计算机的连接。只有使用向导进行迁移时，才支持库中的 SQL Server 2014 和 SQL Server 2016 镜像。
 - 使用专用端口 11435 为 Windows Azure 网关上的 SQL Server 云适配器服务配置一个打开的终结点。此端口在 Windows Azure VM 上预配 SQL Server 2014 或 SQL Server 2016 时创建。云适配器还创建一项 Windows 防火墙规则，以允许其传入 TCP 连接在默认端口 11435 上通过。此终结点允许向导利用云适配器服务将本地实例中的备份文件复制到 Azure VM。有关详细信息，请参阅[用于 SQL Server 的云适配器](https://msdn.microsoft.com/zh-cn/library/dn169301.aspx)。
 
 	![创建云适配器终结点](./media/virtual-machines-migrate-onpremises-database/cloud-adapter-endpoint.png)
@@ -90,14 +90,14 @@
 
 9. 在“部署设置”页上，可以指定新的或现有的云服务名称和虚拟机名称：
 
- - 指定新的云服务名称和虚拟机名称，以便使用 SQL Server 2014 或 SQL Server 2016 库映像创建包含新 Azure 虚拟机的新云服务。
+ - 指定新的云服务名称和虚拟机名称，以便使用 SQL Server 2014 或 SQL Server 2016 库镜像创建包含新 Azure 虚拟机的新云服务。
 
      - 如果指定新的云服务名称，则指定将使用的存储帐户。
 
      - 如果指定现有的云服务名称，则将检索存储帐户并为你输入该帐户。
 
- - 指定现有的云服务名称和新的虚拟机名称可在现有云服务中创建新的 Azure 虚拟机。只能指定 SQL Server 2014 或 SQL Server 2016 库映像。
- - 指定现有的云服务名称和虚拟机名称，以便使用现有的 Azure 虚拟机。必须有一个使用 SQL Server 2014 或 SQL Server 2016 库映像生成的映像。
+ - 指定现有的云服务名称和新的虚拟机名称可在现有云服务中创建新的 Azure 虚拟机。只能指定 SQL Server 2014 或 SQL Server 2016 库镜像。
+ - 指定现有的云服务名称和虚拟机名称，以便使用现有的 Azure 虚拟机。必须有一个使用 SQL Server 2014 或 SQL Server 2016 库镜像生成的镜像。
 
 		![Deploymnent Settings](./media/virtual-machines-migrate-onpremises-database/deployment-settings.png)
 
@@ -106,8 +106,8 @@
 
 		![Azure machine settings](./media/virtual-machines-migrate-onpremises-database/azure-machine-settings.png)
 
-	- 如果指定了新的虚拟机名称，系统将提示你从库映像列表中选择一个映像，并提供以下信息：
-	  - 映像 — 只能选择 SQL Server 2014 或 SQL Server 2016
+	- 如果指定了新的虚拟机名称，系统将提示你从库镜像列表中选择一个镜像，并提供以下信息：
+	  - 镜像 — 只能选择 SQL Server 2014 或 SQL Server 2016
 		- 用户名
 		- 新密码
 		- 确认密码

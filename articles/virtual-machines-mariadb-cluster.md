@@ -16,7 +16,7 @@
 2. 将数据磁盘与操作系统磁盘隔离开来
 3. 在 RAID-0/条带化设置下创建数据磁盘，以提高 IOPS
 4. 使用 Azure 负载平衡器，以使 3 个节点的负载保持平衡
-5. 为了最大程度地减少重复工作，可创建一个包含 MariaDB+Galera 的 VM 映像，并将其用于创建其他群集 VM。
+5. 为了最大程度地减少重复工作，可创建一个包含 MariaDB+Galera 的 VM 镜像，并将其用于创建其他群集 VM。
 
 ![体系结构](./media/virtual-machines-mariadb-cluster/Setup.png)
 
@@ -39,7 +39,7 @@
 
 		azure storage account create mariadbstorage --label mariadbstorage --affinity-group mariadbcluster
 
-3. 查找 CentOS 7 虚拟机映像的名称
+3. 查找 CentOS 7 虚拟机镜像的名称
 
 		azure vm image list | findstr CentOS        
 该输出将如 `5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-70-20140926` 所示。在以下步骤中使用该名称。
@@ -210,16 +210,16 @@
         chkconfig mysql off
 		waagent -deprovision	
 		
-11. 通过门户捕获 VM。（目前，[Azure CLI 工具中的问题 #1268] 描述的事实是，Azure CLI 工具所捕获的映像并没有捕获所附加的数据磁盘。）
+11. 通过门户捕获 VM。（目前，[Azure CLI 工具中的问题 #1268] 描述的事实是，Azure CLI 工具所捕获的镜像并没有捕获所附加的数据磁盘。）
 
 	- 通过门户关闭机器
-    - 单击“捕获”并将映像名称指定为 **mariadb-galera-image**，然后提供描述并选中“我已运行 waagent”。![捕获虚拟机](./media/virtual-machines-mariadb-cluster/Capture.png)![捕获虚拟机](./media/virtual-machines-mariadb-cluster/Capture2.PNG)
+    - 单击“捕获”并将镜像名称指定为 **mariadb-galera-image**，然后提供描述并选中“我已运行 waagent”。![捕获虚拟机](./media/virtual-machines-mariadb-cluster/Capture.png)![捕获虚拟机](./media/virtual-machines-mariadb-cluster/Capture2.PNG)
 	
 ## 创建群集
  
 使用刚才创建的模板创建 3 个 VM，然后配置并启动群集。
 
-1. 从之前创建的 **mariadb-galera-image** 映像创建第一个 CentOS 7 VM，设置虚拟网络名称为 **mariadbvnet**、子网为 **mariadb**、虚拟机大小为“中等”，传入云服务名称为 **mariadbha**（或者你希望通过 mariadbha.chinacloudapp.cn 访问的任何名称），将此虚拟机的名称设置为 **mariadb1**、用户名设置为 **azureuser**，启用 SSH 访问并传送 SSH 证书 .pem 文件，并将 **/path/to/key.pem** 替换为已生成的 .pem SSH 密钥的存储位置路径。
+1. 从之前创建的 **mariadb-galera-image** 镜像创建第一个 CentOS 7 VM，设置虚拟网络名称为 **mariadbvnet**、子网为 **mariadb**、虚拟机大小为“中等”，传入云服务名称为 **mariadbha**（或者你希望通过 mariadbha.chinacloudapp.cn 访问的任何名称），将此虚拟机的名称设置为 **mariadb1**、用户名设置为 **azureuser**，启用 SSH 访问并传送 SSH 证书 .pem 文件，并将 **/path/to/key.pem** 替换为已生成的 .pem SSH 密钥的存储位置路径。
 
 	> [WACOM.NOTE]为清楚起见，以下命令拆开显示在多行内，但每个都应作为一整行进行输入。
 

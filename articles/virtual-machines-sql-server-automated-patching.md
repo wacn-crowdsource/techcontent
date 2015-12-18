@@ -15,7 +15,7 @@
 
 自动修补将为运行 SQL Server 2012 或 2014 的 Azure 虚拟机建立一个维护时段。只能在此维护时段内安装自动更新。对于 SQL Server，这可以确保在数据库的最佳可能时间发生系统更新和任何关联的重新启动。具体的操作取决于 SQL Server IaaS 代理。
 
->[AZURE.NOTE]自动修补依赖 SQL Server IaaS 代理。要安装和配置该代理，必须在目标虚拟机上运行 Azure VM 代理。较新的虚拟机库映像已默认启用此选项，但现有 VM 可能缺少 Azure VM 代理。如果使用你自己的 VM 映像，也需要安装 SQL Server IaaS 代理。有关详细信息，请参阅 [VM 代理和扩展](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/)。
+>[AZURE.NOTE]自动修补依赖 SQL Server IaaS 代理。要安装和配置该代理，必须在目标虚拟机上运行 Azure VM 代理。较新的虚拟机库镜像已默认启用此选项，但现有 VM 可能缺少 Azure VM 代理。如果使用你自己的 VM 镜像，也需要安装 SQL Server IaaS 代理。有关详细信息，请参阅 [VM 代理和扩展](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/)。
 
 ## 使用 PowerShell 配置自动修补
 

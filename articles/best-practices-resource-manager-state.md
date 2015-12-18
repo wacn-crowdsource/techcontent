@@ -315,7 +315,7 @@ enableJumpbox | 约束列表中的字符串 (enabled/disabled) | 一个参数，
 
 ##### machineSettings
 
-生成的变量 *machineSettings* 是一个复杂的对象，其中包含各种用于创建新的 VM 的核心变量：管理员用户名和密码、VM 名称前缀，以及操作系统映像引用，如下所示：
+生成的变量 *machineSettings* 是一个复杂的对象，其中包含各种用于创建新的 VM 的核心变量：管理员用户名和密码、VM 名称前缀，以及操作系统镜像引用，如下所示：
 
     "machineSettings": {
         "adminUsername": "[parameters('adminUsername')]",

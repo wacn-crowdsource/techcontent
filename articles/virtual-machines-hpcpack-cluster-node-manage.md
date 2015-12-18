@@ -23,7 +23,7 @@ ms.service="virtual-machines"
 
 ## 先决条件
 
-* **Azure VM 中的 HPC Pack 群集** - 在经典（服务管理）部署模型中，使用 HPC Pack 2012 R2 Update 1 以上版本创建一个 HPC Pack 群集。例如，可以通过使用 Azure 应用商店的 HPC Pack VM 映像和 Azure PowerShell 脚本，自动化部署。<!-- 有关信息和先决条件，请参阅[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)。-->
+* **Azure VM 中的 HPC Pack 群集** - 在经典（服务管理）部署模型中，使用 HPC Pack 2012 R2 Update 1 以上版本创建一个 HPC Pack 群集。例如，可以通过使用 Azure 应用商店的 HPC Pack VM 镜像和 Azure PowerShell 脚本，自动化部署。<!-- 有关信息和先决条件，请参阅[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)。-->
 
 * **Azure 管理证书或发布设置文件** - 你需要在头节点上执行下列操作之一：
 
@@ -56,13 +56,13 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 
 * **ServiceName** - 云服务的名称，新计算节点 VM 将添加到该服务。
 
-* **ImageName** -Azure VM 映像名称，可以通过 AzurePortal 或 Azure PowerShell cmdlet **Get-AzureVMImage** 获得。映像必须满足以下要求：
+* **ImageName** -Azure VM 镜像名称，可以通过 AzurePortal 或 Azure PowerShell cmdlet **Get-AzureVMImage** 获得。镜像必须满足以下要求：
 
     1. 必须安装了 Windows 操作系统。
 
     2. HPC Pack 必须安装在计算节点角色中。
 
-    3. 映像的“用户”类别必须是私有映像，而不是公共 Azure VM 映像。
+    3. 镜像的“用户”类别必须是私有镜像，而不是公共 Azure VM 镜像。
 
 * **Quantity**- 要添加的计算节点 VM 的数量。
 
@@ -76,7 +76,7 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 
 ### 示例
 
-下面的示例基于 VM 映像 hpccnimage1，在云服务 hpcservice1 中添加了 20 个大型计算节点 VM。
+下面的示例基于 VM 镜像 hpccnimage1，在云服务 hpcservice1 中添加了 20 个大型计算节点 VM。
 
 ```
 Add-HPCIaaSNode.ps1 –ServiceName hpcservice1 –ImageName hpccniamge1

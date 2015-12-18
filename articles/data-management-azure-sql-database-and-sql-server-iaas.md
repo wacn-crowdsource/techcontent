@@ -51,7 +51,7 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 
 **Azure SQL 数据库(Azure SQL 数据库)** 是关系数据库即服务，属于*平台即服务 (PaaS)* 行业类别。Azure SQL 数据库构建在 Microsoft 所拥有、托管及维护的标准化硬件和软件基础之上。使用 SQL 数据库，你可以使用内置的特性和功能在服务上直接进行开发。使用 SQL 数据库时，你可以即用即付，并使用向上或向外缩放选项获得更强大的功能。
 
-**Azure 虚拟机 (VM) 中的 SQL Server** 属于*基础结构即服务 (IaaS)* 行业类别，可让你在云中的虚拟机上运行 SQL Server。与 Azure SQL 数据库一样，它构建在 Microsoft 所拥有、托管及维护的标准化硬件基础之上。使用 VM 中的 SQL Server 时，你可以在 Azure 中使用自己的 SQL Server 许可证，或使用 Azure 门户中某个预先配置的 SQL Server 映像。
+**Azure 虚拟机 (VM) 中的 SQL Server** 属于*基础结构即服务 (IaaS)* 行业类别，可让你在云中的虚拟机上运行 SQL Server。与 Azure SQL 数据库一样，它构建在 Microsoft 所拥有、托管及维护的标准化硬件基础之上。使用 VM 中的 SQL Server 时，你可以在 Azure 中使用自己的 SQL Server 许可证，或使用 Azure 门户中某个预先配置的 SQL Server 镜像。
 
 通常，这两个 SQL 选项已针对不同的用途进行优化：
 
@@ -138,7 +138,7 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 
 使用 **Azure SQL 数据库**，世界各地数据中心内的 Microsoft Azure 将自动配置、修补和升级数据库软件。因此，你就能降低管理成本。此外，它的[内置备份](/documentation/articles/sql-database-business-continuity/)功能可帮助你大幅降低成本，尤其是当你拥有大量的数据库时。使用 Azure SQL 数据库时，你不必支付针对 Azure SQL 数据库运行的单个查询或传入 Internet 流量的费用。将根据[传出 Internet 流量](http://www.windowsazure.cn/pricing/details/data-transfer/)向你收费。如果你的数据库具有高事务量且必须支持许多并发用户，我们建议你使用高级（而不是基本或标准）服务层。
 
-有了 **Azure VM 中的 SQL Server**，你可以利用传统的 SQL Server 许可。你可以使用平台提供的 SQL Server 映像，或在 Azure 中使用你的 SQL Server 许可证。使用 SQL Server 平台提供的映像时，成本取决于选择的 VM 大小以及 SQL Server 版本。简单而言，你需要支付 SQL Server 的每分钟许可成本、Windows Server 每分钟许可和 Azure 存储空间成本。每分钟计费选项可让你随时使用 SQL Server，而无需购买完整的 SQL Server 许可证。如果在 Azure 中使用自己的 SQL Server 许可证，则只需支付 Azure 计算和存储成本。有关详细信息，请参阅 [Azure 上通过软件保障实现的许可移动性](http://www.windowsazure.cn/pricing/license-mobility/)。
+有了 **Azure VM 中的 SQL Server**，你可以利用传统的 SQL Server 许可。你可以使用平台提供的 SQL Server 镜像，或在 Azure 中使用你的 SQL Server 许可证。使用 SQL Server 平台提供的镜像时，成本取决于选择的 VM 大小以及 SQL Server 版本。简单而言，你需要支付 SQL Server 的每分钟许可成本、Windows Server 每分钟许可和 Azure 存储空间成本。每分钟计费选项可让你随时使用 SQL Server，而无需购买完整的 SQL Server 许可证。如果在 Azure 中使用自己的 SQL Server 许可证，则只需支付 Azure 计算和存储成本。有关详细信息，请参阅 [Azure 上通过软件保障实现的许可移动性](http://www.windowsazure.cn/pricing/license-mobility/)。
 
 ####<a name="appcost"></a>计算应用程序总成本
 

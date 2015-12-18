@@ -468,7 +468,7 @@
 ##测试应用程序
 
 ####模拟器测试
-如果你想要在模拟器上进行测试，请确保模拟器映像支持你为应用选择的 Google API 级别。如果你的映像不支持 Google API，最终将会发生 **SERVICE\_NOT\_AVAILABLE** 异常。
+如果你想要在模拟器上进行测试，请确保模拟器镜像支持你为应用选择的 Google API 级别。如果你的镜像不支持 Google API，最终将会发生 **SERVICE\_NOT\_AVAILABLE** 异常。
 
 此外，请确保已将 Google 帐户添加到运行的模拟器的“设置”->“帐户”下。否则，尝试向 GCM 注册可能会导致 **AUTHENTICATION\_FAILED** 异常。
 

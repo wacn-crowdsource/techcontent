@@ -15,7 +15,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
-以下示例演示了如何在 Azure 中，基于 Windows Server 2012 上运行的、由 Microsoft 提供的 Oracle Database 映像创建一个虚拟机 (VM)。执行以下两个步骤。首先，创建 VM，然后在 VM 中创建 Oracle Database。所示的示例采用 Oracle Database 版本 12c，但在 11g 中的步骤几乎相同。
+以下示例演示了如何在 Azure 中，基于 Windows Server 2012 上运行的、由 Microsoft 提供的 Oracle Database 镜像创建一个虚拟机 (VM)。执行以下两个步骤。首先，创建 VM，然后在 VM 中创建 Oracle Database。所示的示例采用 Oracle Database 版本 12c，但在 11g 中的步骤几乎相同。
 
 ##在 Azure 中创建 Oracle Database 虚拟机
 
@@ -23,7 +23,7 @@
 
 2.	单击“应用商店”，单击“计算”，然后在搜索框中键入 **Oracle**。
 
-3.	选择一个可用的 Oracle Database 映像 **- 版本 11g、版本 12c、标准版、企业版，或者常用选项或高级选项套装之一**。 检查有关所选映像的信息（例如最小建议大小），然后单击“下一步”。
+3.	选择一个可用的 Oracle Database 镜像 **- 版本 11g、版本 12c、标准版、企业版，或者常用选项或高级选项套装之一**。 检查有关所选镜像的信息（例如最小建议大小），然后单击“下一步”。
 
 4.	指定 VM 的“主机名”。
 
@@ -183,7 +183,7 @@
 ##其他资源
 在设置虚拟机并创建数据库后，请参阅以下主题以了解更多信息。
 
--	[Oracle 虚拟机映像 - 其他注意事项](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
+-	[Oracle 虚拟机镜像 - 其他注意事项](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
 
 -	[Oracle Database 12c 文档库](http://www.oracle.com/pls/db1211/homepage)
 

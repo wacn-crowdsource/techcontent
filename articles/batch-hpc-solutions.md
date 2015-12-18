@@ -66,7 +66,7 @@ Azure 还为组织和软件供应商提供开发工具与服务，用于构建�
 
 运行中的批处理( Batch )和 HPC 应用程序通常包括一个*群集管理器*和一个*作业计划程序*，可帮助管理群集计算资源并将其分配到运行作业的应用程序。可以通过单独的工具或者一个集成工具来实施这些功能。
 
-* **群集管理器** - 设置、发布和管理计算资源（或计算节点）。根据不同的工具，群集管理器可以自动在计算节点上安装操作系统映像和应用程序，按需缩放计算资源，以及监视节点的性能。
+* **群集管理器** - 设置、发布和管理计算资源（或计算节点）。根据不同的工具，群集管理器可以自动在计算节点上安装操作系统镜像和应用程序，按需缩放计算资源，以及监视节点的性能。
 
 * **作业计划程序** - 指定应用程序需要的资源（例如处理器或内存）及其运行时的条件。作业计划程序维护作业队列，并根据分配的优先级或其他特征向这些作业分配资源。
 
@@ -101,7 +101,7 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 服务 | 说明
 ------------- | -----------
 **[云服务](http://www.windowsazure.cn/documentation/services/cloud-services)**<br/><br/> |• 可以在辅助角色实例中运行大型计算应用程序，辅助角色实例是运行某个 Windows Server 版本的虚拟机并且完全由 Azure 托管<br/><br/>• 可以较低的管理开销支持运行在平台即服务 (PaaS) 模型中的可缩放的可靠应用程序<br/><br/>• 可能需要额外的工具或开发来与现有的本地 HPC 群集解决方案进行集成
-**[虚拟机](http://www.windowsazure.cn/documentation/services/virtual-machines)**<br/><br/> |• 使用 Microsoft Hyper-V 技术提供计算基础结构即服务 (IaaS)<br/><br/>• 使你能够从标准 Windows Server 或 Linux 映像，或者你提供的映像和数据磁盘灵活地设置和管理永久性虚拟机<br/><br/>• 完全在云中运行本地计算群集工具和应用程序
+**[虚拟机](http://www.windowsazure.cn/documentation/services/virtual-machines)**<br/><br/> |• 使用 Microsoft Hyper-V 技术提供计算基础结构即服务 (IaaS)<br/><br/>• 使你能够从标准 Windows Server 或 Linux 镜像，或者你提供的镜像和数据磁盘灵活地设置和管理永久性虚拟机<br/><br/>• 完全在云中运行本地计算群集工具和应用程序
 **[ 批处理( Batch )](http://www.windowsazure.cn/documentation/services/batch)**<br/><br/> |• 在完全托管的服务中运行大规模的并行与 批处理( Batch )工作负荷，例如图像渲染及媒体编码和转码<br/><br/>• 针对虚拟机的托管池提供作业计划和自动缩放<br/><br/>• 允许开发人员构建自定义大型计算解决方案或支持云的现有应用程序<br/>
 
 ### 存储服务
@@ -164,9 +164,9 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 ![IaaS 中的群集][iaas_cluster]
 
-**自动化部署** - 若要部署大量 Windows Server 或 Linux VM，可以使用标准或自定义的 VM 映像与 Azure 自动化工具，例如 [Azure 命令行界面](/documentation/articles/xplat-cli)或 [Azure PowerShell](/documentation/articles/powershell-install-configure)。示例包括：
+**自动化部署** - 若要部署大量 Windows Server 或 Linux VM，可以使用标准或自定义的 VM 镜像与 Azure 自动化工具，例如 [Azure 命令行界面](/documentation/articles/xplat-cli)或 [Azure PowerShell](/documentation/articles/powershell-install-configure)。示例包括：
 
-* 若要在 Azure 基础结构服务中部署 HPC Pack 群集，可以从客户端计算机运行灵活的 [Azure PowerShell 脚本](https://msdn.microsoft.com/zh-cn/library/azure/dn864734.aspx)；该脚本使用预装了 HPC Pack 的 Windows Server VM 映像。<1你也可以使用 Azure [快速入门模板](https://azure.microsoft.com/zh-cn/documentation/templates/create-hpc-cluster/)与 Azure PowerShell 或 Azure CLI 来部署 HPC Pack 群集。
+* 若要在 Azure 基础结构服务中部署 HPC Pack 群集，可以从客户端计算机运行灵活的 [Azure PowerShell 脚本](https://msdn.microsoft.com/zh-cn/library/azure/dn864734.aspx)；该脚本使用预装了 HPC Pack 的 Windows Server VM 镜像。<1你也可以使用 Azure [快速入门模板](https://azure.microsoft.com/zh-cn/documentation/templates/create-hpc-cluster/)与 Azure PowerShell 或 Azure CLI 来部署 HPC Pack 群集。
 
 * 可以使用 Azure [快速入门模板](https://azure.microsoft.com/zh-cn/documentation/templates/slurm/)与 Azure PowerShell 或 Azure CLI，来部署运行 [SLURM](https://computing.llnl.gov/linux/slurm/) 开源工作负荷管理器的 Linux 群集。
 

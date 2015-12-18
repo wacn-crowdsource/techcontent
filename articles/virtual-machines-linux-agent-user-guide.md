@@ -21,7 +21,7 @@
 
 Azure Linux 代理 (/usr/sbin/waagent) 管理虚拟机与 Azure 结构控制器的交互。此选项将执行以下操作：
 
-* **映像设置**
+* **镜像设置**
   - 创建用户帐户
   - 配置 SSH 身份验证类型
   - 部署 SSH 公钥和密钥对
@@ -117,7 +117,7 @@ Linux 代理的正常运行依赖一些系统程序包：
 - install：手动安装代理
  * 在系统中查找必需的依赖项
 
- * 创建 SysV init 脚本 (/etc/init.d/waagent) 和 logrotate 配置文件 (/etc/logrotate.d/waagent)，并配置映像以在启动时运行 init 脚本
+ * 创建 SysV init 脚本 (/etc/init.d/waagent) 和 logrotate 配置文件 (/etc/logrotate.d/waagent)，并配置镜像以在启动时运行 init 脚本
 
  * 将示例配置文件写入 /etc/waagent.conf
 
@@ -147,9 +147,9 @@ Linux 代理的正常运行依赖一些系统程序包：
 
  * 将主机名重置为 localhost.localdomain
 
- **警告：**取消预配无法保证清除映像中的所有敏感信息并使之适用于重新分发。
+ **警告：**取消预配无法保证清除镜像中的所有敏感信息并使之适用于重新分发。
 
-- deprovision+user：执行 -deprovision（上述）下面的所有操作，还将删除最后预配的用户帐户（从 /var/lib/waagent 中获得）和关联数据。此参数是取消对以前在 Azure 中设置的映像的设置以便捕获并重新使用该映像时的参数。
+- deprovision+user：执行 -deprovision（上述）下面的所有操作，还将删除最后预配的用户帐户（从 /var/lib/waagent 中获得）和关联数据。此参数是取消对以前在 Azure 中设置的镜像的设置以便捕获并重新使用该镜像时的参数。
 
 - version：显示 waagent 的版本
 
@@ -189,7 +189,7 @@ Linux 代理的正常运行依赖一些系统程序包：
 类型：字符串
 ；默认值：无
 
-如果指定了指向可执行计划的路径，则在 waagent 已配置好映像且将要向结构报告“Ready”状态时调用此计划。为计划指定的参数将为“Ready”。代理不会等待计划返回，便开始继续操作。
+如果指定了指向可执行计划的路径，则在 waagent 已配置好镜像且将要向结构报告“Ready”状态时调用此计划。为计划指定的参数将为“Ready”。代理不会等待计划返回，便开始继续操作。
 
 **Role.ConfigurationConsumer：**
 
@@ -210,9 +210,9 @@ Linux 代理的正常运行依赖一些系统程序包：
 类型：布尔值
 默认值：y
 
-这允许用户在代理中启用或禁用设置功能。有效值为“y”或“n”。如果禁用设置，则会保留映像中的 SSH 主机和用户密钥，并忽略 Azure 设置 API 中指定的所有配置。
+这允许用户在代理中启用或禁用设置功能。有效值为“y”或“n”。如果禁用设置，则会保留镜像中的 SSH 主机和用户密钥，并忽略 Azure 设置 API 中指定的所有配置。
 
-**注意：**此参数在使用 cloud-init 进行预配的 Ubuntu 云映像上默认为“n”。
+**注意：**此参数在使用 cloud-init 进行预配的 Ubuntu 云镜像上默认为“n”。
 
 **Provisioning.DeleteRootPassword：**
 
@@ -242,7 +242,7 @@ Linux 代理的正常运行依赖一些系统程序包：
 类型：布尔值
 默认值：y
 
-如果设置此参数，则 waagent 将监视 Linux 虚拟机的主机名更改情况（由“hostname”命令返回），并自动更新映像中的网络配置以反映此更改。若要将名称更改推送到 DNS 服务器，可在虚拟机中重新启动网络。这将导致 Internet 连接暂时中断。
+如果设置此参数，则 waagent 将监视 Linux 虚拟机的主机名更改情况（由“hostname”命令返回），并自动更新镜像中的网络配置以反映此更改。若要将名称更改推送到 DNS 服务器，可在虚拟机中重新启动网络。这将导致 Internet 连接暂时中断。
 
 **ResourceDisk.Format：**
 
@@ -256,7 +256,7 @@ Linux 代理的正常运行依赖一些系统程序包：
 类型：字符串
 默认值：ext4
 
-这将指定资源磁盘的 filesystem 类型。支持的值随 Linux 分发的不同而不同。如果字符串为 X，则 mkfs.X 应呈现在 Linux 映像上。SLES 11 映像通常应使用“ext3”。FreeBSD 映像在此处应使用“ufs2”。
+这将指定资源磁盘的 filesystem 类型。支持的值随 Linux 分发的不同而不同。如果字符串为 X，则 mkfs.X 应呈现在 Linux 镜像上。SLES 11 镜像通常应使用“ext3”。FreeBSD 镜像在此处应使用“ufs2”。
 
 **ResourceDisk.MountPoint：**
 
@@ -309,14 +309,14 @@ Linux 代理的正常运行依赖一些系统程序包：
 
 
 
-##Ubuntu 云映像
+##Ubuntu 云镜像
 
-请注意，Ubuntu 云映像利用 [cloud-init](https://launchpad.net/ubuntu/+source/cloud-init) 执行多种配置任务，这些任务在其他情况下也可以通过 Azure Linux 代理来管理。请注意以下不同：
+请注意，Ubuntu 云镜像利用 [cloud-init](https://launchpad.net/ubuntu/+source/cloud-init) 执行多种配置任务，这些任务在其他情况下也可以通过 Azure Linux 代理来管理。请注意以下不同：
 
 
-- **Provisioning.Enabled** 在使用 cloud-init 执行预配任务的 Ubuntu 云映像上默认为“n”。
+- **Provisioning.Enabled** 在使用 cloud-init 执行预配任务的 Ubuntu 云镜像上默认为“n”。
 
-- 以下配置参数对使用 cloud-init 来管理资源磁盘并交换空间的 Ubuntu 云映像没有影响：
+- 以下配置参数对使用 cloud-init 来管理资源磁盘并交换空间的 Ubuntu 云镜像没有影响：
 
  - **ResourceDisk.Format**
  - **ResourceDisk.Filesystem**
@@ -324,7 +324,7 @@ Linux 代理的正常运行依赖一些系统程序包：
  - **ResourceDisk.EnableSwap**
  - **ResourceDisk.SwapSizeMB**
 
-- 请参阅以下资源来配置资源磁盘装入点，并在预配期间交换 Ubuntu 云映像上的空间：
+- 请参阅以下资源来配置资源磁盘装入点，并在预配期间交换 Ubuntu 云镜像上的空间：
 
  - [Ubuntu Wiki：配置交换分区](http://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
  - [将自定义数据注入到 Azure 虚拟机中](/documentation/articles/virtual-machines-how-to-inject-custom-data)

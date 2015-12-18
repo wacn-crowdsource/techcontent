@@ -23,7 +23,7 @@
 
 * **MPI 应用程序的 RDMA 网络连接** – 当配置有必要的网络驱动程序时，A8 和 A9 实例可以通过 Azure 中基于远程直接内存访问 (RDMA) 技术的低延迟、高吞吐量网络与其他 A8 和 A9 实例通信。此功能可以提高使用受支持的 Linux 或 Windows 消息传递接口 (MPI) 实现的应用程序的性能。
 
-* **支持 Linux 和 Windows HPC 群集** – 在 Azure 中的 A8、A9、A10 和 A11 实例上部署群集管理和作业计划软件，以创建一个独立的 HPC 群集或将容量添加到本地群集。与其他 Azure VM 大小一样，A8、A9、A10 和 A11 实例支持标准或自定义 Windows Server 和 Linux 操作系统映像或 Azure VM (IaaS) 中的 Azure 资源管理器模板，或云服务中的 Azure 来宾 OS 版本（PaaS，仅限于 Windows Server）。
+* **支持 Linux 和 Windows HPC 群集** – 在 Azure 中的 A8、A9、A10 和 A11 实例上部署群集管理和作业计划软件，以创建一个独立的 HPC 群集或将容量添加到本地群集。与其他 Azure VM 大小一样，A8、A9、A10 和 A11 实例支持标准或自定义 Windows Server 和 Linux 操作系统镜像或 Azure VM (IaaS) 中的 Azure 资源管理器模板，或云服务中的 Azure 来宾 OS 版本（PaaS，仅限于 Windows Server）。
 
 >[AZURE.NOTE]A10 和 A11 实例与 A8 和 A9 实例具有相同的性能优化和规范。但是，它们不包括对 Azure 中 RDMA 网络的访问权限。它们为节点间不需要保持恒定和低延迟通信的 HPC 应用程序（也称为参数化或易并行应用程序）而设计。对于运行 MPI 应用程序以外的工作负荷，A8 和 A9 实例不会访问 RDMA 网络，并且功能上等效于 A10 和 A11 实例。
 
@@ -89,13 +89,13 @@ A10 和 A11 实例具有连接到 Azure 服务和 Internet 的单个 10-Gbps 以
 
 在单个云服务或可用性集中，A8 和 A9 实例可访问 Azure 中的 RDMA 网络，以运行使用 Linux RDMA 驱动程序在实例间通信的 MPI 应用程序。目前，仅 [Intel MPI Library 5](https://software.intel.com/zh-cn/intel-mpi-library/) 支持 Azure Linux RDMA。
 
->[AZURE.NOTE]目前，Azure Linux RDMA 驱动程序不可通过驱动程序扩展安装。仅当使用来自 Azure 应用商店的已启用 RDMA 的 SLES 12 映像时，它们才可用。
+>[AZURE.NOTE]目前，Azure Linux RDMA 驱动程序不可通过驱动程序扩展安装。仅当使用来自 Azure 应用商店的已启用 RDMA 的 SLES 12 镜像时，它们才可用。
 
 请参阅下表，了解 Linux MPI 应用程序要能够访问计算节点 (IaaS) 群集中的 RDMA 网络所需具备的先决条件。有关部署选项和配置步骤，请参阅[设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-cluster-rdma)。
 
 先决条件 | 虚拟机 (IaaS)
 ------------ | -------------
-操作系统 | 来自 Azure 应用商店的 SLES 12 HPC 映像
+操作系统 | 来自 Azure 应用商店的 SLES 12 HPC 镜像
 MPI | Intel MPI Library 5
 
 ### Windows A8 和 A9 实例的访问权限

@@ -22,7 +22,7 @@ Windows Azure 提供由 Microsoft 和受信任的第三方提供商生成的 VM 
 
 ##Azure VM 扩展
 
-VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码、配置 RDP 等基本功能以及其他许多功能。由于始终可添加新扩展，VM 在 Azure 中支持的可能功能的数量将不断增加。默认情况下，从映像库创建 VM 时，将安装几个基本 VM 扩展，包括 **IaaSDiagnostics**（当前仅限 Windows VM）、**VMAccess** 和 **BGInfo**（当前也仅限 Windows）。但是，由于功能更新和新扩展的不断流动，在任一特定时间并非所有扩展都同时在 Windows 和 Linux 上实现。
+VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码、配置 RDP 等基本功能以及其他许多功能。由于始终可添加新扩展，VM 在 Azure 中支持的可能功能的数量将不断增加。默认情况下，从镜像库创建 VM 时，将安装几个基本 VM 扩展，包括 **IaaSDiagnostics**（当前仅限 Windows VM）、**VMAccess** 和 **BGInfo**（当前也仅限 Windows）。但是，由于功能更新和新扩展的不断流动，在任一特定时间并非所有扩展都同时在 Windows 和 Linux 上实现。
 
 ##连接和基本管理
 

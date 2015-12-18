@@ -1,13 +1,13 @@
-<properties pageTitle="Oracle 虚拟机映像的其他相关注意事项" description="在 Windows Azure 中部署 Oracle 虚拟机之前了解其他注意事项。" services="virtual-machines" authors="bbenz" documentationCenter=""/>
+<properties pageTitle="Oracle 虚拟机镜像的其他相关注意事项" description="在 Windows Azure 中部署 Oracle 虚拟机之前了解其他注意事项。" services="virtual-machines" authors="bbenz" documentationCenter=""/>
 <tags ms.service="virtual-machines"  ms.date="06/22/2015" wacn.date="08/29/2015" />
-#Oracle 虚拟机映像的其他相关注意事项
-本文介绍了 Azure 上的 Oracle 虚拟机的相关注意事项，Oracle 虚拟机基于 Microsoft 提供的、以 Windows Server 为操作系统的 Oracle 软件映像。
+#Oracle 虚拟机镜像的其他相关注意事项
+本文介绍了 Azure 上的 Oracle 虚拟机的相关注意事项，Oracle 虚拟机基于 Microsoft 提供的、以 Windows Server 为操作系统的 Oracle 软件镜像。
 
--  Oracle 数据库虚拟机映像
--  Oracle WebLogic Server 虚拟机映像
--  Oracle JDK 虚拟机映像
+-  Oracle 数据库虚拟机镜像
+-  Oracle WebLogic Server 虚拟机镜像
+-  Oracle JDK 虚拟机镜像
 
-##Oracle 数据库虚拟机映像
+##Oracle 数据库虚拟机镜像
 ### 不支持群集 (RAC)
 
 Azure 当前不支持 Oracle 数据库群集。只允许出现独立的 Oracle 数据库实例。这是因为 Azure 当前不支持在多个 VM 实例之间以读/写方式进行虚拟磁盘共享。此外，也不支持 UDP 多播。
@@ -28,7 +28,7 @@ Azure 向每个虚拟机分配一个内部 IP 地址。除非 VM 是虚拟网络
 
 - **Oracle ASM 自身**可能会带来更好的写入操作性能，但相比使用 Windows Server 2012 存储池的方法，其读取操作 IOPS 性能更差。下图从逻辑上描绘了这种排列方式。![](./media/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images/image2.png)
 
-- **使用 Windows Server 2012 存储池的 Oracle ASM** 在数据库主要执行读取操作或者你更重视读取操作性能而非写入操作性能的情况下，可能会带来更好的读取操作 IOPS 性能。这种方法需要基于 Windows Server 2012 操作系统的映像。有关存储池的详细信息，请参阅[在独立服务器上部署存储空间](http://technet.microsoft.com/zh-cn/library/jj822938.aspx)。在这种排列方式中，首先在两个存储池卷中将两个同等的附加磁盘子集一起“条带化”为物理磁盘，然后将这两个卷添加到一个 ASM 磁盘组中。下图从逻辑上描绘了这种排列方式。
+- **使用 Windows Server 2012 存储池的 Oracle ASM** 在数据库主要执行读取操作或者你更重视读取操作性能而非写入操作性能的情况下，可能会带来更好的读取操作 IOPS 性能。这种方法需要基于 Windows Server 2012 操作系统的镜像。有关存储池的详细信息，请参阅[在独立服务器上部署存储空间](http://technet.microsoft.com/zh-cn/library/jj822938.aspx)。在这种排列方式中，首先在两个存储池卷中将两个同等的附加磁盘子集一起“条带化”为物理磁盘，然后将这两个卷添加到一个 ASM 磁盘组中。下图从逻辑上描绘了这种排列方式。
 
 	![](./media/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images/image3.png)
 
@@ -42,9 +42,9 @@ Azure 向每个虚拟机分配一个内部 IP 地址。除非 VM 是虚拟网络
 
 可通过以下方式实现高可用性：借助 Oracle Data Guard，并在一个 VM 上放置主数据库，在另一个 VM 上放置辅助（备用）数据库，然后在这两个数据库之间建立单向复制。通过这种方式，可对数据库的副本进行读取访问。借助 Oracle GoldenGate，可以在两个数据库之间配置双向复制。若要了解如何使用这些工具为数据库设置高可用性解决方案，请参阅 Oracle 网站上的 [Active Data Guard](http://www.oracle.com/technetwork/database/features/availability/data-guard-documentation-152848.html) 和 [GoldenGate](http://docs.oracle.com/goldengate/1212/gg-winux/index.html) 文档。如果需要对数据库的副本进行读写访问，可以使用 [Oracle Active Data Guard](http://www.oracle.com/uk/products/database/options/active-data-guard/overview/index.html)。
 
-##Oracle WebLogic Server 虚拟机映像
+##Oracle WebLogic Server 虚拟机镜像
 
--  **仅 Enterprise Edition 支持群集。** 如果使用 Microsoft 许可的 WebLogic Server 映像（具体而言，就是那些以 Windows Server 为操作系统的映像），则仅当使用 WebLogic Server Enterprise Edition 时，才有权使用 WebLogic 群集。请勿将群集与 WebLogic Server Standard Edition 结合使用。
+-  **仅 Enterprise Edition 支持群集。** 如果使用 Microsoft 许可的 WebLogic Server 镜像（具体而言，就是那些以 Windows Server 为操作系统的镜像），则仅当使用 WebLogic Server Enterprise Edition 时，才有权使用 WebLogic 群集。请勿将群集与 WebLogic Server Standard Edition 结合使用。
 
 -  **连接超时：**如果你的应用程序依赖于与另一个 Azure 云服务（例如，数据库层服务）的公共终结点的连接，那么，在这些已打开的连接处于非活动状态 4 分钟后，Azure 可能会关闭它们。这可能会影响依赖于连接池的功能和应用程序，因为非活动时间超过该限制的连接可能不再有效。如果这会影响你的应用程序，请考虑对连接池启用“保持连接”逻辑。
 
@@ -76,12 +76,12 @@ Azure 向每个虚拟机分配一个内部 IP 地址。除非 VM 是虚拟网络
 
 -  **单个 VM 上的多个 WebLogic 实例。** 视部署要求而定，你可以考虑在同一个虚拟机上运行多个 WebLogic Server 实例（如果 VM 够大）。例如，在一个包含 2 个核心的中等大小的 VM 上，可以选择运行两个 WebLogic Server 实例。但是请注意，仍建议不要在体系结构中引入单一故障点，也就是只使用一个运行多个 WebLogic Server 实例的 VM。使用至少两个 VM 会更好：每个 VM 可以运行多个 WebLogic Server 实例。每个 WebLogic Server 实例仍然可以属于同一个群集。但是请注意，当前无法使用 Azure 对同一 VM 中的这类 WebLogic Server 部署所暴露的终结点进行负载平衡，因为 Azure 负载平衡器要求在唯一的 VM 之间分布负载平衡服务器。
 
-##Oracle JDK 虚拟机映像
+##Oracle JDK 虚拟机镜像
 
--  **JDK 6 和 7 的最新更新。** 虽然建议使用 Java 最新的公开支持版本（当前为 Java 8），但 Azure 也提供 JDK 6 和 7 映像。这两个版本主要面向尚未准备升级到 JDK 8 的旧应用程序。虽然可能不再向公众提供对 JDK 早期版本的更新，但考虑到 Microsoft 与 Oracle 的合作关系，Azure 提供的 JDK 6 和 7 映像将包含一项由 Oracle 提供的较新的非公开性更新，Oracle 一般只向其精选的一部分受支持客户提供该更新。随着时间推移，新版本的 JDK 映像将集成到 JDK 6 和 7 的更新版本中。
+-  **JDK 6 和 7 的最新更新。** 虽然建议使用 Java 最新的公开支持版本（当前为 Java 8），但 Azure 也提供 JDK 6 和 7 镜像。这两个版本主要面向尚未准备升级到 JDK 8 的旧应用程序。虽然可能不再向公众提供对 JDK 早期版本的更新，但考虑到 Microsoft 与 Oracle 的合作关系，Azure 提供的 JDK 6 和 7 镜像将包含一项由 Oracle 提供的较新的非公开性更新，Oracle 一般只向其精选的一部分受支持客户提供该更新。随着时间推移，新版本的 JDK 镜像将集成到 JDK 6 和 7 的更新版本中。
 
-	请注意，此 JDK 6 和 7 映像中提供的 JDK 以及从其派生的虚拟机和映像只能在 Azure 中使用。
+	请注意，此 JDK 6 和 7 镜像中提供的 JDK 以及从其派生的虚拟机和镜像只能在 Azure 中使用。
 
--  **64 位 JDK。** Azure 提供的 Oracle WebLogic Server 虚拟机映像和 Oracle JDK 虚拟机映像同时包含 64 位版本的 Windows Server 和 JDK。
+-  **64 位 JDK。** Azure 提供的 Oracle WebLogic Server 虚拟机镜像和 Oracle JDK 虚拟机镜像同时包含 64 位版本的 Windows Server 和 JDK。
 
 <!---HONumber=67-->

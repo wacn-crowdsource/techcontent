@@ -226,9 +226,9 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 				print('Version: ' + os.version)
 		print('')
 
-## <a name="CreateVMImage"> </a>如何：创建操作系统映像
+## <a name="CreateVMImage"> </a>如何：创建操作系统镜像
 
-若要将操作系统映像添加到映像存储库中，请使用 **add\_os\_image** 方法：
+若要将操作系统镜像添加到镜像存储库中，请使用 **add\_os\_image** 方法：
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -245,7 +245,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 	operation_result = sms.get_operation_status(result.request_id)
 	print('Operation status: ' + operation_result.status)
 
-若要列出可用的操作系统映像，请使用 **list\_os\_images** 方法。这包括所有平台映像和用户映像：
+若要列出可用的操作系统镜像，请使用 **list\_os\_images** 方法。这包括所有平台镜像和用户镜像：
 
 	result = sms.list_os_images()
 
@@ -259,9 +259,9 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 		print('Media link: ' + image.media_link)
 		print('')
 
-## <a name="DeleteVMImage"> </a>如何：删除操作系统映像
+## <a name="DeleteVMImage"> </a>如何：删除操作系统镜像
 
-若要删除用户映像，请使用 **delete\_os\_image** 方法：
+若要删除用户镜像，请使用 **delete\_os\_image** 方法：
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -328,9 +328,9 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 
 	sms.delete_hosted_service(service_name='myvm')
 
-##如何：基于捕获的虚拟机映像创建虚拟机
+##如何：基于捕获的虚拟机镜像创建虚拟机
 
-若要捕获 VM 映像，请先调用 **capture\_vm\_image** 方法：
+若要捕获 VM 镜像，请先调用 **capture\_vm\_image** 方法：
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -357,11 +357,11 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 			image
 		)
 
-接下来，为确保成功捕获了映像，请使用 **list\_vm\_images** API 并确保你的映像显示在结果中：
+接下来，为确保成功捕获了镜像，请使用 **list\_vm\_images** API 并确保你的镜像显示在结果中：
 
 	images = sms.list_vm_images()
 
-最后，为了使用捕获的映像创建虚拟机，请像前面一样使用 **create\_virtual\_machine\_deployment** 方法，不过这次要传入 vm\_image\_name
+最后，为了使用捕获的镜像创建虚拟机，请像前面一样使用 **create\_virtual\_machine\_deployment** 方法，不过这次要传入 vm\_image\_name
 
 	from azure import *
 	from azure.servicemanagement import *

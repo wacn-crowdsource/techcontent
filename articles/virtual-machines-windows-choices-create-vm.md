@@ -39,19 +39,19 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 
 [使用计算、网络和存储 .NET 库部署 Azure 资源][]
 
-## 操作系统和映像选项
+## 操作系统和镜像选项
 
-根据要运行的操作系统选择映像。Azure 及其合作伙伴提供了许多映像，其中一些映像包括应用程序和工具。或者，使用你自己的某一映像。
+根据要运行的操作系统选择镜像。Azure 及其合作伙伴提供了许多镜像，其中一些镜像包括应用程序和工具。或者，使用你自己的某一镜像。
 
-### Azure 映像
+### Azure 镜像
 
-这些说明显示如何使用 Azure 映像来创建已使用网络、负载平衡等选项自定义的虚拟机。请参阅[如何创建运行 Windows 的自定义虚拟机][]。
+这些说明显示如何使用 Azure 镜像来创建已使用网络、负载平衡等选项自定义的虚拟机。请参阅[如何创建运行 Windows 的自定义虚拟机][]。
 
-### 使用你自己的映像
+### 使用你自己的镜像
 
-通过*捕获*现有 Azure 虚拟机来使用基于该虚拟机的映像，或者上载你自己的存储在虚拟硬盘 (VHD) 中的映像：
+通过*捕获*现有 Azure 虚拟机来使用基于该虚拟机的镜像，或者上载你自己的存储在虚拟硬盘 (VHD) 中的镜像：
 
-- [如何捕获 Windows 虚拟机以用作映像][]
+- [如何捕获 Windows 虚拟机以用作镜像][]
 - [创建 Windows Server VHD 并将其上载到 Azure][]
 
 ## 后续步骤
@@ -76,7 +76,7 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 [使用 Azure PowerShell 创建和预配置 Windows 虚拟机]: /documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms
 [如何创建运行 Windows 的自定义虚拟机]: /documentation/articles/virtual-machines-windows-create-custom
 
-[如何捕获 Windows 虚拟机以用作映像]: /documentation/articles/virtual-machines-capture-image-windows-server
+[如何捕获 Windows 虚拟机以用作镜像]: /documentation/articles/virtual-machines-capture-image-windows-server
 
 [创建 Windows Server VHD 并将其上载到 Azure]: /documentation/articles/virtual-machines-create-upload-vhd-windows-server
 

@@ -18,7 +18,7 @@
 
 #Azure 认可的分发中的 Linux
 
-Azure 库中的 Linux 映像由很多合作伙伴提供，并且我们正在与各个 Linux 社区合作，以便向“认可的分发”列表添加更多风格。在此期间，对于该库未提供的分发，你始终可以按照[本页](/documentation/articles/virtual-machines-linux-create-upload-vhd)中的指南自备 Linux。
+Azure 库中的 Linux 镜像由很多合作伙伴提供，并且我们正在与各个 Linux 社区合作，以便向“认可的分发”列表添加更多风格。在此期间，对于该库未提供的分发，你始终可以按照[本页](/documentation/articles/virtual-machines-linux-create-upload-vhd)中的指南自备 Linux。
 
 
 ## 支持的分发和版本 ##
@@ -27,7 +27,7 @@ Azure 库中的 Linux 映像由很多合作伙伴提供，并且我们正在与�
 
 Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序是 Microsoft 直接为上游 Linux 内核提供的内核模块。LIS 驱动程序在默认情况下内置于分发的内核中，或者作为较旧的基于 RHEL/CentOS 的分发在[此处](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)作为单独的下载提供。有关 LIS 驱动程序的详细信息，请参阅[此文](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic#linux-kernel-requirements)。
 
-Azure Linux 代理已预安装在 Azure 库映像中，并通常可从分发的包存储库中获得。源代码可在 [GitHub](https://github.com/azure/walinuxagent) 上找到。
+Azure Linux 代理已预安装在 Azure 库镜像中，并通常可从分发的包存储库中获得。源代码可在 [GitHub](https://github.com/azure/walinuxagent) 上找到。
 
 分发|版本|驱动程序|代理
 ---|---|---|---
@@ -59,7 +59,7 @@ Canonical 工程和开放社区监管对 Ubuntu 在客户端、服务器和云�
 ### OpenLogic
 [http://www.openlogic.com/azure](http://www.openlogic.com/azure)
 
-OpenLogic 是针对云和数据中心的企业开放源解决方案的行业领先的提供商。OpenLogic 帮助各个行业数以百计的领先企业安全获取、支持和控制开源软件。OpenLogic 为 OpenLogic 专家社区支持的 600 个开放源包提供商业级技术支持和保护（包括针对 CentOS 的企业级支持），同时作为在 Azure 上提供基于 CentOS 的映像的产品发布合作伙伴。
+OpenLogic 是针对云和数据中心的企业开放源解决方案的行业领先的提供商。OpenLogic 帮助各个行业数以百计的领先企业安全获取、支持和控制开源软件。OpenLogic 为 OpenLogic 专家社区支持的 600 个开放源包提供商业级技术支持和保护（包括针对 CentOS 的企业级支持），同时作为在 Azure 上提供基于 CentOS 的镜像的产品发布合作伙伴。
 
 
 ### Oracle

@@ -164,7 +164,7 @@ Azure Web 作业具有以下特征：
 
 实施后台任务时，可以避免将其部署到 Azure 网站或云服务，但有时不方便这样做。典型的示例包括 Windows 服务、第三方实用程序和可执行程序。它还可以包含针对托管应用程序以外的执行环境所编写的程序；例如，它可能是你想要从 Windows 或 .NET 应用程序执行的 Unix 或 Linux 程序。可以为 Azure 虚拟机选择各种操作系统，并在该虚拟机上运行你的服务或可执行文件。
 
-若要确定何时使用虚拟机，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。有关虚拟机选项的信息，请参阅 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)。有关虚拟机可用的操作系统和预建映像的详细信息，请参阅 [Azure 虚拟机库](http://azure.microsoft.com/gallery/virtual-machines/)。
+若要确定何时使用虚拟机，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。有关虚拟机选项的信息，请参阅 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)。有关虚拟机可用的操作系统和预建镜像的详细信息，请参阅 [Azure 虚拟机库](http://azure.microsoft.com/gallery/virtual-machines/)。
 
 若要在独立的虚拟机中启动后台任务，可以从多个选项中进行选择：
 

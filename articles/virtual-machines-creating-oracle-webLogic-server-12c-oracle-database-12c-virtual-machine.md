@@ -1,9 +1,9 @@
-<properties title="Creating an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure" pageTitle="在 Azure 中创建 Oracle WebLogic Server 12c 和 Oracle Database 12c 虚拟机" description="逐步演示在 Windows Azure 中创建运行在 Windows Server 2012 上的 Oracle WebLogic Server 12c 和 Oracle Database 12c 映像的示例。" services="virtual-machines" authors="bbenz" documentationCenter=""/>
+<properties title="Creating an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure" pageTitle="在 Azure 中创建 Oracle WebLogic Server 12c 和 Oracle Database 12c 虚拟机" description="逐步演示在 Windows Azure 中创建运行在 Windows Server 2012 上的 Oracle WebLogic Server 12c 和 Oracle Database 12c 镜像的示例。" services="virtual-machines" authors="bbenz" documentationCenter=""/>
 <tags ms.service="virtual-machines" ms.date="06/22/2015" wacn.date="08/29/2015"/>
 
 #在 Azure 中创建 Oracle WebLogic Server 12c 和 Oracle Database 12c 虚拟机
 
-本文演示如何在 Azure 中，基于 Windows Server 2012 上运行的由 Microsoft 提供的 Oracle WebLogic Server 12c 和 Oracle Database 12c 映像创建虚拟机。
+本文演示如何在 Azure 中，基于 Windows Server 2012 上运行的由 Microsoft 提供的 Oracle WebLogic Server 12c 和 Oracle Database 12c 镜像创建虚拟机。
 
 ##在 Azure 中创建 Oracle WebLogic Server 12c 和 Oracle Database 12c 虚拟机
 
@@ -11,7 +11,7 @@
 
 2.	单击**“应用商店”**，单击**“计算”**，然后在搜索框中键入 **Oracle**。
 
-3.	选择 **Windows Server 2012 上的 Oracle Database 12c 和 WebLogic Server 12c Standard Edition** 或 **Windows Server 2012 上的 Oracle Database 12c 和 WebLogic Server 12c Enterprise Edition** 映像。检查有关此映像的信息（如最小建议大小），然后单击**“下一步”**。
+3.	选择 **Windows Server 2012 上的 Oracle Database 12c 和 WebLogic Server 12c Standard Edition** 或 **Windows Server 2012 上的 Oracle Database 12c 和 WebLogic Server 12c Enterprise Edition** 镜像。检查有关此镜像的信息（如最小建议大小），然后单击**“下一步”**。
 
 4.	指定虚拟机的**“主机名”**。
 
@@ -44,7 +44,7 @@
 按照以**在 Azure 中配置 Oracle WebLogic Server 12c 虚拟机**部分开头的[在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine)中的说明进行操作。如果要设置 WebLogic Server 群集，另请参阅[在 Azure 中创建 Oracle WebLogic Server 12c 群集](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-cluster)。
 
 ##其他资源
-<!--[-->有关 Oracle 虚拟机映像的其他注意事项<!--](/documentation/articles/miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)-->
+<!--[-->有关 Oracle 虚拟机镜像的其他注意事项<!--](/documentation/articles/miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)-->
 
 [从 Java 应用程序连接到 Oracle 数据库](http://docs.oracle.com/cd/E11882_01/appdev.112/e12137/getconn.htm#TDPJD136)
 

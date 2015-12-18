@@ -89,7 +89,7 @@
 
 - 请考虑在传入/传出 Azure 时压缩所有数据文件。
 
-- 请考虑启用即时文件初始化以减少初始文件分配所需的时间。若要利用即时文件初始化，请将 SE\_MANAGE\_VOLUME_NAME 授予 SQL Server (MSSQLSERVER) 服务帐户并将其添加到**执行卷维护任务**安全策略。如果使用的是用于 Azure 的 SQL Server 平台映像，默认服务帐户 (NT Service\\MSSQLSERVER) 不会添加到**执行卷维护任务**安全策略。换而言之，在 SQL Server Azure 平台映像中不启用即时文件初始化。在将 SQL Server 服务帐户添加到**执行卷维护任务**安全策略后，请重新启动 SQL Server 服务。使用此功能可能有一些安全注意事项。有关详细信息，请参阅[数据库文件初始化](https://msdn.microsoft.com/library/ms175935.aspx)。
+- 请考虑启用即时文件初始化以减少初始文件分配所需的时间。若要利用即时文件初始化，请将 SE\_MANAGE\_VOLUME_NAME 授予 SQL Server (MSSQLSERVER) 服务帐户并将其添加到**执行卷维护任务**安全策略。如果使用的是用于 Azure 的 SQL Server 平台镜像，默认服务帐户 (NT Service\\MSSQLSERVER) 不会添加到**执行卷维护任务**安全策略。换而言之，在 SQL Server Azure 平台镜像中不启用即时文件初始化。在将 SQL Server 服务帐户添加到**执行卷维护任务**安全策略后，请重新启动 SQL Server 服务。使用此功能可能有一些安全注意事项。有关详细信息，请参阅[数据库文件初始化](https://msdn.microsoft.com/library/ms175935.aspx)。
 
 - **自动增长**被视为只是非预期增长的偶发情况。自动增长不管理你的数据和记录每天的增长。如果使用自动增长，请使用大小开关预先增长文件。
 

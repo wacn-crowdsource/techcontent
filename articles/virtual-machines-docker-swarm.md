@@ -73,7 +73,7 @@
         REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
         $
 <P />
-> 如果你熟悉 **docker**，就会知道其他节点没有任何条目，因为还没有下载并运行任何映像。
+> 如果你熟悉 **docker**，就会知道其他节点没有任何条目，因为还没有下载并运行任何镜像。
 
 ## 将节点 VM 加入 docker 群集
 

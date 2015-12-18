@@ -24,7 +24,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
-Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以从库中选择虚拟机映像之一，只需要单击几次，即可将虚拟机设置到你的 Azure 环境。
+Azure 虚拟机库包括几种内含 Microsoft SQL Server 的镜像。你可以从库中选择虚拟机镜像之一，只需要单击几次，即可将虚拟机设置到你的 Azure 环境。
 
 在本教程中，您将：
 
@@ -39,19 +39,19 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 
 2. 在 Azure 管理门户中网页的左下角，依次单击“+新建”、“计算”、“虚拟机”、“从库中”。
 
-3. 在“选择映像”页上，单击 **SQL SERVER**。然后，选择 SQL Server 映像。单击页面右下角的“下一步”箭头。
+3. 在“选择镜像”页上，单击 **SQL SERVER**。然后，选择 SQL Server 镜像。单击页面右下角的“下一步”箭头。
 
-	![选择映像](./media/virtual-machines-provision-sql-server/choose-sql-vm.png)
+	![选择镜像](./media/virtual-machines-provision-sql-server/choose-sql-vm.png)
 
-有关在 Azure 上支持的 SQL Server 映像的最新信息，请参阅 [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
+有关在 Azure 上支持的 SQL Server 镜像的最新信息，请参阅 [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
 
->[AZURE.NOTE]如果虚拟机是通过使用平台映像 SQL Server 评估版创建的，则无法将其升级到库中按分钟付费版本的映像。可以选择以下两个选项之一：
+>[AZURE.NOTE]如果虚拟机是通过使用平台镜像 SQL Server 评估版创建的，则无法将其升级到库中按分钟付费版本的镜像。可以选择以下两个选项之一：
 >
 > - 你可以通过使用库中按分钟付费 SQL Server 版本创建一个新虚拟机，并按[将数据库迁移到 Azure VM 上的 SQL Server](virtual-machines-migrate-onpremises-database) 中所述步骤将数据库文件迁移到这个新虚拟机。
 > - 或者，你可以根据[在 Azure 上通过软件保证实现许可迁移](http://azure.microsoft.com/pricing/license-mobility/)协议，通过执行[升级到 SQL Server 的不同版本](https://msdn.microsoft.com/library/cc707783.aspx)中所述的步骤，将 SQL Server 评估版的现有实例升级到 SQL Server 的另一版本。有关如何购买 SQL Server 的许可副本的信息，请参阅[如何购买 SQL Server](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx)。
 
 4. 在第一个**“虚拟机配置”**页上，提供下列信息：
-	- **版本发布日期**。如果有多个映像可用，请选择最新的。
+	- **版本发布日期**。如果有多个镜像可用，请选择最新的。
 	- 唯一的“虚拟机名称”。
 	- 在“新用户名”框中，键入计算机本地管理员帐户的唯一用户名。
 	- 在“新密码”框中，键入一个强密码。 
@@ -65,8 +65,8 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 	> - A2 是建议用于生产工作负荷的最小大小。 
     > - 在使用 SQL Server Enterprise Edition 时，虚拟机的最小建议大小是 A3。
     > - 当使用 SQL Server Enterprise Edition 时，请选择 A3 或更大。
-   	> - 当使用针对事务性工作负荷映像优化的 SQL Server 2012 或 2014 Enterprise 时，请选择 A4 或更大。  
-   	> - 当使用针对数据仓库工作负荷映像优化的 SQL Server 2012 或 2014 Enterprise 时，请选择 A7 或更大。 
+   	> - 当使用针对事务性工作负荷镜像优化的 SQL Server 2012 或 2014 Enterprise 时，请选择 A4 或更大。  
+   	> - 当使用针对数据仓库工作负荷镜像优化的 SQL Server 2012 或 2014 Enterprise 时，请选择 A7 或更大。 
    	> - 为了获得最佳性能，请对高级存储使用 DS2 或 DS3。<!--有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)。-->
    	> - 所选定的大小会限制您能够配置的数据磁盘个数。有关可用虚拟机大小和可附加到虚拟机的数据磁盘数目的最新信息，请参阅[用于 Azure 的虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
 
@@ -76,7 +76,7 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 	- 在“云服务”框中，选择“创建新云服务”。
 	- 在“云服务 DNS 名称”框中，提供所选 DNS 名称的第一部分，让它完成名称时的格式是 **TESTNAME.cloudapp.net** 
 	- 如果有多个订阅可供选择，请选择一个**订阅**。此选择确定哪些 **存储帐户** 可用。
-	- 在“区域/地缘组/虚拟网络”框中，选择将托管此虚拟映像的区域。
+	- 在“区域/地缘组/虚拟网络”框中，选择将托管此虚拟镜像的区域。
 	- 在“存储帐户”中，自动生成一个帐户，或从列表中选择一个帐户。更改**订阅**可查看更多帐户。 
 	- 在“可用性集”框中，选择“(无)”。
 	- 阅读并接受法律条款。
@@ -128,7 +128,7 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 
 ##<a id="Optional">后续步骤</a>
 
-你已经看到了如何使用平台映像在 Azure 虚拟机上创建和配置 SQL Server。在许多情况下，下一步是将数据库迁移到这个新 SQL Server VM。有关数据库迁移指南，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-migrate-onpremises-database)。
+你已经看到了如何使用平台镜像在 Azure 虚拟机上创建和配置 SQL Server。在许多情况下，下一步是将数据库迁移到这个新 SQL Server VM。有关数据库迁移指南，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-migrate-onpremises-database)。
 
 下面的列表提供了有关 Azure 虚拟机中的 SQL Server 的其他资源。
 

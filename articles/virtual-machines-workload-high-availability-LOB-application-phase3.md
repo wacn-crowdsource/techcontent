@@ -19,7 +19,7 @@
 
 你必须在转到[阶段 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)。
 
-> [AZURE.NOTE]这些指令使用 Azure 映像库中的 SQL Server 映像并将收取让你使用 SQL Server 许可证的持续费用。它还可以在 Azure 中创建虚拟机并安装你自己的 SQL Server 许可证，但这些指令在此处未提及。
+> [AZURE.NOTE]这些指令使用 Azure 镜像库中的 SQL Server 镜像并将收取让你使用 SQL Server 许可证的持续费用。它还可以在 Azure 中创建虚拟机并安装你自己的 SQL Server 许可证，但这些指令在此处未提及。
 
 ## 在 Azure 中创建 SQL Server 群集虚拟机
 

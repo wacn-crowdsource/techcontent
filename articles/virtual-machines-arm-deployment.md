@@ -338,7 +338,7 @@
           }
         }
 
-	>[AZURE.NOTE]映像库中的映像 vhd 名称经常发生变化，因此你需要获取当前映像名称以部署虚拟机。为此，请参阅[使用 Windows PowerShell 管理映像 (Windows)](https://msdn.microsoft.com/zh-cn/library/azure/dn790330.aspx)，然后将 {source-image-name} 替换为要使用的 vhd 文件名。例如，“a699494373c04fc0bc8f2bb1389d6106\__Windows-Server-2012-R2-201411.01-en.us-127GB.vhd”。
+	>[AZURE.NOTE]镜像库中的镜像 vhd 名称经常发生变化，因此你需要获取当前镜像名称以部署虚拟机。为此，请参阅[使用 Windows PowerShell 管理镜像 (Windows)](https://msdn.microsoft.com/zh-cn/library/azure/dn790330.aspx)，然后将 {source-image-name} 替换为要使用的 vhd 文件名。例如，“a699494373c04fc0bc8f2bb1389d6106\__Windows-Server-2012-R2-201411.01-en.us-127GB.vhd”。
 
 	将 {subscription-id} 替换为订阅的标识符。
 

@@ -35,7 +35,7 @@
 >[AZURE.NOTE]使用保留 ILPIP 可能需要支付额外的 Azure 订阅费用。有关 ILPIP 定价的详细信息，请参阅 [IP 地址定价](/pricing/details/reserved-ip-addresses/)。
 
 ## 如何在 VM 创建期间请求 ILPIP
-下面的 PowerShell 脚本将创建名为 *FTPService* 的全新云服务，然后从 Azure 中检索映像，并使用检索到的映像创建名为 *FTPInstance* 的 VM，接着将 VM 设置为使用 ILPIP，最后再将 VM 添加到新服务：
+下面的 PowerShell 脚本将创建名为 *FTPService* 的全新云服务，然后从 Azure 中检索镜像，并使用检索到的镜像创建名为 *FTPInstance* 的 VM，接着将 VM 设置为使用 ILPIP，最后再将 VM 添加到新服务：
 
 	New-AzureService -ServiceName FTPService -Location "China North"
 	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}

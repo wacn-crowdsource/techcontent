@@ -44,7 +44,7 @@ Docker 及其他*容器*技术使用 Linux 内核的进程和文件系统隔离�
 | 进程隔离 | 完整性或大或小 | 如果获取 root 权限，容器主机可能会泄密 |
 | 磁盘上需有内存 | 完整操作系统加上应用 | 仅限应用要求 |
 | 启动所需时间 | 明显更长：操作系统引导和应用程序加载 | 明显更短：只需启动应用，因为内核已在运行 |
-| 容器自动化 | 根据操作系统和应用差别很大 | [Docker 映像库](https://registry.hub.docker.com/)；其他
+| 容器自动化 | 根据操作系统和应用差别很大 | [Docker 镜像库](https://registry.hub.docker.com/)；其他
 
 若要查看容器及其优点的综合讨论，请参阅 [Docker 高级白板](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard)。
 
@@ -59,7 +59,7 @@ Docker 及其他*容器*技术使用 Linux 内核的进程和文件系统隔离�
 
 Docker VM 扩展是在你创建的 VM 实例中安装的组件，它会自行安装 Docker 引擎并管理与 VM 的远程通信。安装 VM 扩展的方式有两种：使用管理门户创建 VM，或通过 Azure 命令行界面 (Azure CLI) 创建 VM。
 
-可以使用门户将 Docker VM 扩展添加到任何兼容的 Linux VM（目前，支持此扩展的唯一映像是七月份后推出的 Ubuntu 14.04 LTS 映像）。但是，如果使用 Azure CLI 命令行，则可以在创建 VM 实例时安装 Docker VM 扩展，以及创建并上载你的 Docker 通信证书。
+可以使用门户将 Docker VM 扩展添加到任何兼容的 Linux VM（目前，支持此扩展的唯一镜像是七月份后推出的 Ubuntu 14.04 LTS 镜像）。但是，如果使用 Azure CLI 命令行，则可以在创建 VM 实例时安装 Docker VM 扩展，以及创建并上载你的 Docker 通信证书。
 
 若要立即创建启用 Docker 的 VM，请参阅：
 

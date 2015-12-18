@@ -441,7 +441,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 	下图显示了对 *Seed* 方法所做的更改：
 
-	![代码映像](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss24.PNG)
+	![代码镜像](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss24.PNG)
 
 	此代码会创建名为 *canEdit* 的新角色，创建新的本地用户 **user1@contoso.com*，并将 **user1@contoso.com* 添加到 *canEdit* 角色。有关详细信息，请参阅 ASP.NET 站点上的 [ASP.NET 标识教程](http://www.asp.net/identity/overview/features-api)。
 

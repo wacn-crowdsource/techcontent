@@ -15,17 +15,17 @@
 
 # 创建并上载包含 Linux 操作系统的虚拟硬盘
 
-本文介绍如何创建和上载虚拟硬盘 (VHD)，以便可以使用它作为自己的映像在 Azure 中创建虚拟机。你将学习如何准备操作系统，以便使用它来根据该映像创建多个虚拟机。请注意，本文所指的虚拟机是使用经典部署模型创建的虚拟机。
+本文介绍如何创建和上载虚拟硬盘 (VHD)，以便可以使用它作为自己的镜像在 Azure 中创建虚拟机。你将学习如何准备操作系统，以便使用它来根据该镜像创建多个虚拟机。请注意，本文所指的虚拟机是使用经典部署模型创建的虚拟机。
 
 [AZURE.INCLUDE [trial-note](../includes/free-trial-note.md)]
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用服务管理器上载 VHD。
 
-Azure 中的虚拟机所运行的操作系统基于你在创建虚拟机时选择的映像。你的映像以 VHD 格式和 .vhd 文件的形式存储在存储帐户中。有关详细信息，请参阅[关于 Azure 中的磁盘和映像](https://msdn.microsoft.com/library/azure/jj672979.aspx)。
+Azure 中的虚拟机所运行的操作系统基于你在创建虚拟机时选择的镜像。你的镜像以 VHD 格式和 .vhd 文件的形式存储在存储帐户中。有关详细信息，请参阅[关于 Azure 中的磁盘和镜像](https://msdn.microsoft.com/library/azure/jj672979.aspx)。
 
 当你创建虚拟机时，你可以自定义部分操作系统设置，使之适合于要运行的应用程序。有关说明，请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-create-custom)。
 
-**重要说明**：只有在使用某个认可的分发的时候也使用 [Azure上的 Linux 认可的分发](/documentation/articles/linux-endorsed-distributions)中“支持的版本”下指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。Azure 映像库中的所有 Linux 分发都是具有所需配置的认可的分发。
+**重要说明**：只有在使用某个认可的分发的时候也使用 [Azure上的 Linux 认可的分发](/documentation/articles/linux-endorsed-distributions)中“支持的版本”下指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。Azure 镜像库中的所有 Linux 分发都是具有所需配置的认可的分发。
 
 
 ##先决条件##
@@ -39,11 +39,11 @@ Azure 中的虚拟机所运行的操作系统基于你在创建虚拟机时选�
 
 	有关认可分发的列表，请参阅 [Azure 认可的分发中的 Linux](/documentation/articles/linux-endorsed-distributions)。或者，请参阅本文最后一节中的[非认可分发的信息](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic)。
 
-- **Azure 命令行界面** - 如果你使用 Linux 操作系统来创建映像，则使用 [Azure 命令行界面](/documentation/articles/virtual-machines-command-line-tools)来上载 VHD。
+- **Azure 命令行界面** - 如果你使用 Linux 操作系统来创建镜像，则使用 [Azure 命令行界面](/documentation/articles/virtual-machines-command-line-tools)来上载 VHD。
 
 - **Azure Powershell 工具** - 还可以使用 `Add-AzureVhd` cmdlet 来上载 VHD。若要下载 Azure Powershell cmdlet，请参阅 [Azure 下载](/downloads/)。有关引用信息，请参阅 [Add-AzureVhd](https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx)（可能为英文页面）。
 
-## <a id="prepimage"> </a>步骤 1：准备要上载的映像 ##
+## <a id="prepimage"> </a>步骤 1：准备要上载的镜像 ##
 
 Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentation/articles/linux-endorsed-distributions)）。以下文章将指导你完成如何准备 Azure 上支持的各种 Linux 分发：
 
@@ -53,7 +53,7 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentat
 - **[Ubuntu](/documentation/articles/virtual-machines-linux-create-upload-vhd-ubuntu)**
 - **[其他 - 非认可分发](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic)**
 
-另请参阅 **[Linux 安装说明](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic#linuxinstall)**，以获取更多有关如何为 Azure 准备 Linux 映像的提示。
+另请参阅 **[Linux 安装说明](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic#linuxinstall)**，以获取更多有关如何为 Azure 准备 Linux 镜像的提示。
 
 按照上述指导中的步骤进行操作以后，你应该有了一个可以上载到 Azure 中的 VHD 文件。
 
@@ -130,11 +130,11 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentat
 
 > [AZURE.NOTE]我们建议你使用更新的 Azure Active Directory 方法登录到你的 Azure 订阅，不管是通过 Azure CLI 还是通过 Azure PowerShell。
 
-## <a id="upload"> </a>步骤 3：向 Azure 上载映像 ##
+## <a id="upload"> </a>步骤 3：向 Azure 上载镜像 ##
 
 ### 如果使用 Azure CLI
 
-使用 Azure CLI 上载映像。可使用以下命令上载映像：
+使用 Azure CLI 上载镜像。可使用以下命令上载镜像：
 
 		azure vm image create <image-name> --location <location-of-the-data-center> --os Linux <source-path-to the vhd>
 
@@ -142,7 +142,7 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentat
 
 你需要一个存储帐户，以便向其上载你的 VHD 文件。你可以选择现有的存储帐户，也可以创建一个新的。若要创建存储帐户，请参阅[创建存储帐户](/documentation/articles/storage-create-storage-account)
 
-在上载 .vhd 文件时，你可以将 .vhd 文件放置在 Blob 存储中的任何位置。在以下命令示例中，**BlobStorageURL** 是你计划使用的存储帐户的 URL，**YourImagesFolder** 是要在其中存储映像的 Blob 存储中的容器。**VHDName** 是显示在[管理门户](http://manage.windowsazure.cn)中用于标识虚拟硬盘的标签。**PathToVHDFile** 是 .vhd 文件的完整路径和名称。
+在上载 .vhd 文件时，你可以将 .vhd 文件放置在 Blob 存储中的任何位置。在以下命令示例中，**BlobStorageURL** 是你计划使用的存储帐户的 URL，**YourImagesFolder** 是要在其中存储镜像的 Blob 存储中的容器。**VHDName** 是显示在[管理门户](http://manage.windowsazure.cn)中用于标识虚拟硬盘的标签。**PathToVHDFile** 是 .vhd 文件的完整路径和名称。
 
 从你在上一步中使用的 Azure PowerShell 窗口中，键入：
 

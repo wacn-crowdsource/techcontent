@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="在 PowerShell 中创建 SQL Server 虚拟机 | Windows Azure"
-	description="提供用于创建具有 SQL Server 虚拟机库映像的 Azure VM的步骤和 PowerShell 脚本。"
+	description="提供用于创建具有 SQL Server 虚拟机库镜像的 Azure VM的步骤和 PowerShell 脚本。"
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
@@ -68,13 +68,13 @@
 		$staccount="<storage account name>"
 		Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 
-## 选择 SQL Server 虚拟机映像
+## 选择 SQL Server 虚拟机镜像
 
-1. 从库中找出可用的 SQL Server 虚拟机映像的列表。这些映像都具有以“SQL”开头的 **ImageFamily** 属性。下面的查询显示你可用的预安装 SQL Server 的映像系列。
+1. 从库中找出可用的 SQL Server 虚拟机镜像的列表。这些镜像都具有以“SQL”开头的 **ImageFamily** 属性。下面的查询显示你可用的预安装 SQL Server 的镜像系列。
 
 		Get-AzureVMImage | where { $_.ImageFamily -like "SQL*" } | select ImageFamily -Unique | Sort-Object -Property ImageFamily
 
-1. 当发现虚拟机映像系列时，该系列中可能有多个已发布的映像。使用以下脚本查找你所选的映像系列的最新已发布虚拟机映像名称（如 **Windows Server 2012 R2 上的 SQL Server 2014 SP1 Enterprise**）：
+1. 当发现虚拟机镜像系列时，该系列中可能有多个已发布的镜像。使用以下脚本查找你所选的镜像系列的最新已发布虚拟机镜像名称（如 **Windows Server 2012 R2 上的 SQL Server 2014 SP1 Enterprise**）：
 
 		$family="<ImageFamily value>"
 		$image=Get-AzureVMImage | where { $_.ImageFamily -eq $family } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1

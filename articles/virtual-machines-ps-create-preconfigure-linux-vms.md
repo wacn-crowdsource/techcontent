@@ -41,7 +41,7 @@
 
 ## 步骤 3：确定 ImageFamily
 
-接下来，你需要确定与要创建的 Azure 虚拟机对应的特定映像的 ImageFamily 值。你可以使用以下命令获取可用 ImageFamily 值的列表。
+接下来，你需要确定与要创建的 Azure 虚拟机对应的特定镜像的 ImageFamily 值。你可以使用以下命令获取可用 ImageFamily 值的列表。
 
 	Get-AzureVMImage | select ImageFamily -Unique
 
@@ -163,7 +163,7 @@
 
 我需要 PowerShell 命令集来为 MySQL 服务器创建满足以下条件的初始 Linux 虚拟机：
 
-- 使用 Ubuntu Server 12.10 映像。
+- 使用 Ubuntu Server 12.10 镜像。
 - 具有名称 AZMYSQL1。
 - 具有 500 GB 的附加数据磁盘。
 - 具有静态 IP 地址 192.168.244.4。
@@ -200,7 +200,7 @@
 
 我需要 PowerShell 命令集来为 Apache 服务器创建满足以下条件的 Linux 虚拟机：
 
-- 使用 SUSE Linux Enterprise Server 12 映像。
+- 使用 SUSE Linux Enterprise Server 12 镜像。
 - 具有名称 LOB1。
 - 具有 50 GB 的附加数据磁盘。
 - 是用于标准 Web 流量的 LOBServers 负载平衡器集的成员。

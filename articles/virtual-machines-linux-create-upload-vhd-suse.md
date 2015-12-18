@@ -27,7 +27,7 @@
 
 **SLES/openSUSE 安装说明**
 
- - [SUSE Studio](http://www.susestudio.com) 可以轻松地创建和管理 Azure 和 Hyper-V 的 SLES/openSUSE 映像。这是自定义你自己的 SUSE 和 openSUSE 映像的推荐方法。SUSE Studio 库中的以下正式映像可下载或克隆到你自己的 SUSE Studio 中：
+ - [SUSE Studio](http://www.susestudio.com) 可以轻松地创建和管理 Azure 和 Hyper-V 的 SLES/openSUSE 镜像。这是自定义你自己的 SUSE 和 openSUSE 镜像的推荐方法。SUSE Studio 库中的以下正式镜像可下载或克隆到你自己的 SUSE Studio 中：
 
   - [SUSE Studio 库中的 SLES 11 SP3 for Azure](http://susestudio.com/a/02kbT4/sles-11-sp3-for-windows-azure)
   - [SUSE Studio 库中的 openSUSE 13.1 for Azure](https://susestudio.com/a/02kbT4/opensuse-13-1-for-windows-azure)

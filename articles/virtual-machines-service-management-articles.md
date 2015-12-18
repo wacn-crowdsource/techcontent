@@ -50,7 +50,7 @@
 
 [创建并上载包含 Linux 操作系统的虚拟硬盘](/documentation/articles/virtual-machines-linux-create-upload-vhd)
 
-[如何捕获基于 Windows 的虚拟机以用作映像](/documentation/articles/virtual-machines-capture-image-windows-server)
+[如何捕获基于 Windows 的虚拟机以用作镜像](/documentation/articles/virtual-machines-capture-image-windows-server)
 
 
 [如何捕获基于 Linux 的虚拟机以用作模板](/documentation/articles/virtual-machines-linux-capture-image)

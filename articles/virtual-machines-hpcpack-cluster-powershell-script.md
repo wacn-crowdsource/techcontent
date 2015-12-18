@@ -53,9 +53,9 @@ New-HPCIaaSCluster.ps1 [-ConfigFile] <String> [-AdminUserName]<String> [[-AdminP
 
 * **AdminPassword** - 指定管理员的密码。如果未在命令行中指定，脚本将提示你输入密码。
 
-* **HPCImageName**（可选）- 指定用于部署 HPC 群集的 HPC Pack VM 映像名称。它必须是 Microsoft 通过 Azure 应用商店提供的 HPC Pack 映像。如果未指定（在大多数情况下建议不要指定），脚本将选择最新发布的 HPC Pack 映像。
+* **HPCImageName**（可选）- 指定用于部署 HPC 群集的 HPC Pack VM 镜像名称。它必须是 Microsoft 通过 Azure 应用商店提供的 HPC Pack 镜像。如果未指定（在大多数情况下建议不要指定），脚本将选择最新发布的 HPC Pack 镜像。
 
-    >[AZURE.NOTE]指定无效的 HPC Pack 映像会导致部署失败。
+    >[AZURE.NOTE]指定无效的 HPC Pack 镜像会导致部署失败。
 
 * **LogFile**（可选）- 指定部署日志文件路径。如果未指定，脚本将在运行脚本的计算机的 temp 目录中创建一个日志文件。
 
@@ -76,7 +76,7 @@ New-HPCIaaSCluster.ps1 –ConfigFile MyConfigFile.xml -AdminUserName
 ```
 ### 其他注意事项
 
-* 该脚本使用 Azure 应用商店中的 HPC Pack VM 映像创建群集头节点。当前映像基于装有 HPC Pack 2012 R2 Update 2 的 Windows Server 2012 R2 Datacenter。
+* 该脚本使用 Azure 应用商店中的 HPC Pack VM 镜像创建群集头节点。当前镜像基于装有 HPC Pack 2012 R2 Update 2 的 Windows Server 2012 R2 Datacenter。
 
 * （可选）该脚本可以启用通过 HPC Pack Web 门户或 HPC Pack REST API 提交作业。
 
@@ -92,7 +92,7 @@ New-HPCIaaSCluster.ps1 –ConfigFile MyConfigFile.xml -AdminUserName
 
 ### 示例 1
 
-以下配置文件将在现有域林中部署一个 HPC Pack 群集。该群集包含 1 个具有本地数据库的头节点和 12 个应用了 BGInfo VM 扩展的计算节点。对于域林中的所有 VM，禁用了 Windows 更新的自动安装。所有云服务直接在“亚洲东部”位置创建。计算节点在 3 个云服务和 3 个存储帐户中创建（即，MyHPCCNService01 和 mycnstorage01 中的 MyHPCCN-0001 到 MyHPCCN-0005；MyHPCCNService02 和 mycnstorage02 中的 MyHPCCN-0006 到 MyHPCCN0010；MyHPCCNService03 和 mycnstorage03 中的 MyHPCCN-0011 到 MyHPCCN-0012）。计算节点是基于从计算节点捕获的现有专用映像创建的。已启用自动增长和收缩服务，该服务采用默认的增长和收缩间隔。
+以下配置文件将在现有域林中部署一个 HPC Pack 群集。该群集包含 1 个具有本地数据库的头节点和 12 个应用了 BGInfo VM 扩展的计算节点。对于域林中的所有 VM，禁用了 Windows 更新的自动安装。所有云服务直接在“亚洲东部”位置创建。计算节点在 3 个云服务和 3 个存储帐户中创建（即，MyHPCCNService01 和 mycnstorage01 中的 MyHPCCN-0001 到 MyHPCCN-0005；MyHPCCNService02 和 mycnstorage02 中的 MyHPCCN-0006 到 MyHPCCN0010；MyHPCCNService03 和 mycnstorage03 中的 MyHPCCN-0011 到 MyHPCCN-0012）。计算节点是基于从计算节点捕获的现有专用镜像创建的。已启用自动增长和收缩服务，该服务采用默认的增长和收缩间隔。
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -210,7 +210,7 @@ New-HPCIaaSCluster.ps1 –ConfigFile MyConfigFile.xml -AdminUserName
 
 ### 示例 3
 
-以下配置文件将创建新的域林并部署 HPC Pack 群集，其中包含 1 个具有本地数据库的头节点和 20 个 Linux 计算节点。所有云服务直接在“亚洲东部”位置创建。Linux 计算节点在 4 个云服务和 4 个存储帐户中创建（即，MyLnxCNService01 和 mylnxstorage01 中的 MyLnxCN-0001 到 MyHPCCN-0005；MyLnxCNService02 和 mylnxstorage02 中的MyLnxCN-0006 到 MyLnxCN-0010；MyLnxCNService03 和 mylnxstorage03 中的 MyLnxCN-0011 到 MyLnxCN-0015；MyLnxCNService04 和 mylnxstorage04 中的 MyLnxCN-0016 到 MyLnxCN-0020）。计算节点是基于 OpenLogic CentOS 7.0 版 Linux 映像创建的。
+以下配置文件将创建新的域林并部署 HPC Pack 群集，其中包含 1 个具有本地数据库的头节点和 20 个 Linux 计算节点。所有云服务直接在“亚洲东部”位置创建。Linux 计算节点在 4 个云服务和 4 个存储帐户中创建（即，MyLnxCNService01 和 mylnxstorage01 中的 MyLnxCN-0001 到 MyHPCCN-0005；MyLnxCNService02 和 mylnxstorage02 中的MyLnxCN-0006 到 MyLnxCN-0010；MyLnxCNService03 和 mylnxstorage03 中的 MyLnxCN-0011 到 MyLnxCN-0015；MyLnxCNService04 和 mylnxstorage04 中的 MyLnxCN-0016 到 MyLnxCN-0020）。计算节点是基于 OpenLogic CentOS 7.0 版 Linux 镜像创建的。
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>

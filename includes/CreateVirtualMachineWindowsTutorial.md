@@ -1,6 +1,6 @@
 # 创建运行 Windows Server 的虚拟机 #
 
-本教程将向您演示使用 Windows Azure 在云中创建运行 Windows Server 的虚拟机的快速简单方法。我们将使用 Windows Azure 管理门户中的映像库，它包含各种不同映像，例如基于 Windows 的操作系统、基于 Linux 的操作系统、应用程序映像等。您无需具备 Windows Azure 使用经验即可使用本教程。 
+本教程将向您演示使用 Windows Azure 在云中创建运行 Windows Server 的虚拟机的快速简单方法。我们将使用 Windows Azure 管理门户中的镜像库，它包含各种不同镜像，例如基于 Windows 的操作系统、基于 Linux 的操作系统、应用程序镜像等。您无需具备 Windows Azure 使用经验即可使用本教程。 
 
 您将了解到以下内容：
 
@@ -26,9 +26,9 @@
 
 	![在命令栏中导航到"从库中"](./media/CreateVirtualMachineWindowsTutorial/fromgallery.png)
 	
-4. 在第一个配置屏幕中，您可从映像库的某个列表中，为您的虚拟机"选择映像"。（可用映像可能各不相同，具体取决于您使用的订阅。）在本教程中，我们将选择 "Windows Server 2012 R2 Datacenter"。单击箭头以继续。
+4. 在第一个配置屏幕中，您可从镜像库的某个列表中，为您的虚拟机"选择镜像"。（可用镜像可能各不相同，具体取决于您使用的订阅。）在本教程中，我们将选择 "Windows Server 2012 R2 Datacenter"。单击箭头以继续。
 
-	![选择映像](./media/CreateVirtualMachineWindowsTutorial/chooseimage.png)
+	![选择镜像](./media/CreateVirtualMachineWindowsTutorial/chooseimage.png)
 
 5. 在第二个配置屏幕中，您可以指定**虚拟机本身的属性**。在本教程中，请按下图所示填写字段。在本屏幕中填写完毕之后，请单击箭头继续。
 

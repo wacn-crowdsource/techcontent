@@ -77,7 +77,7 @@
 
 以下部分提供了从 VM 准备 VHD，使它们准备好迁移的准则。VHD 可以是：
  
-- 可用于创建多个 Azure VM 的通用操作系统映像。  
+- 可用于创建多个 Azure VM 的通用操作系统镜像。  
 - 可用于单个 Azure 虚拟机实例的操作系统磁盘。  
 - 可附加到 Azure VM 作为持久存储的数据磁盘。
 
@@ -127,7 +127,7 @@
 
 ## 将 VHD 复制到 Azure 存储空间
 
-现在，VHD 已准备就绪，请按照下面所述的步骤将 VHD 上载到 Azure 存储空间，并将其注册为操作系统映像、已配置的操作系统磁盘或已配置的数据磁盘。
+现在，VHD 已准备就绪，请按照下面所述的步骤将 VHD 上载到 Azure 存储空间，并将其注册为操作系统镜像、已配置的操作系统磁盘或已配置的数据磁盘。
 
 ### 创建 VHD 的目标账号
 
@@ -207,7 +207,7 @@
 
 ## 使用高级存储创建 Azure VM
 
-将 VHD 上载到所需的存储帐户后，请按照本部分中的说明将 VHD 注册为 OS 映像或 OS 磁盘（具体取决于你的方案），然后从中创建 VM 实例。在创建后，可以将数据磁盘 VHD 附加到 VM。
+将 VHD 上载到所需的存储帐户后，请按照本部分中的说明将 VHD 注册为 OS 镜像或 OS 磁盘（具体取决于你的方案），然后从中创建 VM 实例。在创建后，可以将数据磁盘 VHD 附加到 VM。
 
 ### 注册 VHD
   
@@ -215,11 +215,11 @@
 
 #### 用于创建多个 Azure VM 实例的通用操作系统 VHD
 
-将通用 OS 映像 VHD 上载到存储帐户后，将其注册为 **Azure VM 映像**，以便可以从中创建一个或多个 VM 实例。使用以下 PowerShell cmdlet 将你的 VHD 注册为 Azure VM OS 映像。提供 VHD 已复制到的完整容器 URL。
+将通用 OS 镜像 VHD 上载到存储帐户后，将其注册为 **Azure VM 镜像**，以便可以从中创建一个或多个 VM 实例。使用以下 PowerShell cmdlet 将你的 VHD 注册为 Azure VM OS 镜像。提供 VHD 已复制到的完整容器 URL。
 
 	Add-AzureVMImage -ImageName "OSImageName" -MediaLocation "https://storageaccount.blob.core.chinacloudapi.cn/vhdcontainer/osimage.vhd" -OS Windows
 
-复制并保存这个新的 Azure VM 映像的名称。在上面的示例中，它是 *OSImageName*。
+复制并保存这个新的 Azure VM 镜像的名称。在上面的示例中，它是 *OSImageName*。
 
 #### 用于创建单个 Azure VM 实例的唯一操作系统 VHD
 
@@ -241,7 +241,7 @@
 
 ### 创建 Azure DS 系列 VM  
 
-注册 OS 映像或 OS 磁盘后，请创建新的 DS 系列 Azure VM 实例。你将使用你注册的操作系统映像或操作系统磁盘名称。从高级存储层选择 VM 类型。在以下示例中，我们将使用 *Standard\_DS2* VM 大小。可以使用相同的步骤创建 GS 系列 VM。
+注册 OS 镜像或 OS 磁盘后，请创建新的 DS 系列 Azure VM 实例。你将使用你注册的操作系统镜像或操作系统磁盘名称。从高级存储层选择 VM 类型。在以下示例中，我们将使用 *Standard\_DS2* VM 大小。可以使用相同的步骤创建 GS 系列 VM。
 
 >[AZURE.NOTE]更新磁盘大小，以确保它满足你的容量、性能要求和可用的 Azure 磁盘大小。
 
@@ -259,11 +259,11 @@
 
 	New-AzureService -ServiceName $serviceName -Location $location
 
-接下来，根据你的方案，从注册的 OS 映像或 OS 磁盘创建 Azure VM 实例。
+接下来，根据你的方案，从注册的 OS 镜像或 OS 磁盘创建 Azure VM 实例。
 
 #### 用于创建多个 Azure VM 实例的通用操作系统 VHD
 
-使用注册的 **Azure OS 映像**创建一个或多个新的 DS 系列 Azure VM 实例。创建新 VM 时，在 VM 配置中指定此 OS 映像名称，如下所示。
+使用注册的 **Azure OS 镜像**创建一个或多个新的 DS 系列 Azure VM 实例。创建新 VM 时，在 VM 配置中指定此 OS 镜像名称，如下所示。
 
 	$OSImage = Get-AzureVMImage –ImageName "OSImageName"	
 

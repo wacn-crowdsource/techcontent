@@ -1,7 +1,7 @@
 <properties title="Creating an Oracle WebLogic Server 12c Virtual Machine in Azure" pageTitle="在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机" description="逐步演示在 Windows Azure 中创建运行在 Windows Server 2012 上的 Oracle WebLogic Server 12c 虚拟机的示例。" services="virtual-machines" authors="bbenz" documentationCenter=""/>
 <tags ms.service="virtual-machines" ms.date="06/22/2015" wacn.date="08/29/2015"/>
 #在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机
-以下示例演示了如何在 Azure 中，基于 Windows Server 2012 上运行的由 Microsoft 提供的 Oracle WebLogic Server 12c 映像创建一个虚拟机。
+以下示例演示了如何在 Azure 中，基于 Windows Server 2012 上运行的由 Microsoft 提供的 Oracle WebLogic Server 12c 镜像创建一个虚拟机。
 
 ##在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机
 
@@ -9,7 +9,7 @@
 
 2. 单击“应用商店”，单击“计算”，然后在搜索框中键入 **Oracle**。
 
-3.	选择“Windows Server 2012 上的 Oracle WebLogic Server 12c Standard Edition”或“Windows Server 2012 上的 Oracle WebLogic Server 12c Enterprise Edition”映像。检查有关此映像的信息（如最小建议大小），然后单击“下一步”。
+3.	选择“Windows Server 2012 上的 Oracle WebLogic Server 12c Standard Edition”或“Windows Server 2012 上的 Oracle WebLogic Server 12c Enterprise Edition”镜像。检查有关此镜像的信息（如最小建议大小），然后单击“下一步”。
 
 4.	指定 VM 的“主机名”。
 
@@ -160,7 +160,7 @@
 ##其他资源
 现在，你已设置了运行 Oracle WebLogic Server 的虚拟机，接下来请参阅以下主题以了解更多信息。
 
--	[Oracle 虚拟机映像 - 其他注意事项](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
+-	[Oracle 虚拟机镜像 - 其他注意事项](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
 
 -	[Oracle WebLogic Server 产品文档](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html)
 

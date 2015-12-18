@@ -20,9 +20,9 @@
 - [PowerShell: Classic deployment](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
 
-本教程演示在 Azure 门户中创建 Azure 虚拟机 (VM) 是多么容易。我们将使用 Windows Server 映像作为示例，但这只是 Azure 提供的众多映像的其中一个。请注意，映像的选择取决于订阅。例如，桌面映像可能适用于 MSDN 订户。
+本教程演示在 Azure 门户中创建 Azure 虚拟机 (VM) 是多么容易。我们将使用 Windows Server 镜像作为示例，但这只是 Azure 提供的众多镜像的其中一个。请注意，镜像的选择取决于订阅。例如，桌面镜像可能适用于 MSDN 订户。
 
-你也可以使用[自己的映像](/documentation/articles/virtual-machines-create-upload-vhd-windows-server)创建 VM。若要了解此方法和其他方法，请参阅[创建 Windows 虚拟机的不同方式](/documentation/articles/virtual-machines-windows-choices-create-vm)。
+你也可以使用[自己的镜像](/documentation/articles/virtual-machines-create-upload-vhd-windows-server)创建 VM。若要了解此方法和其他方法，请参阅[创建 Windows 虚拟机的不同方式](/documentation/articles/virtual-machines-windows-choices-create-vm)。
 
 
 ## <a id="createvirtualmachine"> </a>如何创建虚拟机

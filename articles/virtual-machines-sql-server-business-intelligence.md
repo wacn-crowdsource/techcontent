@@ -16,7 +16,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型使用资源。
  
-Windows Azure 虚拟机库包括含有 SQL Server 安装的映像。库映像中支持的 SQL Server 版本是可以安装到本地计算机和虚拟机的相同安装文件。本主题总结了在映像上安装的 SQL Server 商业智能 (BI) 功能和配置虚拟机后所需的配置步骤。本主题还介绍了 BI 功能和最佳实践支持的部署拓扑。
+Windows Azure 虚拟机库包括含有 SQL Server 安装的镜像。库镜像中支持的 SQL Server 版本是可以安装到本地计算机和虚拟机的相同安装文件。本主题总结了在镜像上安装的 SQL Server 商业智能 (BI) 功能和配置虚拟机后所需的配置步骤。本主题还介绍了 BI 功能和最佳实践支持的部署拓扑。
 
 ## 许可证注意事项
 
@@ -28,13 +28,13 @@ Windows Azure 虚拟机库包括含有 SQL Server 安装的映像。库映像中
 
 有关授权和当前费率的详细信息，请参阅[虚拟机授权常见问题](/pricing/overview/)。
 
-## 在 Azure 虚拟机库中提供的 SQL Server 映像
+## 在 Azure 虚拟机库中提供的 SQL Server 镜像
 
-Windows Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。虚拟机映像上安装的软件根据操作系统版本和 SQL Server 版本而有所不同。Azure 虚拟机库中提供的映像列表频繁更改。
+Windows Azure 虚拟机库包括若干含有 Microsoft SQL Server 的镜像。虚拟机镜像上安装的软件根据操作系统版本和 SQL Server 版本而有所不同。Azure 虚拟机库中提供的镜像列表频繁更改。
 
-![Azure VM 库中的 SQL 映像](./media/virtual-machines-sql-server-business-intelligence/IC741367.png)
+![Azure VM 库中的 SQL 镜像](./media/virtual-machines-sql-server-business-intelligence/IC741367.png)
 
-![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif)以下 PowerShell 脚本返回 ImageName 中包含“SQL-Server”的 Azure 映像列表：
+![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif)以下 PowerShell 脚本返回 ImageName 中包含“SQL-Server”的 Azure 镜像列表：
 
 	# assumes you have already uploaded a management certificate to your Windows Azure Subscription. View the thumbprint value from the "settings" menu in Windows Azure Management Portal
 	
@@ -59,9 +59,9 @@ Windows Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。�
 
 - [SQL Server 2014 版本支持的功能](https://msdn.microsoft.com/library/cc645993.aspx)
 
-### SQL Server 虚拟机库映像上安装的 BI 功能
+### SQL Server 虚拟机库镜像上安装的 BI 功能
 
-下表总结了安装在适用于 SQL Server 的常见 Windows Azure 虚拟机库映像上的商业智能功能”
+下表总结了安装在适用于 SQL Server 的常见 Windows Azure 虚拟机库镜像上的商业智能功能”
 
 - SQL Server 2014 RTM Enterprise
 
@@ -71,13 +71,13 @@ Windows Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。�
 
 - SQL Server 2012 SP2 Standard
 
-|SQL Server BI 功能|在库映像上安装的|说明|
+|SQL Server BI 功能|在库镜像上安装的|说明|
 |---|---|---|
 |**Reporting Services 本机模式**|是|已安装但需要配置，包括报表管理器 URL。请参阅[配置 Reporting Services](#configure-reporting-services) 部分。|
-|**Reporting Services SharePoint 模式**|否|Windows Azure 虚拟机库映像不包括 SharePoint 或 SharePoint 安装文件。<sup>1</sup>|
+|**Reporting Services SharePoint 模式**|否|Windows Azure 虚拟机库镜像不包括 SharePoint 或 SharePoint 安装文件。<sup>1</sup>|
 |**Analysis Services 多维和数据挖掘 (OLAP)**|是|作为默认 Analysis Services 实例安装和配置|
-|**Analysis Services 表格**|否|在 SQL Server 2012 和 2014 映像中受支持但在默认情况下未安装。安装 Analysis Services 的另一个实例。请参阅本主题中的“安装其他 SQL Server 服务和功能”部分。|
-|**用于 SharePoint 的 Analysis Services Power Pivot**|否|Windows Azure 虚拟机库映像不包括 SharePoint 或 SharePoint 安装文件。<sup>1</sup>|
+|**Analysis Services 表格**|否|在 SQL Server 2012 和 2014 镜像中受支持但在默认情况下未安装。安装 Analysis Services 的另一个实例。请参阅本主题中的“安装其他 SQL Server 服务和功能”部分。|
+|**用于 SharePoint 的 Analysis Services Power Pivot**|否|Windows Azure 虚拟机库镜像不包括 SharePoint 或 SharePoint 安装文件。<sup>1</sup>|
 
 <sup>1</sup> 有关 SharePoint 和 Azure 虚拟机的其他信息，请参阅[适用于 SharePoint 2013 的 Windows Azure 体系结构](https://technet.microsoft.com/library/dn635309.aspx)和 [Windows Azure 虚拟机上的 SharePoint 部署](https://www.microsoft.com/download/details.aspx?id=34598)。
 
@@ -107,7 +107,7 @@ Windows Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。�
 
 	有关详细信息，请参阅以下部分：[卸载 Reporting Services](https://msdn.microsoft.com/library/hh479745.aspx) 和[卸载 Analysis Services 实例](https://msdn.microsoft.com/library/ms143687.aspx)。
 
-- 检查 **Windows Update** 以获取新的“重要更新”。Windows Azure 虚拟机映像会经常刷新；但是在最近刷新 VM 映像后 **Windows Update** 可能还会提供重要更新。
+- 检查 **Windows Update** 以获取新的“重要更新”。Windows Azure 虚拟机镜像会经常刷新；但是在最近刷新 VM 镜像后 **Windows Update** 可能还会提供重要更新。
 
 ## 部署拓扑示例
 
@@ -145,7 +145,7 @@ Analysis Services、Reporting Services、SQL Server 数据库引擎和数据源�
 
 ## Reporting Services 本机模式配置
 
-SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式，但未配置报表服务器。本部分中的步骤配置 Reporting Services 报表服务器。有关配置 Reporting Services 本机模式的更多详细信息，请参阅[安装 Reporting Services 本机模式报表服务器 (SSRS)](https://msdn.microsoft.com/library/ms143711.aspx)。
+SQL Server 的虚拟机库镜像包括安装的 Reporting Services 本机模式，但未配置报表服务器。本部分中的步骤配置 Reporting Services 报表服务器。有关配置 Reporting Services 本机模式的更多详细信息，请参阅[安装 Reporting Services 本机模式报表服务器 (SSRS)](https://msdn.microsoft.com/library/ms143711.aspx)。
 
 >[AZURE.NOTE]有关使用 Windows PowerShell 脚本配置报表服务器的类似内容，请参阅[使用 PowerShell 创建运行本机模式报表服务器的 Azure VM](/documentation/articles/virtual-machines-sql-server-create-native-mode-report-server-powershell)。
 
@@ -312,7 +312,7 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 
 >[AZURE.NOTE]首次运行 SQL Server 安装程序时可能会下载更多安装文件并需要重新启动虚拟机和重新启动 SQL Server 安装程序。
 >
->如果需要反复自定义从 Windows Azure 虚拟机中选择的映像，请考虑创建您自己的 SQL Server 映像。Analysis Services SysPrep 功能在 SQL Server 2012 SP1 CU2 中已启用。有关详细信息，请参阅[使用 SysPrep 安装 SQL Server 的注意事项](https://msdn.microsoft.com/library/ee210754.aspx)。
+>如果需要反复自定义从 Windows Azure 虚拟机中选择的镜像，请考虑创建您自己的 SQL Server 镜像。Analysis Services SysPrep 功能在 SQL Server 2012 SP1 CU2 中已启用。有关详细信息，请参阅[使用 SysPrep 安装 SQL Server 的注意事项](https://msdn.microsoft.com/library/ee210754.aspx)。
 
 ### 若要安装 Analysis Services 表格模式
 

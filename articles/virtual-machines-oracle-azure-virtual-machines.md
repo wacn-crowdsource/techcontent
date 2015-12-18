@@ -20,13 +20,13 @@
 
 在 Azure 基础结构服务中，设置要在虚拟机上运行的第一个或下一个开发/测试或生产 Oracle 数据库。利用方便的配置和快速扩展 Oracle 数据库工作负荷的功能来包含新的容量。
 
-## Oracle 虚拟机映像
+## Oracle 虚拟机镜像
 
-有关最新的基于 Windows 和基于 Linux 的虚拟机映像集，请参阅 [Oracle 虚拟机映像列表](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)。
+有关最新的基于 Windows 和基于 Linux 的虚拟机镜像集，请参阅 [Oracle 虚拟机镜像列表](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)。
 
 ## 基于 Windows 的虚拟机的注意事项
 
-请参阅 [Oracle 虚拟机映像的其他注意事项](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)，了解基于 Windows Server 的 Azure 虚拟机上的 Oracle 软件限制。
+请参阅 [Oracle 虚拟机镜像的其他注意事项](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)，了解基于 Windows Server 的 Azure 虚拟机上的 Oracle 软件限制。
 
 ## Oracle 数据库虚拟机
 

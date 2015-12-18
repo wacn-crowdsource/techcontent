@@ -98,7 +98,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 若要使用 Azure 服务管理器 PowerShell cmdlet 在经典 VNet 中创建 VM，请遵循以下说明。
 
-1. 从 Azure 中检索 VM 映像。以下 PowerShell 命令可检索最新可用的 Windows Server 2012 R2 映像。
+1. 从 Azure 中检索 VM 镜像。以下 PowerShell 命令可检索最新可用的 Windows Server 2012 R2 镜像。
 
 		$WinImage = (Get-AzureVMImage `
 		    | ?{$_.ImageFamily -eq "Windows Server 2012 R2 Datacenter"} `

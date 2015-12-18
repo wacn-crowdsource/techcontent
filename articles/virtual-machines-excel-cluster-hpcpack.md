@@ -13,7 +13,7 @@
 
 # 开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷
 
-本文介绍如何使用 Azure 快速入门模板或 Azure PowerShell 部署脚本将 HPC Pack 群集部署在 Azure 基础结构服务 (IaaS) 上。你将使用设计为使用 HPC Pack 运行 Microsoft Excel 或面向服务的体系结构 (SOA) 工作负荷的 Azure 应用商店 VM 映像。你可以使用群集从本地客户端计算机运行简单的 Excel HPC 和 SOA 服务。Excel HPC 服务提供 Excel 工作簿卸载和 Excel 用户定义的函数或 UDF。
+本文介绍如何使用 Azure 快速入门模板或 Azure PowerShell 部署脚本将 HPC Pack 群集部署在 Azure 基础结构服务 (IaaS) 上。你将使用设计为使用 HPC Pack 运行 Microsoft Excel 或面向服务的体系结构 (SOA) 工作负荷的 Azure 应用商店 VM 镜像。你可以使用群集从本地客户端计算机运行简单的 Excel HPC 和 SOA 服务。Excel HPC 服务提供 Excel 工作簿卸载和 Excel 用户定义的函数或 UDF。
 
 下图在较高级别显示了将创建的 HPC Pack 群集。
 
@@ -42,7 +42,7 @@ HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack �
 
 **创建配置文件**
 
- HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由 1 个头节点和 18 个计算节点（从包含 Microsoft Excel 的计算节点映像创建）组成的群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件或[脚本文档](https://msdn.microsoft.com/zh-cn/library/azure/dn864734.aspx)。
+ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由 1 个头节点和 18 个计算节点（从包含 Microsoft Excel 的计算节点镜像创建）组成的群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件或[脚本文档](https://msdn.microsoft.com/zh-cn/library/azure/dn864734.aspx)。
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -152,7 +152,7 @@ You have enabled REST API or web portal on HPC Pack head node. Please import the
 
 按照下列步骤卸载要在 Azure 中的 HPC Pack 群集上运行的 Excel 工作簿。为此，必须已在客户端计算机上安装 Excel 2010 或 Excel 2013。
 
-1. 使用步骤 1 中的方法之一通过 Excel 计算节点映像部署 HPC Pack 群集。获取群集证书文件 (.cer) 和群集用户名和密码。
+1. 使用步骤 1 中的方法之一通过 Excel 计算节点镜像部署 HPC Pack 群集。获取群集证书文件 (.cer) 和群集用户名和密码。
 
 2. 在客户端计算机上导入 Cert:\\CurrentUser\\Root 下的群集证书。
 
@@ -203,7 +203,7 @@ You have enabled REST API or web portal on HPC Pack head node. Please import the
 
 ### 运行 Excel UDF
 
-若要运行 Excel UDF，请按照前面的步骤 1 – 3 设置客户端计算机。对于 Excel UDF，不需要将 Excel 应用程序安装在计算节点上，因此你可以在步骤 1 中选择普通计算节点映像，而不是带 Excel 的计算节点映像。
+若要运行 Excel UDF，请按照前面的步骤 1 – 3 设置客户端计算机。对于 Excel UDF，不需要将 Excel 应用程序安装在计算节点上，因此你可以在步骤 1 中选择普通计算节点镜像，而不是带 Excel 的计算节点镜像。
 
 >[AZURE.NOTE]在 Excel 2010 和 Excel 2013 群集连接器对话框中有 34 字符限制。如果完整的群集名称较长（例如 hpcexcelhn01.southeastasia.cloudapp.azure.com），则它会容纳不下，UDF 将不会运行。解决方法是使用 IaaS 部署脚本为群集部署较短名称（如 hpcexcelhn01.cloudapp.net）。将在以后版本的 SOA 会话 API 中解决此问题。
 
@@ -225,7 +225,7 @@ You have enabled REST API or web portal on HPC Pack head node. Please import the
 
 ## 步骤 3.从本地客户端运行 SOA 工作负荷
 
-若要在 HPC Pack IaaS 群集上运行常规 SOA 应用程序，先使用通用计算节点映像（因为你在计算节点上不需要 Excel）通过步骤 1 中的方法之一部署 IaaS 群集。然后，执行以下步骤。
+若要在 HPC Pack IaaS 群集上运行常规 SOA 应用程序，先使用通用计算节点镜像（因为你在计算节点上不需要 Excel）通过步骤 1 中的方法之一部署 IaaS 群集。然后，执行以下步骤。
 
 1. 检索群集证书之后，在客户端计算机上的 Cert: \\CurrentUser\\Root 下导入它。
 

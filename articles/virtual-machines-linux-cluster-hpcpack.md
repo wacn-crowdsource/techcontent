@@ -22,7 +22,7 @@
 
 ## 使用 Linux 计算节点部署 HPC Pack 群集
 
-你将使用 Windows HPC Pack IaaS 部署脚本 (**New-HpcIaaSCluster.ps1**) 在 Azure 基础结构服务 (IaaS) 中自动执行群集部署。此 Azure PowerShell 脚本使用 Azure 应用商店中的 HPC Pack VM 映像进行快速部署，并提供一组全面的配置参数使部署轻松且灵活。你可以使用脚本部署 Azure 虚拟网络、存储帐户、云服务、域控制器、可选的单独 SQL Server 数据库服务器、群集头节点、计算节点、代理节点、Azure PaaS（“迸发”）节点和 Linux 计算节点（[HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/zh-cn/library/mt269417.aspx) 中引入的 Linux 支持）。
+你将使用 Windows HPC Pack IaaS 部署脚本 (**New-HpcIaaSCluster.ps1**) 在 Azure 基础结构服务 (IaaS) 中自动执行群集部署。此 Azure PowerShell 脚本使用 Azure 应用商店中的 HPC Pack VM 镜像进行快速部署，并提供一组全面的配置参数使部署轻松且灵活。你可以使用脚本部署 Azure 虚拟网络、存储帐户、云服务、域控制器、可选的单独 SQL Server 数据库服务器、群集头节点、计算节点、代理节点、Azure PaaS（“迸发”）节点和 Linux 计算节点（[HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/zh-cn/library/mt269417.aspx) 中引入的 Linux 支持）。
 
 有关 HPC Pack 群集部署选项的概述，请参阅 [HPC Pack 2012 R2 和 HPC Pack 2012 入门指南](https://technet.microsoft.com/zh-cn/library/jj884144.aspx)。
 
@@ -107,16 +107,16 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
 * HPC Pack 目前支持计算节点的以下 Linux 分发：Ubuntu Server 14.10、CentOS 6.6、CentOS 7.0 和 SUSE Linux Enterprise Server 12。
 
-* 本文中的示例使用 Azure 应用商店中提供的特定 CentOS 版本来创建群集。如果要使用其他可用映像，请使用 **get-azurevmimage** Azure PowerShell cmdlet 查找所需的映像。例如，若要列出所有 CentOS 7.0 映像，请运行以下命令：```
+* 本文中的示例使用 Azure 应用商店中提供的特定 CentOS 版本来创建群集。如果要使用其他可用镜像，请使用 **get-azurevmimage** Azure PowerShell cmdlet 查找所需的镜像。例如，若要列出所有 CentOS 7.0 镜像，请运行以下命令：```
     get-azurevmimage | ?{$_.Label -eq "OpenLogic 7.0"}
     ```
 
-    找到所需的映像，然后替换配置文件中的 **ImageName** 值。
+    找到所需的镜像，然后替换配置文件中的 **ImageName** 值。
 
-* 对 A8 和 A9 大小 VM 支持 RDMA 连接的 Linux 映像可用。如果你指定的映像安装并启用了 Linux RDMA 驱动程序，则 HPC Pack IaaS 部署脚本将部署这些驱动程序。例如，为当前 SUSE Linux Enterprise Server 12（已针对应用商店中的高性能计算映像进行优化）指定映像名称 `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708`。
+* 对 A8 和 A9 大小 VM 支持 RDMA 连接的 Linux 镜像可用。如果你指定的镜像安装并启用了 Linux RDMA 驱动程序，则 HPC Pack IaaS 部署脚本将部署这些驱动程序。例如，为当前 SUSE Linux Enterprise Server 12（已针对应用商店中的高性能计算镜像进行优化）指定镜像名称 `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708`。
 
 
-* 若要在从支持的映像创建的 Linux VM 上启用 Linux RDMA 以运行 MPI 作业，请在群集部署后根据应用程序需求在 Linux 节点上安装并配置特定的 MPI 库。有关如何在 Azure 上的 Linux 节点中使用 RDMA 的详细信息，请参阅[设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-cluster-rdma)。
+* 若要在从支持的镜像创建的 Linux VM 上启用 Linux RDMA 以运行 MPI 作业，请在群集部署后根据应用程序需求在 Linux 节点上安装并配置特定的 MPI 库。有关如何在 Azure 上的 Linux 节点中使用 RDMA 的详细信息，请参阅[设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-cluster-rdma)。
 
 * 请确保在一个服务内部署所有 Linux RDMA 节点，以便节点之间的 RDMA 网络连接可以正常工作。
 

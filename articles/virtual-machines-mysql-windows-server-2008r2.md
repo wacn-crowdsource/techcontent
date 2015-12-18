@@ -17,7 +17,7 @@
 # 在 Azure 中运行 Windows Server 2012 R2 的虚拟机上安装 MySQL
 
 
-[MySQL](http://www.mysql.com) 是一种受欢迎的 SQL 开源数据库。使用 [Azure 门户](http://manage.windowsazure.cn)，你可以从映像库创建运行 Windows Server 2012 R2 的虚拟机。然后，你就可以将其安装并配置为 MySQL Server。
+[MySQL](http://www.mysql.com) 是一种受欢迎的 SQL 开源数据库。使用 [Azure 门户](http://manage.windowsazure.cn)，你可以从镜像库创建运行 Windows Server 2012 R2 的虚拟机。然后，你就可以将其安装并配置为 MySQL Server。
 
 有关如何在 Linux 上安装 MySQL 的说明，请参阅：[如何在 Azure 上安装 MySQL](/documentation/articles/virtual-machines-linux-install-mysql)。
 

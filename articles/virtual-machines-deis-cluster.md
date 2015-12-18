@@ -192,7 +192,7 @@
         deis create
         git push deis master
 <p />
-8. git push 将触发 Docker 映像的构建和部署，这需要几分钟来完成。根据我的经验，步骤 10（将映像推送到专用存储库）偶尔会挂起。如果发生此情况，你可以停止过程，使用 `deis apps:destroy –a <application name>` 删除应用程序，然后重试。你也可以使用 `deis apps:list` 找出应用程序的名称。如果一切正常，你应会在命令输出的末尾看到如下内容：
+8. git push 将触发 Docker 镜像的构建和部署，这需要几分钟来完成。根据我的经验，步骤 10（将镜像推送到专用存储库）偶尔会挂起。如果发生此情况，你可以停止过程，使用 `deis apps:destroy –a <application name>` 删除应用程序，然后重试。你也可以使用 `deis apps:list` 找出应用程序的名称。如果一切正常，你应会在命令输出的末尾看到如下内容：
 
         -----> Launching...
                done, lambda-underdog:v2 deployed to Deis

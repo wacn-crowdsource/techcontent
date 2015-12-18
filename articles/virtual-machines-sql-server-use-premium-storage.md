@@ -152,11 +152,11 @@
 
 接下来的两部分将演示如何将 SQL Server VM 部署到高级存储。如前所述，不一定需要将操作系统磁盘放到高级存储上。如果你打算将任何密集型 IO 工作负荷放置在操作系统 VHD 上，则可以选择这样做。
 
-第一个示例演示如何利用现有 Azure 库映像。第二个示例演示如何使用你在现有标准存储帐户中拥有的自定义 VM 映像。
+第一个示例演示如何利用现有 Azure 库镜像。第二个示例演示如何使用你在现有标准存储帐户中拥有的自定义 VM 镜像。
 
 > [AZURE.NOTE]这些示例假定你已创建区域 VNET。
 
-### 使用库映像创建带高级存储的新 VM
+### 使用库镜像创建带高级存储的新 VM
 
 下面的示例演示如何将操作系统 VHD 放置到高级存储上并附加高级存储 VHD。但是，也可以将操作系统磁盘放置在标准存储帐户中，然后附加驻留在高级存储帐户中的 VHD。将演示这两种方案。
 
@@ -253,9 +253,9 @@
     Get-AzureVM -ServiceName $destcloudsvc -Name $vmName |Get-AzureOSDisk
      
 
-### 使用自定义映像创建新的 VM 以使用高级存储
+### 使用自定义镜像创建新的 VM 以使用高级存储
 
-此方案演示拥有驻留在标准存储帐户中的现有自定义映像的位置。如前所述，如果要将操作系统 VHD 放置在高级存储上，则需要复制标准存储帐户中存在的映像，并将它们传输到高级存储中，然后才能使用它。如果你在本地有一个映像，也可以使用此方法将该映像直接复制到高级存储帐户。
+此方案演示拥有驻留在标准存储帐户中的现有自定义镜像的位置。如前所述，如果要将操作系统 VHD 放置在高级存储上，则需要复制标准存储帐户中存在的镜像，并将它们传输到高级存储中，然后才能使用它。如果你在本地有一个镜像，也可以使用此方法将该镜像直接复制到高级存储帐户。
 
 #### 步骤 1：创建存储帐户
     $mysubscription = "DansSubscription"
@@ -273,8 +273,8 @@
     New-AzureService $destcloudsvc -Location $location 
 
  
-#### 步骤 3：使用现有映像
-可以使用现有映像，也可以[创建现有虚拟机的映像](/documentation/articles/virtual-machines-capture-image-windows-server)。请注意，你要创建映像的虚拟机不一定是 DS* 虚拟机。获得映像后，以下步骤演示如何使用 **Start-AzureStorageBlobCopy** PowerShell commandlet 将其复制到高级存储帐户。
+#### 步骤 3：使用现有镜像
+可以使用现有镜像，也可以[创建现有虚拟机的镜像](/documentation/articles/virtual-machines-capture-image-windows-server)。请注意，你要创建镜像的虚拟机不一定是 DS* 虚拟机。获得镜像后，以下步骤演示如何使用 **Start-AzureStorageBlobCopy** PowerShell commandlet 将其复制到高级存储帐户。
 
     #Get storage account keys:
     #Standard Storage account
@@ -299,7 +299,7 @@
 #### 步骤 5：定期检查复制状态：
     $blob | Get-AzureStorageBlobCopyState 
 
-#### 步骤 6：将映像磁盘添加到订阅中的 Azure 磁盘存储库
+#### 步骤 6：将镜像磁盘添加到订阅中的 Azure 磁盘存储库
     $imageMediaLocation = $destContext.BlobEndPoint+"/"+$myImageVHD 
     $newimageName = "prem"+"dansoldonorsql2k14"
     
@@ -308,7 +308,7 @@
 > [AZURE.NOTE]你可能会发现即使状态报告为成功，你也仍会收到磁盘租约错误。在这种情况下，请等待大约 10 分钟。
 
 #### 步骤 7：生成 VM
-在此处你将基于映像生成 VM 并附加两个高级存储 VHD：
+在此处你将基于镜像生成 VM 并附加两个高级存储 VHD：
 
     $newimageName = "prem"+"dansoldonorsql2k14"
     #Set up Machine Specific Information

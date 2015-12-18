@@ -15,11 +15,11 @@
 
 # 在 Azure 网站中使用 Azure CDN
 
-Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure 网站](/documentation/services/web-sites/)固有的全局缩放功能，在全球通过靠近客户的服务器节点提供网站内容。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure 网站的性能，在全球显著改善网站的用户体验。
+Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure 网站](/documentation/services/web-sites/)固有的全局缩放功能，在全球通过靠近客户的服务器节点提供网站内容。在特定情况下（例如提供静态镜像），此集成可以大幅提高 Azure 网站的性能，在全球显著改善网站的用户体验。
 
 将网站与 Azure CDN 集成具有以下优点：
 
-- 在网站的[持续部署](/documentation/articles/web-sites-publish-source-control)过程中集成内容部署（映像、脚本和样式表）
+- 在网站的[持续部署](/documentation/articles/web-sites-publish-source-control)过程中集成内容部署（镜像、脚本和样式表）
 - 轻松升级 Azure 网站的网站中的 NuGet 包，例如 jQuery 或 Bootstrap 版本 
 - 在同一 Visual Studio 界面中管理网站和 CDN 提供的内容
 - 将 ASP.NET 绑定和缩减与 Azure CDN 集成
@@ -28,7 +28,7 @@ Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure �
 
 ## 要生成的项目 ##
 
-你需要在 Visual Studio 中使用默认的 ASP.NET MVC 模板将一个网站部署到 Azure 网站，需要添加代码来处理集成 Azure CDN 所提供的内容（例如映像、控制器操作结果、默认的 JavaScript 和 CSS 文件），还需要编写代码来配置回退机制以处理 CDN 脱机时提供的捆绑包。
+你需要在 Visual Studio 中使用默认的 ASP.NET MVC 模板将一个网站部署到 Azure 网站，需要添加代码来处理集成 Azure CDN 所提供的内容（例如镜像、控制器操作结果、默认的 JavaScript 和 CSS 文件），还需要编写代码来配置回退机制以处理 CDN 脱机时提供的捆绑包。
 
 ## 所需的项目 ##
 
@@ -436,7 +436,7 @@ Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure �
 
 ## CDN URL 的回退机制 ##
 
-你希望你的网页在 Azure CDN 终结点因某种原因而出现故障时，能够表现出相当的智能，即能够访问作为回退选项的源 Web 服务器，以便加载 JavaScript 或 Bootstrap。因 CDN 不可用而丢失网站上的映像是很严重的问题，但更为严重的是失去脚本和样式表提供的重要页面功能。
+你希望你的网页在 Azure CDN 终结点因某种原因而出现故障时，能够表现出相当的智能，即能够访问作为回退选项的源 Web 服务器，以便加载 JavaScript 或 Bootstrap。因 CDN 不可用而丢失网站上的镜像是很严重的问题，但更为严重的是失去脚本和样式表提供的重要页面功能。
 
 [捆绑包](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bundle.aspx)类包含一个名为 [CdnFallbackExpression](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bundle.cdnfallbackexpression.aspx) 的属性，该属性可以让你配置回退机制以应对 CDN 故障情况。若要使用此属性，请执行以下步骤：
 

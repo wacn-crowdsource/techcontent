@@ -1,6 +1,6 @@
 <properties
-	pageTitle="捕获 Windows VM 的映像| Windows Azure"
-	description="捕获使用经典部署模型创建的 Windows 虚拟机的映像。"
+	pageTitle="捕获 Windows VM 的镜像| Windows Azure"
+	description="捕获使用经典部署模型创建的 Windows 虚拟机的镜像。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -13,13 +13,13 @@
 	ms.date="07/16/2015"
         wacn.date="11/12/2015"/>
 
-#捕获使用经典部署模型创建的 Windows 虚拟机的映像。
+#捕获使用经典部署模型创建的 Windows 虚拟机的镜像。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
-本文将演示如何捕获运行 Windows 的 Azure 虚拟机，你可以将它用作映像来创建其他虚拟机。此映像包含操作系统磁盘和任何附加到虚拟机的数据磁盘。由于它不包括网络配置，因此你在使用此模板创建其他虚拟机时，需要进行相关配置。
+本文将演示如何捕获运行 Windows 的 Azure 虚拟机，你可以将它用作镜像来创建其他虚拟机。此镜像包含操作系统磁盘和任何附加到虚拟机的数据磁盘。由于它不包括网络配置，因此你在使用此模板创建其他虚拟机时，需要进行相关配置。
 
-Azure 将映像存储在**“我的映像”**下。你上载的任何映像都会存储在同一位置。有关映像的详细信息，请参阅关于 [Azure 中的虚拟机映像] []。
+Azure 将镜像存储在**“我的镜像”**下。你上载的任何镜像都会存储在同一位置。有关镜像的详细信息，请参阅关于 [Azure 中的虚拟机镜像] []。
 
 ##开始之前##
 
@@ -58,16 +58,16 @@ Azure 将映像存储在**“我的映像”**下。你上载的任何映像都�
 
 	此时将显示**“捕获虚拟机”**对话框。
 
-10.	在**“映像名称”**中，键入新映像的名称。
+10.	在**“镜像名称”**中，键入新镜像的名称。
 
-11.	在将 Windows Server 映像添加到自定义映像组之前，必须先按前面步骤中的说明通过运行 Sysprep 将该映像通用化。单击**“我已经在虚拟机上运行了 Sysprep”**以指明你已完成此操作。
+11.	在将 Windows Server 镜像添加到自定义镜像组之前，必须先按前面步骤中的说明通过运行 Sysprep 将该镜像通用化。单击**“我已经在虚拟机上运行了 Sysprep”**以指明你已完成此操作。
 
-12.	单击复选标记以捕获映像。新映像现在将显示在**“映像”**下。
+12.	单击复选标记以捕获镜像。新镜像现在将显示在**“镜像”**下。
 
- 	![成功捕获映像](./media/virtual-machines-capture-image-windows-server/VMCapturedImageAvailable.png)
+ 	![成功捕获镜像](./media/virtual-machines-capture-image-windows-server/VMCapturedImageAvailable.png)
 
 ##后续步骤##
-该映像已就绪，可用于创建虚拟机了。为此，你将通过使用**“从库中”**菜单项并选择你刚创建的映像来创建一个虚拟机。有关说明，请参阅[创建运行 Windows 的自定义虚拟机][]。
+该镜像已就绪，可用于创建虚拟机了。为此，你将通过使用**“从库中”**菜单项并选择你刚创建的镜像来创建一个虚拟机。有关说明，请参阅[创建运行 Windows 的自定义虚拟机][]。
 
 [创建运行 Windows 的自定义虚拟机]: /documentation/articles/virtual-machines-windows-create-custom
 [如何将数据磁盘附加到虚拟机]: /documentation/articles/storage-windows-attach-disk

@@ -32,7 +32,7 @@
 重新启动 VM | `azure vm restart [options] <vname>` | `azure vm restart [options] <resource_group> <name>`
 删除 VM | `azure vm delete [options] <name>` | `azure vm delete [options] <resource_group> <name>`
 捕获 VM | `azure vm capture [options] <name>` | `azure vm capture [options] <resource_group> <name>`
-从用户映像创建 VM | `azure  vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] –q <image-name> <resource-group> <name> <location> <os-type>`
+从用户镜像创建 VM | `azure  vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] –q <image-name> <resource-group> <name> <location> <os-type>`
 从专用磁盘创建 VM | `azure  vm create [options]-d <custom-data-file> <dns-name> [userName] [password]` | `azue  vm create [options] –d <os-disk-vhd> <resource-group> <name> <location> <os-type>`
 将数据磁盘添加到 VM | `azure  vm disk attach [options] <vm-name> <disk-image-name>` -或- <br/> `vm disk attach-new [options] <vm-name> <size-in-gb> [blob-url]` | `azure  vm disk attach-new [options] <resource-group> <vm-name> <size-in-gb> [vhd-name]`
 从 VM 中删除数据磁盘 | `azure  vm disk detach [options] <vm-name> <lun>` | `azure  vm disk detach [options] <resource-group> <vm-name> <lun>`
@@ -43,8 +43,8 @@
 禁用 VM 扩展 | `azure  vm extension set [options] –b <vm-name> <extension-name> <publisher-name> <version>` | 不可用
 删除 VM 扩展 | `azure  vm extension set [options] –u <vm-name> <extension-name> <publisher-name> <version>` | `azure  vm extension set [options] –u <resource-group> <vm-name> <name> <publisher-name> <version>`
 列出 VM 扩展 | `azure vm extension list [options]` | `azure  vm extension get [options] <resource-group> <vm-name>`
-列出 VM 映像 | `azure vm image list [options]` | `azure vm image list [options] <location> <publisher> [offer] [sku]` -或- <br/> `azure vm image list-publishers [options] <location>` -或- <br/> `azure vm image list-offers [options] <location>` -或- <br/> `azure vm image list-skus [options] <location>`
-显示 VM 映像 | `azure vm image show [options]` | 不可用
+列出 VM 镜像 | `azure vm image list [options]` | `azure vm image list [options] <location> <publisher> [offer] [sku]` -或- <br/> `azure vm image list-publishers [options] <location>` -或- <br/> `azure vm image list-offers [options] <location>` -或- <br/> `azure vm image list-skus [options] <location>`
+显示 VM 镜像 | `azure vm image show [options]` | 不可用
 获取 VM 资源的使用情况 | 不可用 | `azure vm list-usage [options] <location>`
 获取所有可用 VM 大小 | 不可用 | `azure vm sizes [options]`
 

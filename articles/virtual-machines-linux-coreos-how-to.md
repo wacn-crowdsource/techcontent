@@ -29,7 +29,7 @@ CoreOS 是 Linux 的轻量级版本，旨在支持快速创建使用 Linux 容�
 
 概括而言，支持这些目标的 CoreOS 功能包括：
 
-1. 单一打包系统：CoreOS 仅运行可在 Linux 容器中运行，以取得部署速度、一致性和方便性的 Linux 容器映像
+1. 单一打包系统：CoreOS 仅运行可在 Linux 容器中运行，以取得部署速度、一致性和方便性的 Linux 容器镜像
 2. 系统会自动执行操作系统更新，这样一来，操作系统会作为单个实体进行更新，并且可以轻松回退到已知状态
 3. 内置用于动态 VM 和群集通信与管理的 [etcd](https://github.com/coreos/etcd) 和 [fleet](https://github.com/coreos/fleet) 守护程序（服务）
 
@@ -99,7 +99,7 @@ coreos:
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 
 1. 如果尚未安装 [Azure 命令行界面 (Azure CLI)]，请先执行安装并使用工作或学校 ID 登录，或下载 .publishsettings 文件并将其导入你的帐户。
-2. 寻找 CoreOS 映像。若要查找随时可用的映像，请键入 `azure vm image list | grep CoreOS`，然后就会看到类似于以下内容的结果列表：
+2. 寻找 CoreOS 镜像。若要查找随时可用的镜像，请键入 `azure vm image list | grep CoreOS`，然后就会看到类似于以下内容的结果列表：
 
 	数据: 2b171e93f07c4903bcad35bda10acf22\_\_CoreOS-Stable-522.6.0 Public Linux
 
@@ -109,7 +109,7 @@ coreos:
 
 	![][CloudServiceInNewPortal]
 
-4. 使用 **azure vm create** 命令可连接到你的云服务，并可在其中创建新的 CoreOS VM。你将在 **--ssh-cert** 选项中传递 X.509 证书的位置。通过键入以下命令创建你的第一个 VM 映像，请记得使用你创建的云服务名称替换 **coreos-cluster**：
+4. 使用 **azure vm create** 命令可连接到你的云服务，并可在其中创建新的 CoreOS VM。你将在 **--ssh-cert** 选项中传递 X.509 证书的位置。通过键入以下命令创建你的第一个 VM 镜像，请记得使用你创建的云服务名称替换 **coreos-cluster**：
 
 ```
 azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem --no-ssh-password --vm-name=node-1 --connect=coreos-cluster --location='China East' 2b171e93f07c4903bcad35bda10acf22__CoreOS-Stable-522.6.0 core
