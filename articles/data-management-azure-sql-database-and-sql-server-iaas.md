@@ -167,7 +167,7 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 
 ###<a name="admin"></a>管理
 
-如果你手头已有许多任务，或许你并不期望采用服务器和数据库管理。对许多企业来说，决定使用云服务的关键在于降低管理复杂性的能力。使用 **Azure SQL 数据库**，Microsoft 可以管理物理硬件（例如硬盘、服务器和存储）；自动复制所有数据以提供高可用性；配置及升级数据库软件；管理负载平衡；在发生服务器故障时执行透明的故障转移。你可以继续管理 Azure SQL 数据库实例，但无需控制基础 SQL Server 实例和 Azure 平台的物理资源。例如，你可以管理数据库和登录、执行索引调整以及优化查询，但无法管理系统表和文件组管理。有关详细信息，请参阅 [Azure SQL 数据库指导原则和限制](/documentation/articles/sql-database-general-limitations/)。
+如果你手头已有许多任务，或许你并不期望采用服务器和数据库管理。对许多企业来说，决定使用云服务的关键在于降低管理复杂性的能力。使用 **Azure SQL 数据库**，Microsoft 可以管理物理硬件（例如硬盘、服务器和存储）；自动复制所有数据以提供高可用性；配置及升级数据库软件；管理负载均衡；在发生服务器故障时执行透明的故障转移。你可以继续管理 Azure SQL 数据库实例，但无需控制基础 SQL Server 实例和 Azure 平台的物理资源。例如，你可以管理数据库和登录、执行索引调整以及优化查询，但无法管理系统表和文件组管理。有关详细信息，请参阅 [Azure SQL 数据库指导原则和限制](/documentation/articles/sql-database-general-limitations/)。
 
 在另一方面，你可能有内部专业人员，并想要保持只由计算机本身控制数据库位置。使用 **Azure VM 中运行的 SQL Server**，你可以完全掌控操作系统和 SQL Server 实例配置。使用 VM，你可以决定何时更新/升级操作系统与数据库软件，以及何时安装任何其他软件（例如防病毒和备份工具）。此外，你还可以控制 VM 的大小、磁盘数目及其存储配置。例如，Azure 允许你视需要更改正在运行的 VM 的大小。有关信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-size-specs)。
 

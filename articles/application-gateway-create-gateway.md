@@ -152,7 +152,7 @@
 
 >[AZURE.IMPORTANT]协议项 Http 或 Https 区分大小写。
 
-以下示例演示如何使用配置文件设置应用程序网关负载平衡公共端口 80 上的 Http 流量，并将网络流量发送到 2 个 IP 地址之间的后端端口 80。
+以下示例演示如何使用配置文件设置应用程序网关负载均衡公共端口 80 上的 Http 流量，并将网络流量发送到 2 个 IP 地址之间的后端端口 80。
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<ApplicationGatewayConfiguration xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/windowsazure">
@@ -400,9 +400,9 @@
 
 如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl)。
 
-如果你想要将应用程序网关配置为与 ILB 配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb)。
+如果你想要将应用程序网关配置为与 ILB 配合使用，请参阅[创建具有内部负载均衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb)。
 
-如需负载平衡选项的其他常规信息，请参阅：
+如需负载均衡选项的其他常规信息，请参阅：
 
 <!--- [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)-->
 - [Azure 流量管理器](/documentation/services/traffic-manager)

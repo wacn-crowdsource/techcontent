@@ -196,7 +196,7 @@ Azure 基础结构中的虚拟机将进行验证，并能够与其他 Microsoft 
 	- 使用 Azure 门户在 Azure 上的新虚拟机上创建和部署域控制器。还可参考 Windows PowerShell 脚本，使用 Azure 虚拟机和 Azure 虚拟网络在云中部署独立域。有关在 Azure 虚拟网络上的虚拟机上创建新的 Active Directory 林的详细信息，请转到[在 Azure 中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine)。
 2. 设置虚拟机：使用 Azure 门户从镜像库中的储备镜像设置新的虚拟机。
 3. 部署 SharePoint 场。
-	- 使用 Azure 门户配置负载平衡。配置虚拟机终结点，选择用于对现有终结点上的流量进行负载平衡的选项，然后指定负载平衡的虚拟机的名称。
+	- 使用 Azure 门户配置负载均衡。配置虚拟机终结点，选择用于对现有终结点上的流量进行负载均衡的选项，然后指定负载均衡的虚拟机的名称。
 	- 将其他前端 Web 虚拟机添加到现有 SharePoint 场以处理额外流量。
 3. 管理虚拟机：
 	- 使用 Azure 门户监视虚拟机。
@@ -241,7 +241,7 @@ Azure 基础结构中的虚拟机将进行验证，并能够与其他 Microsoft 
 
 组织可使用 Azure 虚拟机在经济实惠且高度安全的云基础结构上托管自定义应用程序和关联组件。他们还可将本地 Microsoft System Center 用作本地和云应用程序的常见管理工具。
 
-若要在 Azure 上实现完全自定义的 SharePoint 网站，组织必须在云中部署 Active Directory 域并在此域中设置新的虚拟机。然后，必须创建运行 SQL Server 2012 的虚拟机并将其配置为 SharePoint 场的一部分。最后，必须创建 SharePoint 场，对该场进行负载平衡并将其连接到 Active Directory 和 SQL Server（图 6）。
+若要在 Azure 上实现完全自定义的 SharePoint 网站，组织必须在云中部署 Active Directory 域并在此域中设置新的虚拟机。然后，必须创建运行 SQL Server 2012 的虚拟机并将其配置为 SharePoint 场的一部分。最后，必须创建 SharePoint 场，对该场进行负载均衡并将其连接到 Active Directory 和 SQL Server（图 6）。
 
 ![azure-sharepoint-wp-14](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-14.png)
 
@@ -263,7 +263,7 @@ Azure 基础结构中的虚拟机将进行验证，并能够与其他 Microsoft 
 	- 使用 Azure 门户创建虚拟机。
 	- 在该虚拟机上安装 SharePoint Server 并生成可重复使用的镜像。有关安装 SharePoint Server 的详细信息，请转到[使用 Windows PowerShell 安装和配置 SharePoint Server 2010](http://technet.microsoft.com/zh-cn/library/cc262839.aspx) 或 [CodePlex：AutoSPInstaller](http://autospinstaller.codeplex.com/)。
 	- 使用 [Join-SharePointFarm](http://technet.microsoft.com/zh-cn/library/ff607979.aspx) 命令配置 SharePoint 虚拟机以创建 SharePoint 场并连接到该场。
-	- 使用 Azure 门户配置负载平衡：配置虚拟机终结点，选择用于对现有终结点上的流量进行负载平衡的选项，然后指定负载平衡的虚拟机的名称。
+	- 使用 Azure 门户配置负载均衡：配置虚拟机终结点，选择用于对现有终结点上的流量进行负载均衡的选项，然后指定负载均衡的虚拟机的名称。
 4. 通过系统中心管理 SharePoint 场：
 	- 使用 Operations Manager 代理和新的 Azure 集成包将本地系统中心连接到 Azure 虚拟机。
 	- 使用本地 App Controller 和 Orchestrator 进行管理。

@@ -99,7 +99,7 @@
    <td valign="middle"><p>X</p></td>
    <td valign="middle"><p>包含 5 个 SNI SSL 和 1 个 IP SSL 连接</p></td>
 </tr><tr>
-   <td valign="middle"><p>集成负载平衡器</p></td>
+   <td valign="middle"><p>集成负载均衡器</p></td>
    <td valign="middle"><p></p></td>
    <td valign="middle"><p>X</p></td>
    <td valign="middle"><p>X</p></td>

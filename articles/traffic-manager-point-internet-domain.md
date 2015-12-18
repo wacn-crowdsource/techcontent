@@ -25,7 +25,7 @@
 
 ## 后续步骤
 
-[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)
+[关于流量管理器负载均衡方法](/documentation/articles/traffic-manager-load-balancing-methods)
 
 [流量管理器 - 禁用、启用或删除配置文件](/documentation/articles/disable-enable-or-delete-a-profile)
 

@@ -23,7 +23,7 @@
 
 有两个 web 服务器虚拟机，可以在其上部署 ASP.NET 应用程序或可由 Windows Server 2012 R2 中的 Internet 信息服务 (IIS) 8 托管的旧版应用程序。
 
-首先，将配置内部负载平衡，以便 Azure 将客户端发到业务线应用程序的流量均匀地分布在两个 web 服务器上。这需要你指定内部负载平衡实例，该实例由名称和它自己的 IP 地址（从你分配给 Azure 虚拟网络的子网地址空间中分配）组成。若要确定为内部负载平衡器选择的 IP 地址是否可用，请在 Azure PowerShell 提示符下使用这些命令。为变量指定值，并删除 < and > 字符。
+首先，将配置内部负载均衡，以便 Azure 将客户端发到业务线应用程序的流量均匀地分布在两个 web 服务器上。这需要你指定内部负载均衡实例，该实例由名称和它自己的 IP 地址（从你分配给 Azure 虚拟网络的子网地址空间中分配）组成。若要确定为内部负载均衡器选择的 IP 地址是否可用，请在 Azure PowerShell 提示符下使用这些命令。为变量指定值，并删除 < and > 字符。
 
 	Switch-AzureMode AzureServiceManagement
 	$vnet="<Table V – Item 1 – Value column>"
@@ -52,7 +52,7 @@
 	$lbrule=New-AzureLoadBalancerRuleConfig -Name "WebTraffic" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol "TCP" -FrontendPort 80 -BackendPort 80
 	New-AzureLoadBalancer -ResourceGroupName $rgName -Name "WebServersInAzure" -Location $locName -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe -FrontendIpConfiguration $frontendIP
 
-接下来，将 DNS 地址记录添加到你组织的内部 DNS 基础结构中，以便将业务线应用程序的完全限定域名（例如 lobapp.corp.contoso.com）解析为分配给内部负载平衡器的 IP 地址（前面的 Azure PowerShell 命令块中 $privIP 的值）。
+接下来，将 DNS 地址记录添加到你组织的内部 DNS 基础结构中，以便将业务线应用程序的完全限定域名（例如 lobapp.corp.contoso.com）解析为分配给内部负载均衡器的 IP 地址（前面的 Azure PowerShell 命令块中 $privIP 的值）。
 
 接下来，使用以下 PowerShell 命令块为两个 web 服务器创建虚拟机。请注意，此 PowerShell 命令集使用下表中的值：
 

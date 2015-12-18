@@ -16,7 +16,7 @@
 
 本文将逐步指导你完成在 Azure 上设置 [Deis](http://deis.io/) 群集的过程。其中包括所有的步骤，从创建必要的证书，到在新设置的群集上部署和缩放示例 **Go** 应用程序。
 
-下图显示了部署的系统的体系结构。系统管理员可以使用 Deis 工具（如 **deis** 和 **deisctl**）来管理群集。连接是通过会将连接转发到群集上某个成员节点的 Azure 负载平衡器建立的。客户端也通过负载平衡器访问部署的应用程序。在此情况下，负载平衡器会将流量转发到 Deis 路由器网络，从者进一步将流量路由到托管在群集上的对应 Docker 容器。
+下图显示了部署的系统的体系结构。系统管理员可以使用 Deis 工具（如 **deis** 和 **deisctl**）来管理群集。连接是通过会将连接转发到群集上某个成员节点的 Azure 负载均衡器建立的。客户端也通过负载均衡器访问部署的应用程序。在此情况下，负载均衡器会将流量转发到 Deis 路由器网络，从者进一步将流量路由到托管在群集上的对应 Docker 容器。
 
   ![部署的 Desis 群集的体系结构示意图](./media/virtual-machines-deis-cluster/architecture-overview.png)
 
@@ -70,7 +70,7 @@
 
 8. 修改 **newStorageAccountName** 参数。这是 VM OS 磁盘的存储帐户。此帐户名称必须全域唯一。
 
-9. 修改 **publicDomainName** 参数。此参数将成为与负载平衡器公共 IP 关联的 DNS 名称的一部分。最终的 FQDN 格式是 _[此参数的值]_ _[区域]_.cloudapp.azure.com。例如，如果你将名称指定为 deishbai32，资源组已部署到美国西部区域，则负载平衡器的最终 FQDN 是 deishbai32.westus.cloudapp.azure.com。
+9. 修改 **publicDomainName** 参数。此参数将成为与负载均衡器公共 IP 关联的 DNS 名称的一部分。最终的 FQDN 格式是 _[此参数的值]_ _[区域]_.cloudapp.azure.com。例如，如果你将名称指定为 deishbai32，资源组已部署到美国西部区域，则负载均衡器的最终 FQDN 是 deishbai32.westus.cloudapp.azure.com。
 
 10. 保存参数文件。接下来，你可以使用 Azure PowerShell 设置群集：
 
@@ -82,13 +82,13 @@
         ./deploy-deis.sh -n "[resource group name]" -l "West US" -f ./azuredeploy.json -e ./azuredeploy-parameters.json
         -c ./cloud-config.yaml  
 
-11. 设置资源组后，可以在 Azure 门户上看到组中的所有资源。如以下屏幕截图所示，资源组中有一个包含三个 VM 的虚拟网络，这些 VM 已加入同一个可用性集。该组还包含具有关联公共 IP 的负载平衡器。
+11. 设置资源组后，可以在 Azure 门户上看到组中的所有资源。如以下屏幕截图所示，资源组中有一个包含三个 VM 的虚拟网络，这些 VM 已加入同一个可用性集。该组还包含具有关联公共 IP 的负载均衡器。
 
   ![Azure 门户上显示的已设置资源组](./media/virtual-machines-deis-cluster/resource-group.png)
 
 ## 安装客户端
 
-需要使用 **deisctl** 来控制 Deis 群集。尽管 deisctl 会自动安装在所有群集节点中，但较好的做法是在独立的管理计算机上使用 deisctl。此外，因为所有节点上只配置了专用 IP 地址，因此你需要通过负载平衡器（有公共 IP）使用 SSH 隧道，来连接到节点计算机。以下是在独立 Ubuntu 物理机或虚拟机上设置 deisctl 的步骤。
+需要使用 **deisctl** 来控制 Deis 群集。尽管 deisctl 会自动安装在所有群集节点中，但较好的做法是在独立的管理计算机上使用 deisctl。此外，因为所有节点上只配置了专用 IP 地址，因此你需要通过负载均衡器（有公共 IP）使用 SSH 隧道，来连接到节点计算机。以下是在独立 Ubuntu 物理机或虚拟机上设置 deisctl 的步骤。
 
 1. 安装 deisctl:mkdir deis
 
@@ -106,7 +106,7 @@
         export DEISCTL_TUNNEL=[public ip of the load balancer]: /documentation/articles/2223
 模板定义了将 2223 映射到实例 1、将 2224 映射到实例 2、将 2225 映射到实例 3 的入站 NAT 规则。这提供了使用 deisctl 工具时的冗余。可以在 Azure 门户中检查这些规则：
 
-![负载平衡器上的 NAT 规则](./media/virtual-machines-deis-cluster/nat-rules.png)
+![负载均衡器上的 NAT 规则](./media/virtual-machines-deis-cluster/nat-rules.png)
 
 > [AZURE.NOTE]模板目前仅支持三节点群集。这是因为 Azure 资源管理器模板 NAT 规则定义存在限制，它不支持循环语法。
 
@@ -159,7 +159,7 @@
 
 以下步骤说明如何将“Hello World”Go 应用程序部署到群集。这些步骤基于 [Deis 文档](http://docs.deis.io/en/latest/using_deis/using-dockerfiles/#using-dockerfiles)。
 
-1. 为了使路由网络正确工作，指向负载平衡器公共 IP 的域需要有通配符 A 记录。以下屏幕截图显示了在 GoDaddy 上注册的示例域的 A 记录：
+1. 为了使路由网络正确工作，指向负载均衡器公共 IP 的域需要有通配符 A 记录。以下屏幕截图显示了在 GoDaddy 上注册的示例域的 A 记录：
 
     ![Godaddy A 记录](./media/virtual-machines-deis-cluster/go-daddy.png)
 <p />
@@ -241,7 +241,7 @@
 
 ## 后续步骤
 
-本文已指导你完成使用 Azure 资源管理器模板在 Azure 上设置新 Deis 群集的步骤。该模板支持工具连接冗余，以及对已部署应用程序的负载平衡。该模板还避免使用成员节点上的公共 IP，因此可以节省宝贵的公共 IP 资源，并为宿主应用程序提供更安全的环境。若要了解更多信息，请参阅下列文章：
+本文已指导你完成使用 Azure 资源管理器模板在 Azure 上设置新 Deis 群集的步骤。该模板支持工具连接冗余，以及对已部署应用程序的负载均衡。该模板还避免使用成员节点上的公共 IP，因此可以节省宝贵的公共 IP 资源，并为宿主应用程序提供更安全的环境。若要了解更多信息，请参阅下列文章：
 
 [Azure 资源管理器概述][resource-group-overview]  
 [如何使用 Azure CLI][azure-command-line-tools]  

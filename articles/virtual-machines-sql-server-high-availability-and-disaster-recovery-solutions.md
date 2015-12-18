@@ -96,7 +96,7 @@ Azure 中的 DHCP 服务不符合 RFC 标准，可能会导致创建某些 WSFC 
 
 ### 可用性组侦听器支持
 
-运行 Windows Server 2008 R2、Windows Server 2012 和 Windows Server 2012 R2 的 Azure VM 支持可用性组侦听器。这种支持的实现，是借助于在 Azure VM 上启用了直接服务器返回 (DSR) 的负载平衡终结点，它们都是可用性组节点。你必须执行特殊的配置步骤，才能让这些侦听器对在 Azure 中运行和本地运行的客户端应用程序都有效。
+运行 Windows Server 2008 R2、Windows Server 2012 和 Windows Server 2012 R2 的 Azure VM 支持可用性组侦听器。这种支持的实现，是借助于在 Azure VM 上启用了直接服务器返回 (DSR) 的负载均衡终结点，它们都是可用性组节点。你必须执行特殊的配置步骤，才能让这些侦听器对在 Azure 中运行和本地运行的客户端应用程序都有效。
 
 客户端必须从未托管 AlwaysOn 可用性组节点的云服务中的计算机连接到侦听器。如果可用性组跨多个 Azure 子网（例如，跨 Azure 区域的部署），则客户端连接字符串必须包含“MultisubnetFailover=True”。这会导致与不同子网中的副本建立并行连接。有关设置侦听器的说明，请参阅[在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener)。
 

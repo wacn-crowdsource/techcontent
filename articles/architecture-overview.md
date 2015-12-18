@@ -25,7 +25,7 @@ Microsoft 发布一系列体系结构设计模式，以帮助您编写自己的�
 [混合网络](/documentation/articles/azure-architectures-cpif-infrastructure-hybrid-networking) -
 [异地批处理](/documentation/articles/azure-architectures-cpif-foundation-offsite-batch-processing-tier) -
 [多站点数据层](/documentation/articles/azure-architectures-cpif-foundation-multi-site-data-tier) -
-[全局负载平衡的 Web 层](/documentation/articles/azure-architectures-cpif-foundation-global-load-balanced-web-tier) -
+[全局负载均衡的 Web 层](/documentation/articles/azure-architectures-cpif-foundation-global-load-balanced-web-tier) -
 [Azure 搜索层](/documentation/articles/azure-architectures-cpif-foundation-azure-search-tier)
  
 每个模式包含

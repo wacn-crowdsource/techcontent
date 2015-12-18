@@ -10,7 +10,7 @@
 ##概览  
 
 - [什么是流量管理器](/documentation/articles/traffic-manager-overview)  
-- [流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)  
+- [流量管理器负载均衡方法](/documentation/articles/traffic-manager-load-balancing-methods)  
 - [监视流量管理器](/documentation/articles/traffic-manager-monitoring)  
 
 ##开始使用  
@@ -21,9 +21,9 @@
 
 ##如何  
 
-- [配置故障转移负载平衡](/documentation/articles/traffic-manager-configure-failover-load-balancing)  
-- [配置循环负载平衡](/documentation/articles/traffic-manager-configure-round-robin-load-balancing)  
-- [配置性能负载平衡](/documentation/articles/traffic-manager-configure-performance-load-balancing)  
+- [配置故障转移负载均衡](/documentation/articles/traffic-manager-configure-failover-load-balancing)  
+- [配置循环负载均衡](/documentation/articles/traffic-manager-configure-round-robin-load-balancing)  
+- [配置性能负载均衡](/documentation/articles/traffic-manager-configure-performance-load-balancing)  
 - [测试流量管理器设置](/documentation/articles/traffic-manager-testing-settings)  
 
 

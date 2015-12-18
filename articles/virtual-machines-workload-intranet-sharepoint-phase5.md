@@ -101,7 +101,7 @@
 
 ## 为 AlwaysOn 可用性组配置侦听器
 
-你可以选择性地为 AlwaysOn 可用性组创建侦听器配置。相关步骤请参阅[教程：AlwaysOn 可用性组的侦听器配置](https://msdn.microsoft.com/zh-cn/library/dn425027.aspx)。你只应创建一个侦听器，并将其配置为使用内部负载平衡实例的虚拟 IP 地址。
+你可以选择性地为 AlwaysOn 可用性组创建侦听器配置。相关步骤请参阅[教程：AlwaysOn 可用性组的侦听器配置](https://msdn.microsoft.com/zh-cn/library/dn425027.aspx)。你只应创建一个侦听器，并将其配置为使用内部负载均衡实例的虚拟 IP 地址。
 
 创建侦听器以后，你需要将所有 SharePoint 虚拟机配置为使用侦听器而非群集中第一个 SQL Server 计算机的名称。请将 SharePoint 虚拟机配置为使用 SQL 别名而非名称。有关详细信息和步骤，请参阅 [SharePoint 的 SQL 别名](http://blogs.msdn.com/b/priyo/archive/2013/09/13/sql-alias-for-sharepoint.aspx)。
 

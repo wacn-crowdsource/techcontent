@@ -85,7 +85,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | ------- | ------- | -------- | -------------- | -------- | ------ |
 | 应用程序网关 | 是 | | | | |
 | DNS | 是 | | | [创建 DNS 区域](https://msdn.microsoft.com/zh-cn/library/azure/mt130622.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
-| 负载平衡器 | 是 | | | [创建负载平衡器](https://msdn.microsoft.com/zh-cn/library/azure/mt163574.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
+| 负载均衡器 | 是 | | | [创建负载均衡器](https://msdn.microsoft.com/zh-cn/library/azure/mt163574.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
 | 虚拟网络 | 是 | 是 | 否 | [创建虚拟网络](https://msdn.microsoft.com/zh-cn/library/azure/mt163661.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
 | 流量管理器 | 是 | 否 | | [创建流量管理器配置文件](https://msdn.microsoft.com/zh-cn/library/azure/mt163581.aspx) | |
 | ExpressRoute | 是 | 否 | 否 | [ExpressRoute REST](https://msdn.microsoft.com/zh-cn/library/azure/mt586720.aspx) | |

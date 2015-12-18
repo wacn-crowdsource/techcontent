@@ -492,10 +492,10 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
  	-s, --subscription <subscription>      the subscription identifier
  	-q, --quiet                            quiet mode, do not ask for delete confirmation
 
-**用于管理负载平衡器的命令**
+**用于管理负载均衡器的命令**
 
 	network lb create [options] <resource-group> <name> <location>
-创建负载平衡器集。
+创建负载均衡器集。
 
 	azure network lb create -g myresourcegroup -n mylb -l chinanorth
 
@@ -525,7 +525,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <BR>
 
 	network lb list [options] <resource-group>
-列出资源组中的负载平衡器资源。
+列出资源组中的负载均衡器资源。
 
 	azure network lb list myresourcegroup
 
@@ -547,7 +547,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb show [options] <resource-group> <name>
 
-显示资源组中特定负载平衡器的负载平衡器信息
+显示资源组中特定负载均衡器的负载均衡器信息
 
 	azure network lb show myresourcegroup mylb -v
 
@@ -573,7 +573,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb delete [options] <resource-group> <name>
 
-删除负载平衡器资源。
+删除负载均衡器资源。
 
 	azure network lb delete  myresourcegroup mylb
 
@@ -593,11 +593,11 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
  	-q, --quiet                            quiet mode, do not ask for delete confirmation
  	-s, --subscription <subscription>      the subscription identifier
 
-**用于管理负载平衡器探测的命令**
+**用于管理负载均衡器探测的命令**
 
 	network lb probe create [options] <resource-group> <lb-name> <name>
 
-在负载平衡器中创建运行状况状态探测配置。请记住，若要运行此命令，负载平衡器需要一个前端 IP 资源（发出命令“azure network frontend-ip”可向负载平衡器分配 IP 地址）。
+在负载均衡器中创建运行状况状态探测配置。请记住，若要运行此命令，负载均衡器需要一个前端 IP 资源（发出命令“azure network frontend-ip”可向负载均衡器分配 IP 地址）。
 
 	azure network lb probe create -g myresourcegroup --lb-name mylb -n mylbprobe --protocol tcp --port 80 -i 300
 
@@ -625,7 +625,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb probe set [options] <resource-group> <lb-name> <name>
 
-使用新值更新现有负载平衡器探测。
+使用新值更新现有负载均衡器探测。
 
 	azure network lb probe set -g myresourcegroup -l mylb -n mylbprobe -p mylbprobe1 -p TCP -o 443 -i 300
 
@@ -653,7 +653,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb probe list [options] <resource-group> <lb-name>
 
-列出负载平衡器集的探测属性。
+列出负载均衡器集的探测属性。
 
 	C:\>azure network lb probe list -g myresourcegroup -l mylb
 
@@ -675,7 +675,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 
 	network lb probe delete [options] <resource-group> <lb-name> <name>
-删除为负载平衡器创建的探测。
+删除为负载均衡器创建的探测。
 
 	azure network lb probe delete -g myresourcegroup -l mylb -n mylbprobe
 
@@ -685,10 +685,10 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 	+ Updating load balancer "mylb"
 	info:    network lb probe delete command OK
 
-**用于管理负载平衡器前端 IP 配置的命令**
+**用于管理负载均衡器前端 IP 配置的命令**
 
 	network lb frontend-ip create [options] <resource-group> <lb-name> <name>
-为现有的负载平衡器集创建前端 IP 配置。
+为现有的负载均衡器集创建前端 IP 配置。
 
 	azure network lb frontend-ip create -g myresourcegroup --lb-name mylb -n myfrontendip -o Dynamic -e subnet -m newvnet
 
@@ -716,7 +716,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb frontend-ip set [options] <resource-group> <lb-name> <name>
 
-用于更新现有的前端 IP 配置。以下命令将名为 mypubip5 的公共 IP 添加到名为 myfrontendip 的现有负载平衡器前端 IP。
+用于更新现有的前端 IP 配置。以下命令将名为 mypubip5 的公共 IP 添加到名为 myfrontendip 的现有负载均衡器前端 IP。
 
 	azure network lb frontend-ip set -g myresourcegroup --lb-name mylb -n myfrontendip -i mypubip5
 
@@ -766,7 +766,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb frontend-ip list [options] <resource-group> <lb-name>
 
-列出针对负载平衡器配置的所有前端 IP 资源。
+列出针对负载均衡器配置的所有前端 IP 资源。
 
 	azure network lb frontend-ip list -g myresourcegroup -l mylb
 
@@ -788,7 +788,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <BR>
 
 	network lb frontend-ip delete [options] <resource-group> <lb-name> <name>
-删除与负载平衡器关联的前端 IP 对象
+删除与负载均衡器关联的前端 IP 对象
 
 	network lb frontend-ip delete -g myresourcegroup -l mylb -n myfrontendip
 	info:    Executing command network lb frontend-ip delete
@@ -807,11 +807,11 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 	-q, --quiet                            quiet mode, do not ask for delete confirmation
 	-s, --subscription <subscription>      the subscription identifier
 
-**用于管理负载平衡器后端地址池的命令**
+**用于管理负载均衡器后端地址池的命令**
 
 	network lb address-pool create [options] <resource-group> <lb-name> <name>
 
-为负载平衡器创建后端地址池。
+为负载均衡器创建后端地址池。
 
 	azure network lb address-pool create -g myresourcegroup --lb-name mylb -n myaddresspool
 
@@ -842,7 +842,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb address-pool add [options] <resource-group> <lb-name> <name>
 
-负载平衡器根据后端地址池范围来确定哪些资源正在使用 Azure 资源管理器来从其终结点路由传入的网络流量。在创建并命名后端地址池范围后（请参阅命令“azure network lb address-pool create”），需要添加现在已由名为“网络接口”的资源定义的终结点。
+负载均衡器根据后端地址池范围来确定哪些资源正在使用 Azure 资源管理器来从其终结点路由传入的网络流量。在创建并命名后端地址池范围后（请参阅命令“azure network lb address-pool create”），需要添加现在已由名为“网络接口”的资源定义的终结点。
 
 若要配置后端地址范围，你至少需要一个“网络接口”（有关详细信息，请参阅“azure network lb nic”命令行）。
 
@@ -945,7 +945,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <BR> 
         network lb address-pool delete [选项] <resource-group> <lb-name> <name>
 
-从负载平衡器中删除后端 IP 池范围资源。
+从负载均衡器中删除后端 IP 池范围资源。
 
 	azure network lb address-pool delete -g myresourcegroup -l mylb -n mybackendpool
 
@@ -966,14 +966,14 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 	-q, --quiet                            quiet mode, do not ask for delete confirmation
 	-s, --subscription <subscription>      the subscription identifier
 
-**用于管理负载平衡器规则的命令**
+**用于管理负载均衡器规则的命令**
 
 	network lb rule create [options] <resource-group> <lb-name> <name>
-创建负载平衡器规则。
+创建负载均衡器规则。
 
-你可以创建负载平衡器规则，用于配置负载平衡器的前端终结点以及要接收传入网络流量的后端地址池范围。设置还包括前端 IP 终结点的端口，以及后端地址池范围的端口。
+你可以创建负载均衡器规则，用于配置负载均衡器的前端终结点以及要接收传入网络流量的后端地址池范围。设置还包括前端 IP 终结点的端口，以及后端地址池范围的端口。
 
-以下示例演示了如何创建负载平衡器规则、侦听端口 80 TCP 的前端终结点，以及发送到后端地址池范围的端口 8080 的负载平衡网络流量。
+以下示例演示了如何创建负载均衡器规则、侦听端口 80 TCP 的前端终结点，以及发送到后端地址池范围的端口 8080 的负载均衡网络流量。
 
 	azure network lb rule create -g myresourcegroup -l mylb -n mylbrule -p tcp -f 80 -b 8080 -i 10
 
@@ -1001,7 +1001,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb rule set [options] <resource-group> <lb-name> <name>
 
-更新特定资源组中设置的现有负载平衡器规则。在以下示例中，我们已将规则名称从 mylbrule 更改为 mynewlbrule。
+更新特定资源组中设置的现有负载均衡器规则。在以下示例中，我们已将规则名称从 mylbrule 更改为 mynewlbrule。
 
 	azure network lb rule set -g myresourcegroup -l mylb -n mylbrule -r mynewlbrule -p tcp -f 80 -b 8080 -i 10 -t myfrontendip -o mybackendpool
 
@@ -1046,7 +1046,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb rule list [options] <resource-group> <lb-name>
 
-列出针对特定资源组中某个负载平衡器配置的所有负载平衡器规则。
+列出针对特定资源组中某个负载均衡器配置的所有负载均衡器规则。
 
 	azure network lb rule list -g myresourcegroup -l mylb
 
@@ -1068,7 +1068,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb rule delete [options] <resource-group> <lb-name> <name>
 
-删除负载平衡器规则。
+删除负载均衡器规则。
 
 	azure network lb rule delete -g myresourcegroup -l mylb -n mynewlbrule
 
@@ -1089,12 +1089,12 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 	-q, --quiet                            quiet mode, do not ask for delete confirmation
 	-s, --subscription <subscription>      the subscription identifier
 
-**用于管理负载平衡器入站 NAT 规则的命令**
+**用于管理负载均衡器入站 NAT 规则的命令**
 
 	network lb inbound-nat-rule create [options] <resource-group> <lb-name> <name>
-为负载平衡器创建入站 NAT 规则。
+为负载均衡器创建入站 NAT 规则。
 
-在以下示例中，我们从前端 IP（前面已定义。有关详细信息，请参阅“azure network frontend-ip”命令），使用入站侦听端口和负载平衡器要将网络流量发送到的出站端口，创建了一个 NAT 规则。
+在以下示例中，我们从前端 IP（前面已定义。有关详细信息，请参阅“azure network frontend-ip”命令），使用入站侦听端口和负载均衡器要将网络流量发送到的出站端口，创建了一个 NAT 规则。
 
 
 	azure network lb inbound-nat-rule create -g myresourcegroup -l mylb -n myinboundnat -p tcp -f 80 -b 8080 -i myfrontendip
@@ -1180,7 +1180,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb inbound-nat-rule list [options] <resource-group> <lb-name>
 
-列出负载平衡器的所有入站 NAT 规则。
+列出负载均衡器的所有入站 NAT 规则。
 
 	azure network lb inbound-nat-rule list -g myresourcegroup -l mylb
 
@@ -1205,7 +1205,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 	network lb inbound-nat-rule delete [options] <resource-group> <lb-name> <name>
 
-删除特定资源组中负载平衡器的 NAT 规则。
+删除特定资源组中负载均衡器的 NAT 规则。
 
 	azure network lb inbound-nat-rule delete -g myresourcegroup -l mylb -n myinboundnat
 
@@ -1381,7 +1381,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 **用于管理网络接口的命令**
 
 	network nic create [options] <resource-group> <name> <location>
-创建可用于负载平衡器或关联到虚拟机的名为网络接口 (NIC) 的资源。
+创建可用于负载均衡器或关联到虚拟机的名为网络接口 (NIC) 的资源。
 
 	azure network nic create -g myresourcegroup -l chinaeast -n testnic1 --subnet-name subnet-1 --subnet-vnet-name myvnet
 

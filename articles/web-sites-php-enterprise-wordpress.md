@@ -37,7 +37,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 ###多区域部署
 
-通过使用 Azure [流量管理器][trafficmanager]，可以在多个地理地区扩展您的 WordPress 网站，同时仅为访客提供一个 URL。所有访客都通过流量管理器进来，然后基于负载平衡配置被路由到某一区域。
+通过使用 Azure [流量管理器][trafficmanager]，可以在多个地理地区扩展您的 WordPress 网站，同时仅为访客提供一个 URL。所有访客都通过流量管理器进来，然后基于负载均衡配置被路由到某一区域。
 
 ![一个托管在多个区域的 Azure 网站，使用 CDBR 高可用性路由器跨区域路由到 MySQL][multi-region-diagram]
 
@@ -71,7 +71,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 为此，请执行以下操作... | 使用此方法...
 ------------------------|-----------
-**负载平衡站点**或**地理分配站点** | [通过 Azure 流量管理器路由流量][trafficmanager]
+**负载均衡站点**或**地理分配站点** | [通过 Azure 流量管理器路由流量][trafficmanager]
 **备份和还原** | [在 Azure 网站中备份网站][backup]和[在 Azure 网站中存储网站][restore]
 
 ####性能
@@ -183,7 +183,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 **使用 blob 进行存储处理** | <ol><li><p><a href="/documentation/articles/storage-create-storage-account/">创建 Azure 存储帐户</a></p></li><li><p>了解如何<a href="/documentation/articles/cdn-how-to-use/">使用内容分发网络 (CDN) </a>地理分配 Blob 中存储的数据。</p></li><li><p>安装和配置 <a href="https://wordpress.org/plugins/windows-azure-storage/">WordPress 插件的 Azure 存储</a>。</p><p>有关该插件的详细设置和配置信息，请参阅<a href="http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx">用户指南</a>。</p></li></ol>
 **配置自定义域名** | [在 Azure 网站中配置自定义域名][customdomain]
 **启用自定义域名的 HTTPS** | [在 Azure 网站中启用网站的 HTTPS][httpscustomdomain]
-**负载平衡或地理分配站点** | [通过 Azure 流量管理器路由流量][trafficmanager]。如果您使用自定义域，请参阅[在 Azure 网站中使用自定义域名][customdomain]，了解有关使用含自定义域名的流量管理器的信息
+**负载均衡或地理分配站点** | [通过 Azure 流量管理器路由流量][trafficmanager]。如果您使用自定义域，请参阅[在 Azure 网站中使用自定义域名][customdomain]，了解有关使用含自定义域名的流量管理器的信息
 **启用自动化的备份** | [在 Azure 网站中备份网站][backup]
 **启用诊断日志记录** | [在 Azure 网站中启用网站的诊断日志记录][log]
 

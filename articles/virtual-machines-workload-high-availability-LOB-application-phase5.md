@@ -105,9 +105,9 @@
 
 ## 为 AlwaysOn 可用性组配置侦听器
 
-你可以选择性地为 AlwaysOn 可用性组创建侦听器配置。相关步骤请参阅[教程：AlwaysOn 可用性组的侦听器配置](https://msdn.microsoft.com/zh-cn/library/dn425027.aspx)。这些说明将指导你逐步完成只创建一个侦听器（推荐），并使用内部负载平衡实例的静态 IP 地址。
+你可以选择性地为 AlwaysOn 可用性组创建侦听器配置。相关步骤请参阅[教程：AlwaysOn 可用性组的侦听器配置](https://msdn.microsoft.com/zh-cn/library/dn425027.aspx)。这些说明将指导你逐步完成只创建一个侦听器（推荐），并使用内部负载均衡实例的静态 IP 地址。
 
-配置侦听器以后，你需要将所有 web 服务器虚拟机配置为使用侦听器而非群集中第一个 SQL Server 的名称。不是使用映射到内部负载平衡实例的虚拟 IP 地址的新 DNS 名称和记录，而是将 web 服务器虚拟机配置为使用 SQL 别名。有关详细信息和步骤，请参阅 [SharePoint 的 SQL 别名](http://blogs.msdn.com/b/priyo/archive/2013/09/13/sql-alias-for-sharepoint.aspx)。
+配置侦听器以后，你需要将所有 web 服务器虚拟机配置为使用侦听器而非群集中第一个 SQL Server 的名称。不是使用映射到内部负载均衡实例的虚拟 IP 地址的新 DNS 名称和记录，而是将 web 服务器虚拟机配置为使用 SQL 别名。有关详细信息和步骤，请参阅 [SharePoint 的 SQL 别名](http://blogs.msdn.com/b/priyo/archive/2013/09/13/sql-alias-for-sharepoint.aspx)。
 
 ## 其他资源
 

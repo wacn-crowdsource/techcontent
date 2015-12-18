@@ -3,8 +3,8 @@
    documentationCenter="dev-center-name" 
    editor=""
    manager="jefco" 
-   pageTitle="管理：负载平衡器空闲超时" 
-   description="Azure 负载平衡器空闲超时的管理功能" 
+   pageTitle="管理：负载均衡器空闲超时" 
+   description="Azure 负载均衡器空闲超时的管理功能" 
    services="virtual-network" 
    />
 
@@ -14,9 +14,9 @@
    wacn.date="10/17/2015"
    />
    
-# 管理虚拟网络：负载平衡器 TCP 空闲超时
+# 管理虚拟网络：负载均衡器 TCP 空闲超时
 
-**TCP 空闲超时**允许开发人员指定一个确定的阈值，该阈值针对客户端-服务器会话期间出现的与 Azure 负载平衡器相关的非活动状态。TCP 空闲超时值为 4 分钟（Azure 负载平衡器的默认值）意味着，如果在客户端-服务器会话期间出现的与 Azure 负载平衡器相关的非活动状态的持续时间超过 4 分钟，则会关闭连接。
+**TCP 空闲超时**允许开发人员指定一个确定的阈值，该阈值针对客户端-服务器会话期间出现的与 Azure 负载均衡器相关的非活动状态。TCP 空闲超时值为 4 分钟（Azure 负载均衡器的默认值）意味着，如果在客户端-服务器会话期间出现的与 Azure 负载均衡器相关的非活动状态的持续时间超过 4 分钟，则会关闭连接。
 
 当客户端-服务器连接关闭时，客户端应用程序会收到一条类似于下面这样的错误消息：“基础连接已关闭: 应保持活动状态的连接已由服务器关闭”。
 
@@ -24,14 +24,14 @@
 
 虽然 TCP Keep-Alive 很有效，但通常不适用于移动应用程序，因为它会消耗移动设备上有限的能源。使用 TCP Keep-Alive 的移动应用程序会更快地耗尽设备电池的能源，因为它会持续地汲取需要在网络上使用的能源。
 
-Azure 负载平衡器支持对 TCP 空闲超时进行配置，因此支持移动设备方案。对于入站连接，开发人员可以将 TCP 空闲超时设置为 4 到 30 分钟（可配置的 TCP 空闲超时不适用于出站连接）。这样客户端就可以与服务器维持很长时间的会话，即使长时间处于非活动状态也不会断开连接。移动设备上的应用程序仍然可以选择利用 TCP Keep-Alive 技术来保留非活动时间预计会超过 30 分钟的连接，不过在使用这种空闲时间更长的 TCP 空闲超时时，应用程序发出 TCP Keep-Alive 请求的频率要比以前低得多，因此会大大降低移动设备能源的消耗。
+Azure 负载均衡器支持对 TCP 空闲超时进行配置，因此支持移动设备方案。对于入站连接，开发人员可以将 TCP 空闲超时设置为 4 到 30 分钟（可配置的 TCP 空闲超时不适用于出站连接）。这样客户端就可以与服务器维持很长时间的会话，即使长时间处于非活动状态也不会断开连接。移动设备上的应用程序仍然可以选择利用 TCP Keep-Alive 技术来保留非活动时间预计会超过 30 分钟的连接，不过在使用这种空闲时间更长的 TCP 空闲超时时，应用程序发出 TCP Keep-Alive 请求的频率要比以前低得多，因此会大大降低移动设备能源的消耗。
 
 ## 实现
 
 TCP 空闲超时可以针对以下情况进行配置：
 
 * [实例级公共 IP](/documentation/articles/virtual-networks-instance-level-public-ip)
-<!--* [负载平衡的终结点集](/documentation/articles/load-balancer-overview)-->
+<!--* [负载均衡的终结点集](/documentation/articles/load-balancer-overview)-->
 * [虚拟机终结点](/documentation/articles/virtual-machines-set-up-endpoints)
 * [Web 角色](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 * [辅助角色](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
@@ -73,9 +73,9 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
     InternalLoadBalancerName :
     IdleTimeoutInMinutes : 15
     
-### 在负载平衡终结点集上设置 TCP 超时
+### 在负载均衡终结点集上设置 TCP 超时
 
-如果终结点是负载平衡终结点集的一部分，则必须在负载平衡终结点集上设置 TCP 超时：
+如果终结点是负载均衡终结点集的一部分，则必须在负载均衡终结点集上设置 TCP 超时：
 
     Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -IdleTimeoutInMinutes 15
 
@@ -106,9 +106,9 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
     
 ## API 示例
 
-开发人员可以使用服务管理 API 配置负载平衡器分发。请确保添加的 x-ms-version 标头设置为 2014-06-01 或更高版本。
+开发人员可以使用服务管理 API 配置负载均衡器分发。请确保添加的 x-ms-version 标头设置为 2014-06-01 或更高版本。
 
-### 通过一次部署，在所有虚拟机上更新指定的负载平衡输入终结点的配置
+### 通过一次部署，在所有虚拟机上更新指定的负载均衡输入终结点的配置
 
 #### 请求
 

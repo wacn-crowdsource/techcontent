@@ -1054,7 +1054,7 @@ Azure 提供了 [API 管理服务](http://azure.microsoft.com/documentation/serv
 
 你可以在 Microsoft 网站上的 [API 管理](http://azure.microsoft.com/services/api-management/)页中找到描述如何执行这些任务的完整详细信息。Azure API 管理服务还提供其自己的 REST 接口，使你可以构建自定义界面来简化配置 Web API 的过程。有关详细信息，请访问 Microsoft 网站上的 [Azure API 管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn776326.aspx)页。
 
-> [AZURE.TIP]Azure 提供了使用 Azure 流量管理器，使用它可以实现故障转移和负载平衡，并可以减少在不同地理位置托管的多个网站实例之间的延迟。可以将 Azure 流量管理器与 API 管理服务结合使用；API 管理服务可以通过 Azure 流量管理器将请求路由到网站实例。有关详细信息，请访问 Microsoft 网站上的[关于流量管理器负载平衡方法](https://msdn.microsoft.com/zh-cn/library/azure/dn339010.aspx)页。
+> [AZURE.TIP]Azure 提供了使用 Azure 流量管理器，使用它可以实现故障转移和负载均衡，并可以减少在不同地理位置托管的多个网站实例之间的延迟。可以将 Azure 流量管理器与 API 管理服务结合使用；API 管理服务可以通过 Azure 流量管理器将请求路由到网站实例。有关详细信息，请访问 Microsoft 网站上的[关于流量管理器负载均衡方法](https://msdn.microsoft.com/zh-cn/library/azure/dn339010.aspx)页。
 
 > 在此结构中，如果你要对网站使用自定义 DNS 名称，则应将每个网站的相应 CNAME 记录配置为指向 Azure 流量管理器网站的 DNS 名称。-->
 

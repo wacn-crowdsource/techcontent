@@ -59,7 +59,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 在公有云环境（例如 Azure）中尤其如此，你可随时随地租用 VM。你不仅能获得独立且快速的部署和协调工具，还能做出更高效的应用程序基础结构决策。
 
-例如，当前你可能有一个包含 9 个大规模 Azure VM 的部署，适用于高度可用的分布式应用程序。如果此应用程序的组件可在容器中进行部署，则你可能只能使用 4 个 VM 并将你的应用程序组件部署在 20 个容器内，以实现冗余和负载平衡。
+例如，当前你可能有一个包含 9 个大规模 Azure VM 的部署，适用于高度可用的分布式应用程序。如果此应用程序的组件可在容器中进行部署，则你可能只能使用 4 个 VM 并将你的应用程序组件部署在 20 个容器内，以实现冗余和负载均衡。
 
 当然，这只是一个示例，但是如果你能在自己的方案中做到这一点，那么就能利用更多容器而非更多 Azure VM 来调整以适应用量尖峰，并能比从前更高效地使用剩余的总体 CPU 负载。
 
@@ -121,7 +121,7 @@ IT 和运营专家还可以从容器与虚拟机的组合中获益。
 
 有多个常用系统可部署整个组的 VM，并在其上安装 Docker（或其他 Linux 容器主机系统）作为可自动化组。有关直接链接，请参阅下文的[容器和工具](#containers-and-vm-technologies)节。有许多系统都或多或少能实现这一点，此列表不能尽录。根据你的技能组合和具体情况，它们可能有用，也可能不发挥作用。
 
-Docker 有自己的 VM 创建工具集 ([docker-machine](/documentation/articles/virtual-machines-docker-machine)) 和一个负载平衡、docker-container 群集管理工具 ([swarm](/documentation/articles/virtual-machines-docker-swarm))。此外，[Azure Docker VM 扩展程序](https://github.com/Azure/azure-docker-extension/blob/master/README.md)附带了默认的 [`docker-compose`](https://docs.docker.com/compose/) 支持，此功能可在多个容器内部署已配置的应用程序容器。
+Docker 有自己的 VM 创建工具集 ([docker-machine](/documentation/articles/virtual-machines-docker-machine)) 和一个负载均衡、docker-container 群集管理工具 ([swarm](/documentation/articles/virtual-machines-docker-swarm))。此外，[Azure Docker VM 扩展程序](https://github.com/Azure/azure-docker-extension/blob/master/README.md)附带了默认的 [`docker-compose`](https://docs.docker.com/compose/) 支持，此功能可在多个容器内部署已配置的应用程序容器。
 
 另外，你还可以尝试使用 [Mesosphere 的数据中心操作系统 (DCOS)](http://docs.mesosphere.com/install/azurecluster/)。DCOS 基于开放源 [mesos](http://mesos.apache.org/)“分布式系统内核”，有助于你将数据中心视为一个可寻址服务进行处理。DCOS 拥有适合于多个重要系统（[Spark](http://spark.apache.org/) 和 [Kafka](http://kafka.apache.org/) 及其他）的内置程序包，以及 [Marathon](https://mesosphere.github.io/marathon/)（一种容器控制系统）和 [Chronos](https://mesosphere.github.io/chronos/)（一种分布式计划程序）等内置服务。Mesos 是借鉴了从 Twitter、AirBnb 和其他网络级企业学到的经验。
 

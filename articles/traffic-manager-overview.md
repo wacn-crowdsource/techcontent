@@ -35,11 +35,11 @@
 1. **指向公司域名的用户流量：**客户端使用公司域名来请求信息。目标是将 DNS 名称解析为 IP 地址。必须通过在流量管理器外部维护的正常 Internet 域名注册保留公司域。在图 1 中，示例公司域为 *www.contoso.com*。
 2. **公司域名到流量管理器域名：**公司域的 DNS 资源记录指向在 Azure 流量管理器中维护的流量管理器域名。这是使用一条 CNAME 资源记录来实现的，该记录可将公司域名映射到流量管理器域名。在此示例中，流量管理器域名为 *contoso.trafficmanager.cn*。
 3. **流量管理器域名和配置文件：**流量管理器域名是流量管理器配置文件的一部分。用户的 DNS 服务器针对流量管理器域名（在此示例中为 *contoso.trafficmanager.cn*）发送新的 DNS 查询，该查询由流量管理器 DNS 名称服务器接收。
-4. **流量管理器配置文件规则已处理：**流量管理器使用指定的负载平衡方法和监视状态来确定应该由哪个 Azure 终结点为请求提供服务。
+4. **流量管理器配置文件规则已处理：**流量管理器使用指定的负载均衡方法和监视状态来确定应该由哪个 Azure 终结点为请求提供服务。
 5. **将终结点域名发送给用户：**流量管理器返回一条 CNAME 记录，该记录将流量管理器域名映射到终结点的域名。用户的 DNS 服务器将终结点域名解析为其 IP 地址，并将该地址发送给用户。
 6. **用户调用终结点：**用户直接使用返回的终结点的 IP 地址调用该终结点。
 
-由于公司域和解析的 IP 地址已在客户端计算机上缓存，因此，用户将持续与所选终结点交互，直到该终结点的本地 DNS 缓存条目过期。特别要注意的是，DNS 客户端缓存 DNS 主机条目的持续时间就是这些条目的生存时间 (TTL)。从 DNS 客户端缓存中检索主机条目会绕过流量管理器配置文件，如果在 TTL 过期之前终结点变得不可用，则你可能会遇到连接延迟的情况。如果缓存中 DNS 主机条目的 TTL 过期，并且客户端计算机需要再次解析公司域名，则该计算机将发送新的 DNS 查询。根据应用的负载平衡方法和请求时终结点的运行状况，客户端计算机可能会收到不同终结点的 IP 地址。
+由于公司域和解析的 IP 地址已在客户端计算机上缓存，因此，用户将持续与所选终结点交互，直到该终结点的本地 DNS 缓存条目过期。特别要注意的是，DNS 客户端缓存 DNS 主机条目的持续时间就是这些条目的生存时间 (TTL)。从 DNS 客户端缓存中检索主机条目会绕过流量管理器配置文件，如果在 TTL 过期之前终结点变得不可用，则你可能会遇到连接延迟的情况。如果缓存中 DNS 主机条目的 TTL 过期，并且客户端计算机需要再次解析公司域名，则该计算机将发送新的 DNS 查询。根据应用的负载均衡方法和请求时终结点的运行状况，客户端计算机可能会收到不同终结点的 IP 地址。
 
 ## 如何实施流量管理器
 
@@ -51,15 +51,15 @@
 
 1. **将 Azure 云服务、Azure 网站或其他终结点部署到生产环境**。在创建流量管理器配置文件时，必须将其与某个订阅关联。然后，在生产环境中为云服务和“标准”层网站添加属于同一订阅的终结点。如果某一终结点位于过渡环境中而不在 Azure 生产环境中或同一订阅中，则不能将其添加为外部终结点。有关云服务的详细信息，请参阅[云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)。有关网站的详细信息，请参阅[网站](/home/features/web-site/)。
 2. **确定流量管理器域的名称**。考虑为域使用带有唯一前缀的名称。域的后半部分（即 trafficmanager.cn）是固定的。有关详细信息，请参阅[最佳实践](#best-practices)。
-3. **确定要使用的监视配置**。无论使用哪种负载平衡方法，流量管理器都会监视终结点以确保它们联机。在你配置监视设置之后，流量管理器不会将流量定向到监视系统判定为脱机的终结点，除非它检测到所有终结点均已脱机，或无法检测配置文件中包含的任一终结点的状态。有关监视的详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
-4. **确定要使用的负载平衡方法**。有三种不同的负载平衡方法。请花一些时间了解哪种方法最适合你的要求。如果你以后需要更改方法，随时可以更改。另请注意，每种方法都需要稍微不同的配置步骤。有关负载平衡方法的信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)。
+3. **确定要使用的监视配置**。无论使用哪种负载均衡方法，流量管理器都会监视终结点以确保它们联机。在你配置监视设置之后，流量管理器不会将流量定向到监视系统判定为脱机的终结点，除非它检测到所有终结点均已脱机，或无法检测配置文件中包含的任一终结点的状态。有关监视的详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
+4. **确定要使用的负载均衡方法**。有三种不同的负载均衡方法。请花一些时间了解哪种方法最适合你的要求。如果你以后需要更改方法，随时可以更改。另请注意，每种方法都需要稍微不同的配置步骤。有关负载均衡方法的信息，请参阅[关于流量管理器负载均衡方法](/documentation/articles/traffic-manager-load-balancing-methods)。
 5. **创建配置文件并配置设置**。可以使用 REST API、Windows PowerShell 或管理门户来创建流量管理器配置文件并配置设置。有关详细信息，请参阅[如何配置流量管理器设置](#how-to-configure-traffic-manager-settings)。以下步骤假定你将使用管理门户中的“快速创建”。 
    - **创建流量管理器配置文件** - 若要使用管理门户中的“快速创建”创建配置文件，请参阅[管理流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles)。
-   - **配置负载平衡方法设置** – 在“快速创建”期间，你必须为配置文件选择负载平衡方法。在完成“快速创建”步骤之后，可以随时更改此设置。有关配置步骤，请参阅与负载负载平衡对应的主题：[配置“性能”负载平衡](/documentation/articles/traffic-manager-configure-performance-load-balancing)、[配置“故障转移”负载平衡](/documentation/articles/traffic-manager-configure-failover-load-balancing)、[配置“轮循机制”负载平衡](/documentation/articles/traffic-manager-configure-round-robin-load-balancing)。>[AZURE.NOTE]“轮循机制”负载平衡方法现在支持将网络流量进行加权分布。但是，目前必须使用 REST API 或 Windows PowerShell 配置权重。有关详细信息和示例配置，请参阅 Azure 博客中的 [Azure 流量管理器外部终结点与通过 PowerShell 实施的加权轮循机制](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/)。
+   - **配置负载均衡方法设置** – 在“快速创建”期间，你必须为配置文件选择负载均衡方法。在完成“快速创建”步骤之后，可以随时更改此设置。有关配置步骤，请参阅与负载负载均衡对应的主题：[配置“性能”负载均衡](/documentation/articles/traffic-manager-configure-performance-load-balancing)、[配置“故障转移”负载均衡](/documentation/articles/traffic-manager-configure-failover-load-balancing)、[配置“轮循机制”负载均衡](/documentation/articles/traffic-manager-configure-round-robin-load-balancing)。>[AZURE.NOTE]“轮循机制”负载均衡方法现在支持将网络流量进行加权分布。但是，目前必须使用 REST API 或 Windows PowerShell 配置权重。有关详细信息和示例配置，请参阅 Azure 博客中的 [Azure 流量管理器外部终结点与通过 PowerShell 实施的加权轮循机制](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/)。
 
-   - **配置终结点** – 在“快速创建”期间无法配置终结点。在创建配置文件并指定负载平衡方法后，必须让流量管理器知道相应的终结点。有关配置终结点的步骤，请参阅[在流量管理器中管理终结点](/documentation/articles/traffic-manager-endpoints)
+   - **配置终结点** – 在“快速创建”期间无法配置终结点。在创建配置文件并指定负载均衡方法后，必须让流量管理器知道相应的终结点。有关配置终结点的步骤，请参阅[在流量管理器中管理终结点](/documentation/articles/traffic-manager-endpoints)
 
-   - **配置监视设置** – 在“快速创建”期间无法配置监视设置。在创建配置文件并指定负载平衡方法之后，你必须让流量管理器知道要监视什么。有关配置监视的步骤，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
+   - **配置监视设置** – 在“快速创建”期间无法配置监视设置。在创建配置文件并指定负载均衡方法之后，你必须让流量管理器知道要监视什么。有关配置监视的步骤，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
 6. **测试流量管理器配置文件**。测试你的配置文件和域是否按预期工作。有关如何执行此操作的信息，请参阅[测试流量管理器设置](/documentation/articles/traffic-manager-testing-settings)。
 7. **将公司域名的 DNS 资源记录指向配置文件以使其生效**。有关详细信息，请参阅[将公司 Internet 域指向流量管理器域](/documentation/articles/traffic-manager-point-internet-domain)。
 
@@ -73,7 +73,7 @@
 
 有关用于流量管理器的 Windows PowerShell cmdlet 的详细信息，请参阅 [Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-CN/library/dn690250.aspx)。
 
->[AZURE.NOTE]当前不支持使用管理门户为“轮循机制”负载平衡方法和嵌套的配置文件配置外部终结点（类型=“任何”）权重。必须使用 REST（请参阅[创建定义](https://msdn.microsoft.com/zh-CN/library/azure/hh758257.aspx)）或 Windows PowerShell（请参阅 [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-CN/library/azure/dn690257.aspx)）。
+>[AZURE.NOTE]当前不支持使用管理门户为“轮循机制”负载均衡方法和嵌套的配置文件配置外部终结点（类型=“任何”）权重。必须使用 REST（请参阅[创建定义](https://msdn.microsoft.com/zh-CN/library/azure/hh758257.aspx)）或 Windows PowerShell（请参阅 [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-CN/library/azure/dn690257.aspx)）。
 
 ### 在管理门户中配置设置
 
@@ -84,8 +84,8 @@
 - **DNS 前缀** – 你创建的唯一前缀。配置文件按前缀显示在管理门户中。
 - **DNS TTL** – DNS 生存时间 (TTL) 值控制客户端本地缓存名称服务器在 Azure 流量管理器 DNS 系统中查询已更新 DNS 条目的频率。
 - **订阅** – 选择你的配置文件将对应于的订阅。请注意，仅当你有多个订阅时，才会显示此选项。
-- **负载平衡方法** – 你希望流量管理器用于处理负载平衡的方式。
-- **故障转移顺序** – 使用故障转移负载负载平衡方法时终结点的顺序。
+- **负载均衡方法** – 你希望流量管理器用于处理负载均衡的方式。
+- **故障转移顺序** – 使用故障转移负载负载均衡方法时终结点的顺序。
 - **监视** – 监视设置包含协议（HTTP 或 HTTPS）、端口、相对路径和文件名。
 
 ### 通过使用 REST API 配置设置
@@ -96,7 +96,7 @@
 - **定义** – 定义包含策略设置和监视设置。定义与配置文件相对应。每个配置文件只能有一个定义。定义本身在管理门户中不可见，但在管理门户中可以看到定义的许多设置，并可对其进行配置。
 - **DNS 选项** – 每个定义都包含 DNS 选项。这是配置 DNS TTL 的位置。
 - **监视器** – 每个定义都包含监视设置。这是配置协议、端口、相对路径和文件名的位置。在管理门户中，可以看到监视设置，也可以对其进行配置。有关详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
-- **策略** – 每个定义都包含策略设置。策略是指定负载平衡方法和终结点的位置。策略本身在管理门户中不可见，但在管理门户中可以看到策略的某些设置，并可对其进行配置。有关详细信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)。
+- **策略** – 每个定义都包含策略设置。策略是指定负载均衡方法和终结点的位置。策略本身在管理门户中不可见，但在管理门户中可以看到策略的某些设置，并可对其进行配置。有关详细信息，请参阅[关于流量管理器负载均衡方法](/documentation/articles/traffic-manager-load-balancing-methods)。
 
 ## 通过使用 Windows PowerShell 配置设置
 
@@ -130,12 +130,12 @@
 
 **￼图 3**
 
-你最多可以嵌套 10 层，并可以为每个配置文件配置不同的负载平衡方法。
+你最多可以嵌套 10 层，并可以为每个配置文件配置不同的负载均衡方法。
 
 例如，你可以为以下内容创建配置：
 
-- 在顶层（映射到外部 DNS 名称的流量管理器配置文件），可以为配置文件配置性能负载平衡方法。
-- 在中间层，一组流量管理器配置文件表示不同的数据中心，并使用轮循机制负载平衡方法。
+- 在顶层（映射到外部 DNS 名称的流量管理器配置文件），可以为配置文件配置性能负载均衡方法。
+- 在中间层，一组流量管理器配置文件表示不同的数据中心，并使用轮循机制负载均衡方法。
 - 在底层，每个数据中心的一组云服务终结点处理用户的通信请求。
 
 结果就是，在区域范围内根据性能将用户定向到相应的数据中心，并根据相同的或加权的负载分布将用户定向到该数据中心内的云服务。例如，可以使用加权将一小部分流量分配到新部署或试用部署，以便进行测试或获取客户反馈。

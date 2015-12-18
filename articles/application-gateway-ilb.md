@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="在虚拟网络中创建和配置具有内部负载平衡器 (ILB) 的应用程序网关 | Windows Azure"
-   description="本页说明如何配置具有内部负载平衡终结点的 Azure 应用程序网关"
+   pageTitle="在虚拟网络中创建和配置具有内部负载均衡器 (ILB) 的应用程序网关 | Windows Azure"
+   description="本页说明如何配置具有内部负载均衡终结点的 Azure 应用程序网关"
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
@@ -11,14 +11,14 @@
    ms.date="06/30/2015"
    wacn.date="09/15/2015"/>
 
-# 创建具有内部负载平衡器 (ILB) 的应用程序网关
+# 创建具有内部负载均衡器 (ILB) 的应用程序网关
 
 > [AZURE.SELECTOR]
 - [Azure classic steps](/documentation/articles/application-gateway-ilb)
 - [Resource Manager Powershell steps](/documentation/articles/application-gateway-ilb-arm)
 
 
-可以配置使用面对 Internet 的 VIP 或不向 Internet 公开的内部终结点（也称为内部负载平衡器 (ILB) 终结点）的应用程序网关。配置使用 ILB 的网关适用于不向 Internet 公开的内部业务线应用程序。对于位于不向 Internet 公开的安全边界内的多层应用程序中的服务/层也很有用，但仍需要执行循环负载分散、会话粘性或 SSL 终止。本文将引导你配置具有 ILB 的应用程序网关。
+可以配置使用面对 Internet 的 VIP 或不向 Internet 公开的内部终结点（也称为内部负载均衡器 (ILB) 终结点）的应用程序网关。配置使用 ILB 的网关适用于不向 Internet 公开的内部业务线应用程序。对于位于不向 Internet 公开的安全边界内的多层应用程序中的服务/层也很有用，但仍需要执行循环负载分散、会话粘性或 SSL 终止。本文将引导你配置具有 ILB 的应用程序网关。
 
 ## 开始之前
 
@@ -203,7 +203,7 @@
 ## 后续步骤
 
 
-如需负载平衡选项的其他常规信息，请参阅：
+如需负载均衡选项的其他常规信息，请参阅：
 
 <!--- [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)-->
 - [Azure 流量管理器](/documentation/services/traffic-manager/)

@@ -26,7 +26,7 @@ Azure Site Recovery 功能在设计时牢记应用程序级别的保护/恢复�
 - 针对单层或 N 层应用程序的应用程序一致快照
 - 集成应用程序级复制。充分利用同类最佳应用程序级产品，包括 AD 复制、SQL Always On、Exchange Database Availability Groups 和 Oracle Data Guard
 - 灵活恢复计划让一次单击即可恢复整个应用程序堆栈成为可能，包括执行外部脚本甚至手动操作。 
-- ASR 和 Azure 中的高级网络管理让你的应用程序特有的所有网络配置都实现自动化：保留 IP 地址、配置负载平衡器，或使用 Microsoft 的流量管理器以实现低 RTO 网络切换。
+- ASR 和 Azure 中的高级网络管理让你的应用程序特有的所有网络配置都实现自动化：保留 IP 地址、配置负载均衡器，或使用 Microsoft 的流量管理器以实现低 RTO 网络切换。
 - 丰富自动化库 (Rich Automation Library)，提供为生产做好准备的应用程序特定脚本。下载它们并集成到基于 ASR 的解决方案。
 
 

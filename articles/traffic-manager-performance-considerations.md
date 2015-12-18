@@ -81,7 +81,7 @@ http://www.digwebinterface.com – 类似于 Watchmouse 站点，但此站点显
 ## 后续步骤
 
 
-[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)
+[关于流量管理器负载均衡方法](/documentation/articles/traffic-manager-load-balancing-methods)
 
 [什么是流量管理器？](/documentation/articles/traffic-manager-overview)
 
