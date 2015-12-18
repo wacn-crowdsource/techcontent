@@ -84,7 +84,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 13. [博客：在 Azure 中运行 FreeBSD](http://azure.microsoft.com/blog/2014/05/22/running-freebsd-in-azure/)
 14. [博客：轻松部署 FreeBSD](http://msopentech.com/blog/2014/10/24/easy-deploy-freebsd-microsoft-azure-vm-depot/)
 15. [博客：部署自定义的 FreeBSD 映像](http://msopentech.com/blog/2014/05/14/deploy-customize-freebsd-virtual-machine-image-microsoft-azure/)
-17. [如何：安装 Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)
+17. [如何：安装 Azure Linux Agent](/documentation/articles/virtual-machines-linux-agent-user-guide)
 
 ## 基础知识
 
@@ -100,7 +100,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 12. [博客中的基础知识：优化使用 Linux 和 Azure 时的存储、磁盘和性能](http://blogs.msdn.com/b/igorpag/archive/2014/10/23/azure-storage-secrets-and-linux-i-o-optimizations.aspx)
 13. [基础知识：RAID](/documentation/articles/virtual-machines-linux-configure-raid)
 14. [基础知识：捕获 Linux VM 来创建模板](/documentation/articles/virtual-machines-linux-capture-image)
-15. [基础知识：Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)
+15. [基础知识：Azure Linux Agent](/documentation/articles/virtual-machines-linux-agent-user-guide)
 16. [基础知识：Azure VM 扩展和功能](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
 17. [基础知识：将自定义数据注入到 VM 中以用于 Cloud-init](/documentation/articles/virtual-machines-how-to-inject-custom-data)
 18. [博客中的基础知识：通过 12 个步骤在 Azure 上构建具有高可用性的 Linux](http://blogs.technet.com/b/keithmayer/archive/2014/10/03/quick-start-guide-building-highly-available-linux-servers-in-the-cloud-on-microsoft-azure.aspx)

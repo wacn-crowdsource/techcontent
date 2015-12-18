@@ -36,7 +36,7 @@
 
 - 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果首选，LVM 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid) 可以在数据磁盘上使用。
 
-- 不要在操作系统磁盘上配置交换分区。可以配置 Linux 代理，以在临时资源磁盘上创建交换文件。可以在下面的步骤中找到有关此内容的详细信息。
+- 不要在操作系统磁盘上配置交换分区。可以配置 Linux Agent，以在临时资源磁盘上创建交换文件。可以在下面的步骤中找到有关此内容的详细信息。
 
 - 所有 VHD 的大小必须是 1 MB 的倍数。
 
@@ -53,7 +53,7 @@
 
 		# sudo zypper update
 
-5. 从 SLES 存储库安装 Azure Linux 代理：
+5. 从 SLES 存储库安装 Azure Linux Agent：
 
 		# sudo zypper install WALinuxAgent
 
@@ -76,7 +76,7 @@
 
 10.	不要在操作系统磁盘上创建交换空间
 
-	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
+	Azure Linux Agent可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -130,7 +130,7 @@
 
 		# sudo zypper update
 
-5.	安装 Azure Linux 代理
+5.	安装 Azure Linux Agent
 
 		# sudo zypper install WALinuxAgent
 
@@ -155,7 +155,7 @@
 
 10.	不要在操作系统磁盘上创建交换空间
 
-	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
+	Azure Linux Agent可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -169,7 +169,7 @@
 		# export HISTSIZE=0
 		# logout
 
-12. 确保在启动时运行 Azure Linux 代理：
+12. 确保在启动时运行 Azure Linux Agent：
 
 		# sudo systemctl enable waagent.service
 

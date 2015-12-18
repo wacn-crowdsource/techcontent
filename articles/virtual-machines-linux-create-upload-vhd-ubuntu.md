@@ -27,7 +27,7 @@
 
 - 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果首选，LVM 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid) 可以在数据磁盘上使用。
 
-- 不要在操作系统磁盘上配置交换分区。可以配置 Linux 代理，以在临时资源磁盘上创建交换文件。可以在下面的步骤中找到有关此内容的详细信息。
+- 不要在操作系统磁盘上配置交换分区。可以配置 Linux Agent，以在临时资源磁盘上创建交换文件。可以在下面的步骤中找到有关此内容的详细信息。
 
 - 所有 VHD 的大小必须是 1 MB 的倍数。
 
@@ -105,7 +105,7 @@
 
 8.	请确保已安装 SSH 服务器且已将其配置为在引导时启动。这通常是默认设置。
 
-9.	安装 Azure Linux 代理：
+9.	安装 Azure Linux Agent：
 
 		# sudo apt-get update
 		# sudo apt-get install walinuxagent

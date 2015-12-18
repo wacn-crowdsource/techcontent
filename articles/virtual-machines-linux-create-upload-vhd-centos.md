@@ -31,9 +31,9 @@
 
 - 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果首选，LVM 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid) 可以在数据磁盘上使用。
 
-- 由于低于 2.6.37 的 Linux 内核版本中的 bug，更大的 VM 不支持 NUMA。此问题主要影响使用上游 Red Hat 2.6.32 内核的分发。手动安装的 Azure Linux 代理 (waagent) 将自动在 Linux 内核的 GRUB 配置中禁用 NUMA。可以在下面的步骤中找到有关此内容的详细信息。
+- 由于低于 2.6.37 的 Linux 内核版本中的 bug，更大的 VM 不支持 NUMA。此问题主要影响使用上游 Red Hat 2.6.32 内核的分发。手动安装的 Azure Linux Agent (waagent) 将自动在 Linux 内核的 GRUB 配置中禁用 NUMA。可以在下面的步骤中找到有关此内容的详细信息。
 
-- 不要在操作系统磁盘上配置交换分区。可以配置 Linux 代理，以在临时资源磁盘上创建交换文件。可以在下面的步骤中找到有关此内容的详细信息。
+- 不要在操作系统磁盘上配置交换分区。可以配置 Linux Agent，以在临时资源磁盘上创建交换文件。可以在下面的步骤中找到有关此内容的详细信息。
 
 - 所有 VHD 的大小必须是 1 MB 的倍数。
 
@@ -109,7 +109,7 @@
 
 		# sudo yum install python-pyasn1
 
-10. 如果你想要使用 Azure 数据中心托管的 OpenLogic 镜像，请使用以下存储库替换 /etc/yum.repos.d/CentOS-Base.repo 文件。这还会添加包含 Azure Linux 代理包的 **[openlogic]** 存储库：
+10. 如果你想要使用 Azure 数据中心托管的 OpenLogic 镜像，请使用以下存储库替换 /etc/yum.repos.d/CentOS-Base.repo 文件。这还会添加包含 Azure Linux Agent包的 **[openlogic]** 存储库：
 
 		[openlogic]
 		name=CentOS-$releasever - openlogic packages for $basearch
@@ -153,7 +153,7 @@
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
-	**注意：**本指南的余下部分假设你至少会使用 [openlogic] 存储库，下面将使用该存储库安装 Azure Linux 代理。
+	**注意：**本指南的余下部分假设你至少会使用 [openlogic] 存储库，下面将使用该存储库安装 Azure Linux Agent。
 
 
 11.	将下列行添加到 /etc/yum.conf：
@@ -193,7 +193,7 @@
 
 16.	请确保已安装 SSH 服务器且已将其配置为在引导时启动。这通常是默认设置。
 
-17. 通过运行以下命令来安装 Azure Linux 代理：
+17. 通过运行以下命令来安装 Azure Linux Agent：
 
 		# sudo yum install WALinuxAgent
 
@@ -201,7 +201,7 @@
 
 18.	不要在操作系统磁盘上创建交换空间
 
-	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
+	Azure Linux Agent可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -227,7 +227,7 @@
 
 为 Azure 准备 CentOS 7 虚拟机非常类似于 CentOS 6，但有几个值得注意的重要区别：
 
- - NetworkManager 包不再与 Azure Linux 代理冲突。默认情况下将安装此包，建议你不要删除它。
+ - NetworkManager 包不再与 Azure Linux Agent冲突。默认情况下将安装此包，建议你不要删除它。
  - GRUB2 现在用作默认引导加载程序，因此用于编辑内核参数的过程已更改（请参见下文）。
  - XFS 现在是默认文件系统。如果需要，仍可以使用 ext4 文件系统。
 
@@ -267,7 +267,7 @@
 
 		# sudo yum install python-pyasn1
 
-8. 如果你想要使用 Azure 数据中心托管的 OpenLogic 镜像，请使用以下存储库替换 /etc/yum.repos.d/CentOS-Base.repo 文件。这还会添加包含 Azure Linux 代理包的 **[openlogic]** 存储库：
+8. 如果你想要使用 Azure 数据中心托管的 OpenLogic 镜像，请使用以下存储库替换 /etc/yum.repos.d/CentOS-Base.repo 文件。这还会添加包含 Azure Linux Agent包的 **[openlogic]** 存储库：
 
 		[openlogic]
 		name=CentOS-$releasever - openlogic packages for $basearch
@@ -313,7 +313,7 @@
 
 
 
-	**注意：**本指南的余下部分假设你至少会使用 [openlogic] 存储库，下面将使用该存储库安装 Azure Linux 代理。
+	**注意：**本指南的余下部分假设你至少会使用 [openlogic] 存储库，下面将使用该存储库安装 Azure Linux Agent。
 
 9.	运行以下命令以清除当前 yum 元数据并安装所有更新：
 
@@ -338,13 +338,13 @@
 
 12.	请确保已安装 SSH 服务器且已将其配置为在引导时启动。这通常是默认设置。
 
-13. 通过运行以下命令来安装 Azure Linux 代理：
+13. 通过运行以下命令来安装 Azure Linux Agent：
 
 		# sudo yum install WALinuxAgent
 
 14.	不要在操作系统磁盘上创建交换空间
 
-	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
+	Azure Linux Agent可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
