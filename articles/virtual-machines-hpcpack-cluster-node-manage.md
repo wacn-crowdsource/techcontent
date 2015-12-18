@@ -76,7 +76,7 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 
 ### 示例
 
-下面的示例基于 VM 映像 hpccnimage1，在云服务 hpcservice1 中添加了 20 个大型计算节点 VM。
+下面的示例基于 VM 镜像 hpccnimage1，在云服务 hpcservice1 中添加了 20 个大型计算节点 VM。
 
 ```
 Add-HPCIaaSNode.ps1 –ServiceName hpcservice1 –ImageName hpccniamge1

@@ -31,7 +31,7 @@
 
 3. 在“计算”下，单击“虚拟机”，然后单击“从库中”，在随后出现的映像列表中选择“Ubuntu Server 14.04 LTS”。
 
-	![选择 VM 映像](./media/virtual-machines-linux-tutorial-portal-rm/chooseubuntuvm.png)
+	![选择 VM 镜像](./media/virtual-machines-linux-tutorial-portal-rm/chooseubuntuvm.png)
 
 ## 创建虚拟机
 

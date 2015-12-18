@@ -65,7 +65,7 @@ Azure Linux 代理 (/usr/sbin/waagent) 管理虚拟机与 Azure 结构控制器�
 ## 要求
 下列系统已经过测试并确认兼容 Azure Linux 代理。**请注意，此列表可能不同于 Windows Azure 平台所支持系统的官方列表**，详见以下网站：[http://support.microsoft.com/kb/2805216](http://support.microsoft.com/kb/2805216)
 
-###支持的 Linux 分发
+###支持的 Linux 发行版
 
 * CoreOS
 * CentOS 6.2+
@@ -228,14 +228,14 @@ Linux 代理的正常运行依赖一些系统程序包：
 
 如果设置此参数，则会在设置过程中从 /etc/ssh/ 中删除所有 SSH 主机密钥对（ecdsa、dsa 和 rsa）。并且会生成一个全新的密钥对。
 
-此全新密钥对的加密类型可由 Provisioning.SshHostKeyPairType 项进行配置。请注意，在重新启动 SSH 监控程序时（例如，重新启动时），某些分发将为任何缺失的加密类型重新创建 SSH 密钥对。
+此全新密钥对的加密类型可由 Provisioning.SshHostKeyPairType 项进行配置。请注意，在重新启动 SSH 守护进程时（例如，重新启动时），某些分发将为任何缺失的加密类型重新创建 SSH 密钥对。
 
 **Provisioning.SshHostKeyPairType：**
 
 类型：字符串
 默认值：rsa
 
-可将其设置为虚拟机上的 SSH 监控程序支持的加密算法类型。通常支持的值为“rsa”、“dsa”和“ecdsa”。请注意，Windows 上的“putty.exe”不支持“ecdsa”。因此，若要在 Windows 上使用 putty.exe 连接到 Linux 部署，请使用“rsa”或“dsa”。
+可将其设置为虚拟机上的 SSH 守护进程支持的加密算法类型。通常支持的值为“rsa”、“dsa”和“ecdsa”。请注意，Windows 上的“putty.exe”不支持“ecdsa”。因此，若要在 Windows 上使用 putty.exe 连接到 Linux 部署，请使用“rsa”或“dsa”。
 
 **Provisioning.MonitorHostName：**
 
@@ -284,7 +284,7 @@ Linux 代理的正常运行依赖一些系统程序包：
 类型：布尔值
 默认值：y
 
-如果设置此参数，则 waagent 将响应来自平台的负载平衡器探测（如果有）。
+如果设置此参数，则 waagent 将响应来自平台的负载均衡器探测（如果有）。
 
 **Logs.Verbose：**
 
@@ -324,7 +324,7 @@ Linux 代理的正常运行依赖一些系统程序包：
  - **ResourceDisk.EnableSwap**
  - **ResourceDisk.SwapSizeMB**
 
-- 请参阅以下资源来配置资源磁盘装入点，并在预配期间交换 Ubuntu 云映像上的空间：
+- 请参阅以下资源来配置资源磁盘装入点，并在初始化配置阶段交换 Ubuntu 云映像上的空间：
 
  - [Ubuntu Wiki：配置交换分区](http://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
  - [将自定义数据注入到 Azure 虚拟机中](/documentation/articles/virtual-machines-how-to-inject-custom-data)

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="创建和上载 FreeBSD VM 映像 | Windows Azure"
+   pageTitle="创建和上载 FreeBSD VM 镜像 | Windows Azure"
    description="了解如何创建和上载包含 FreeBSD 操作系统的虚拟硬盘 (VHD) 以创建 Azure 虚拟机。"
    services="virtual-machines"
    documentationCenter=""
@@ -202,7 +202,7 @@
 
 4. 完成设置后，你将看到你的 FreeBSD VM 在 Azure 中运行。
 
-	![azure 中的 freebsd 映像](./media/virtual-machines-freebsd-create-upload-vhd/freebsdimageinazure.png)
+	![azure 中的 freebsd 镜像](./media/virtual-machines-freebsd-create-upload-vhd/freebsdimageinazure.png)
  
 
 <!---HONumber=79-->

@@ -203,7 +203,7 @@ AD FS 服务需要域服务帐户来验证用户，以及在 Active Directory �
 需要完成以下附加任务才能完成联合配置。
 
 - 针对 Intranet（内部 DNS 服务器）和 Extranet（通过域注册机构注册的公共 DNS）设置 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）的 DNS 记录。对于 Intranet 记录，请确保使用 A 记录而不是 CNAME 记录。只有这样，才能从加入域的计算机正常执行 Windows 身份验证。
-- 如果要部署多个 AD FS 服务器或网站代理服务器，请确保配置负载平衡器，以及指向负载平衡器的 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）的 DNS 记录。
+- 如果要部署多个 AD FS 服务器或网站代理服务器，请确保配置负载均衡器，以及指向负载均衡器的 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）的 DNS 记录。
 - 如果要将 Windows 集成身份验证用于 Intranet 中使用 Internet Explorer 的浏览器应用程序，请确保已将 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）添加到 IE 中的 Intranet 区域。此配置可以通过组策略进行控制，并可部署到所有已加入域的计算机中。 
 
 

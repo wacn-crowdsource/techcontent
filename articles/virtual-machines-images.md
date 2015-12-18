@@ -21,9 +21,9 @@
 -	开源社区通过 [VM 仓库](http://vmdepot.msopentech.com/List/Index)提供映像。
 -	你还可以通过捕获现有的 Azure 虚拟机用作映像或上载映像来在 Azure 中存储和使用自己的映像。
 
-## 关于 VM 映像和 OS 映像
+## 关于 VM 映像和 OS 镜像
 
-可以在 Azure 中使用两种类型的映像：*VM 映像*和 *OS 映像*。VM 映像包括在创建该映像时附加到虚拟机的操作系统和所有磁盘。这是较新类型的映像。在引入 VM 映像之前，Azure 中的映像只能包含一个通用操作系统，而不能包含任何附加磁盘。只包含一个通用操作系统的 VM 映像基本上与原始类型的映像（即，OS 映像）相同。
+可以在 Azure 中使用两种类型的映像：*VM 镜像*和 *OS 镜像*。VM 映像包括在创建该映像时附加到虚拟机的操作系统和所有磁盘。这是较新类型的映像。在引入 VM 映像之前，Azure 中的映像只能包含一个通用操作系统，而不能包含任何附加磁盘。只包含一个通用操作系统的 VM 映像基本上与原始类型的映像（即，OS 映像）相同。
 
 你可以基于 Azure 中的虚拟机或复制和上载的在别处运行的虚拟机，创建你自己的映像。如果要使用某个映像来创建多个虚拟机，则需要通过对其进行通用化来准备将其用作映像。若要创建 Windows Server 映像，请在上载 .vhd 文件之前在服务器上运行 Sysprep 命令对其进行通用化。有关 Sysprep 的详细信息，请参阅[如何使用 Sysprep：简介](http://go.microsoft.com/fwlink/p/?LinkId=392030)。若要创建 Linux 映像，根据软件分发，你需要运行一组特定于该分发的命令，并运行 Azure Linux 代理。
 
@@ -37,7 +37,7 @@
 -	**获取所有映像**：`Get-AzureVMImage`返回当前订阅中可用的所有映像的列表：你的映像以及 Azure 或合作伙伴提供的映像。这意味着你可能会收到一个大列表。下一个示例演示如何获取较短的列表。
 -	**获取映像系列**：`Get-AzureVMImage | select ImageFamily` 通过显示 **ImageFamily** 字符串属性获取映像系列的列表。
 -	**获取特定系列中的所有映像**：`Get-AzureVMImage | Where-Object {$_.ImageFamily -eq $family}`
--	**查找 VM 映像**：`Get-AzureVMImage | where {(gm –InputObject $_ -Name DataDiskConfigurations) -ne $null} | Select -Property Label, ImageName` 这通过筛选 DataDiskConfiguration 属性来完成，它仅适用于 VM 映像。此示例还仅根据标签和映像名称来筛选输出。
+-	**查找 VM 镜像**：`Get-AzureVMImage | where {(gm –InputObject $_ -Name DataDiskConfigurations) -ne $null} | Select -Property Label, ImageName` 这通过筛选 DataDiskConfiguration 属性来完成，它仅适用于 VM 映像。此示例还仅根据标签和映像名称来筛选输出。
 -	**保存通用映像**：`Save-AzureVMImage –ServiceName "myServiceName" –Name "MyVMtoCapture" –OSState "Generalized" –ImageName "MyVmImage" –ImageLabel "This is my generalized image"`
 -	**保存专用映像**：`Save-AzureVMImage –ServiceName "mySvc2" –Name "MyVMToCapture2" –ImageName "myFirstVMImageSP" –OSState "Specialized" -Verbose`
 >[Azure.Tip]如果要创建包含数据磁盘和操作系统磁盘的 VM 映像，OSState 参数是必需的。如果未使用此参数，该 cmdlet 将创建 OS 映像。该参数的值根据操作系统磁盘是否已准备好重用来指示映像是通用的还是专用的。

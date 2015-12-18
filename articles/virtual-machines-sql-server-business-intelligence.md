@@ -28,11 +28,11 @@ Windows Azure 虚拟机库包括含有 SQL Server 安装的映像。库映像中
 
 有关授权和当前费率的详细信息，请参阅[虚拟机授权常见问题](/pricing/overview/)。
 
-## 在 Azure 虚拟机库中提供的 SQL Server 映像
+## 在 Azure 虚拟机库中提供的 SQL Server 镜像
 
 Windows Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。虚拟机映像上安装的软件根据操作系统版本和 SQL Server 版本而有所不同。Azure 虚拟机库中提供的映像列表频繁更改。
 
-![Azure VM 库中的 SQL 映像](./media/virtual-machines-sql-server-business-intelligence/IC741367.png)
+![Azure VM 库中的 SQL 镜像](./media/virtual-machines-sql-server-business-intelligence/IC741367.png)
 
 ![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif)以下 PowerShell 脚本返回 ImageName 中包含“SQL-Server”的 Azure 映像列表：
 

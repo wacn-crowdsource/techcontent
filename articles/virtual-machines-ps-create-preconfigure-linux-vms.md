@@ -203,7 +203,7 @@
 - 使用 SUSE Linux Enterprise Server 12 映像。
 - 具有名称 LOB1。
 - 具有 50 GB 的附加数据磁盘。
-- 是用于标准 Web 流量的 LOBServers 负载平衡器集的成员。
+- 是用于标准 Web 流量的 LOBServers 负载均衡器集的成员。
 - 位于 AZDatacenter 虚拟网络的 FrontEnd 子网中。
 - 位于 Azure-TailspinToys 云服务中。
 

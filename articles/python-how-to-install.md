@@ -156,9 +156,9 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 
 ## 其他软件和资源：
 
-* [Continuum Analytics Python 分发][]
-* [Enthought Python 分发][]
-* [ActiveState Python 分发][]
+* [Continuum Analytics Python 发行版][]
+* [Enthought Python 发行版][]
+* [ActiveState Python 发行版][]
 * [SciPy - Scientific Python 库套件][]
 * [NumPy - Python 的数字库][]
 * [Django 项目 - 成熟的 Web 框架/CMS][]
@@ -167,9 +167,9 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 * [GitHub 上的 Python Tools for Visual Studio][]
 
 
-[Continuum Analytics Python 分发]: http://continuum.io
-[Enthought Python 分发]: http://www.enthought.com
-[ActiveState Python 分发]: http://www.activestate.com
+[Continuum Analytics Python 发行版]: http://continuum.io
+[Enthought Python 发行版]: http://www.enthought.com
+[ActiveState Python 发行版]: http://www.activestate.com
 [www.python.org]: http://www.python.org
 [www.continuum.io]: http://continuum.io
 [www.enthought.com]: http://www.enthought.com

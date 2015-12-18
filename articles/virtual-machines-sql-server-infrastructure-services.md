@@ -83,7 +83,7 @@
 |---|---|
 |远程桌面|已为管理员帐户启用|
 |Windows 更新|Enabled|
-|用户帐户|默认情况下，在预配期间指定的用户帐户是本地 Administrators 组的成员。此管理员帐户也是 SQL Server sysadmin 服务器角色的成员|
+|用户帐户|默认情况下，在初始化配置阶段指定的用户帐户是本地 Administrators 组的成员。此管理员帐户也是 SQL Server sysadmin 服务器角色的成员|
 |工作组|该虚拟机是名为 WORKGROUP 的工作组的成员|
 |来宾帐户|已禁用|
 |具有高级安全性的 Windows 防火墙|启用|

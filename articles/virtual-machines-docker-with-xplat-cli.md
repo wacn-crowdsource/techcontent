@@ -63,7 +63,7 @@
 
 ### 使用 Azure 映像库
 
-从 Bash 或终端会话键入以下 Azure CLI 命令找到 VM 映像库中要使用的最新 Ubuntu 映像
+从 Bash 或终端会话键入以下 Azure CLI 命令找到 VM 映像库中要使用的最新 Ubuntu 镜像
 
 `azure vm image list | grep Ubuntu-14_04`
 
