@@ -324,7 +324,7 @@ Linux 代理的正常运行依赖一些系统程序包：
  - **ResourceDisk.EnableSwap**
  - **ResourceDisk.SwapSizeMB**
 
-- 请参阅以下资源来配置资源磁盘装入点，并在预配期间交换 Ubuntu 云镜像上的空间：
+- 请参阅以下资源来配置资源磁盘装入点，并在初始化配置阶段交换 Ubuntu 云镜像上的空间：
 
  - [Ubuntu Wiki：配置交换分区](http://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
  - [将自定义数据注入到 Azure 虚拟机中](/documentation/articles/virtual-machines-how-to-inject-custom-data)
