@@ -2,9 +2,9 @@
 
 <tags ms.service="virtual-machines" ms.date="12/18/2015" wacn.date="12/18/2015"/>
 
-# 为 Azure 准备 Aisanuxr 虚拟机
+# 为 Azure 准备 Aisanux 虚拟机
 
-- [为 Azure 准备 Aisanux 4 虚拟机](#asianux4)
+- [为 Azure 准备 Aisanux4 虚拟机](#asianux4)
 
 
 ##先决条件##
