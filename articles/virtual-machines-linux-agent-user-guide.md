@@ -228,14 +228,14 @@ Linux 代理的正常运行依赖一些系统程序包：
 
 如果设置此参数，则会在设置过程中从 /etc/ssh/ 中删除所有 SSH 主机密钥对（ecdsa、dsa 和 rsa）。并且会生成一个全新的密钥对。
 
-此全新密钥对的加密类型可由 Provisioning.SshHostKeyPairType 项进行配置。请注意，在重新启动 SSH 监控程序时（例如，重新启动时），某些分发将为任何缺失的加密类型重新创建 SSH 密钥对。
+此全新密钥对的加密类型可由 Provisioning.SshHostKeyPairType 项进行配置。请注意，在重新启动 SSH 守护进程时（例如，重新启动时），某些分发将为任何缺失的加密类型重新创建 SSH 密钥对。
 
 **Provisioning.SshHostKeyPairType：**
 
 类型：字符串
 默认值：rsa
 
-可将其设置为虚拟机上的 SSH 监控程序支持的加密算法类型。通常支持的值为“rsa”、“dsa”和“ecdsa”。请注意，Windows 上的“putty.exe”不支持“ecdsa”。因此，若要在 Windows 上使用 putty.exe 连接到 Linux 部署，请使用“rsa”或“dsa”。
+可将其设置为虚拟机上的 SSH 守护进程支持的加密算法类型。通常支持的值为“rsa”、“dsa”和“ecdsa”。请注意，Windows 上的“putty.exe”不支持“ecdsa”。因此，若要在 Windows 上使用 putty.exe 连接到 Linux 部署，请使用“rsa”或“dsa”。
 
 **Provisioning.MonitorHostName：**
 
