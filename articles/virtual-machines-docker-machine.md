@@ -15,7 +15,7 @@
 
 # 如何将 docker-machine 与 Azure 一起使用
 
-本主题介绍如何将 [Docker](https://www.docker.com/) 与[计算机](https://github.com/docker/machine)和 [Azure CLI](https://github.com/Azure/azure-xplat-cli) 结合使用来创建 Azure 虚拟机，以便快速轻松地从运行 Ubuntu 的计算机管理 Linux 容器。为了演示，本教程将说明如何同时部署 [busybox Docker Hub 映像](https://registry.hub.docker.com/_/busybox/)和 [nginx Docker Hub 映像](https://registry.hub.docker.com/_/nginx/)，并配置容器将 Web 请求路由到 nginx 容器。（Docker **计算机**文档介绍如何针对其他平台修改这些说明。）
+本主题介绍如何将 [Docker](https://www.docker.com/) 与[计算机](https://github.com/docker/machine)和 [Azure CLI](https://github.com/Azure/azure-xplat-cli) 结合使用来创建 Azure 虚拟机，以便快速轻松地从运行 Ubuntu 的计算机管理 Linux 容器。为了演示，本教程将说明如何同时部署 [busybox Docker Hub 镜像](https://registry.hub.docker.com/_/busybox/)和 [nginx Docker Hub 镜像](https://registry.hub.docker.com/_/nginx/)，并配置容器将 Web 请求路由到 nginx 容器。（Docker **计算机**文档介绍如何针对其他平台修改这些说明。）
 
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。

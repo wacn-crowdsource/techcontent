@@ -95,7 +95,7 @@ A10 和 A11 实例具有连接到 Azure 服务和 Internet 的单个 10-Gbps 以
 
 先决条件 | 虚拟机 (IaaS)
 ------------ | -------------
-操作系统 | 来自 Azure 应用商店的 SLES 12 HPC 映像
+操作系统 | 来自 Azure 应用商店的 SLES 12 HPC 镜像
 MPI | Intel MPI Library 5
 
 ### Windows A8 和 A9 实例的访问权限

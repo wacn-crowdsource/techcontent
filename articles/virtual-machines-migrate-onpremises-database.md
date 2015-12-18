@@ -107,7 +107,7 @@
 		![Azure machine settings](./media/virtual-machines-migrate-onpremises-database/azure-machine-settings.png)
 
 	- 如果指定了新的虚拟机名称，系统将提示你从库映像列表中选择一个映像，并提供以下信息：
-	  - 映像 — 只能选择 SQL Server 2014 或 SQL Server 2016
+	  - 镜像 — 只能选择 SQL Server 2014 或 SQL Server 2016
 		- 用户名
 		- 新密码
 		- 确认密码

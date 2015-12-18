@@ -215,7 +215,7 @@
 
 #### 用于创建多个 Azure VM 实例的通用操作系统 VHD
 
-将通用 OS 映像 VHD 上载到存储帐户后，将其注册为 **Azure VM 映像**，以便可以从中创建一个或多个 VM 实例。使用以下 PowerShell cmdlet 将你的 VHD 注册为 Azure VM OS 映像。提供 VHD 已复制到的完整容器 URL。
+将通用 OS 镜像 VHD 上载到存储帐户后，将其注册为 **Azure VM 镜像**，以便可以从中创建一个或多个 VM 实例。使用以下 PowerShell cmdlet 将你的 VHD 注册为 Azure VM OS 映像。提供 VHD 已复制到的完整容器 URL。
 
 	Add-AzureVMImage -ImageName "OSImageName" -MediaLocation "https://storageaccount.blob.core.chinacloudapi.cn/vhdcontainer/osimage.vhd" -OS Windows
 
@@ -263,7 +263,7 @@
 
 #### 用于创建多个 Azure VM 实例的通用操作系统 VHD
 
-使用注册的 **Azure OS 映像**创建一个或多个新的 DS 系列 Azure VM 实例。创建新 VM 时，在 VM 配置中指定此 OS 映像名称，如下所示。
+使用注册的 **Azure OS 镜像**创建一个或多个新的 DS 系列 Azure VM 实例。创建新 VM 时，在 VM 配置中指定此 OS 映像名称，如下所示。
 
 	$OSImage = Get-AzureVMImage –ImageName "OSImageName"	
 

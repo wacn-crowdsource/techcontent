@@ -24,7 +24,7 @@
 
 ## <a id='simple'>示例 1：使用 Docker 的 Hello World</a>
 
-下面是一个在单个 Docker 容器中运行的简单“Hello World”应用程序。此应用程序使用 [busybox Docker Hub 映像]。
+下面是一个在单个 Docker 容器中运行的简单“Hello World”应用程序。此应用程序使用 [busybox Docker Hub 镜像]。
 
 在 Linux 客户端计算机上，使用你最喜欢的文本编辑器创建以下 **systemd** 单元文件并将其命名为 `helloworld.service`。（有关语法的详细信息，请参阅[单元文件]。）
 
@@ -85,7 +85,7 @@ fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload helloworld.service
 
 ## <a id='highavail'>示例 2：高度可用的 Apache 服务器</a>
 
-使用 CoreOS、Docker 和 **fleet** 的一个优点是很容易以高度可用的方式运行服务。在此示例中，你将部署一个由三个运行 Apache Web 服务器的相同容器组成的服务。这些容器将在群集中的三个虚拟机上运行。此示例类似于[使用 fleet 启动容器]中的示例，并使用 [CoreOS Apache Docker Hub 映像]。
+使用 CoreOS、Docker 和 **fleet** 的一个优点是很容易以高度可用的方式运行服务。在此示例中，你将部署一个由三个运行 Apache Web 服务器的相同容器组成的服务。这些容器将在群集中的三个虚拟机上运行。此示例类似于[使用 fleet 启动容器]中的示例，并使用 [CoreOS Apache Docker Hub 镜像]。
 
 >[AZURE.IMPORTANT]若要运行高度可用的 Apache 服务器，需要在虚拟机（公共端口 80、专用端口 80）上配置负载平衡 HTTP 终结点。你可以在创建 CoreOS 群集后，使用 Azure 门户或 **azure vm endpoint** 命令执行此操作。有关详细信息，请参阅[配置负载平衡集]。
 
@@ -163,7 +163,7 @@ fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload apache@{1,2,3}.servi
 [配置负载平衡集]: https://msdn.microsoft.com/zh-CN/library/azure/dn655055.aspx
 [使用 fleet 启动容器]: https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/
 [单元文件]: https://coreos.com/docs/launching-containers/launching/fleet-unit-files/
-[busybox Docker Hub 映像]: https://registry.hub.docker.com/_/busybox/
-[CoreOS Apache Docker Hub 映像]: https://registry.hub.docker.com/u/coreos/apache/
+[busybox Docker Hub 镜像]: https://registry.hub.docker.com/_/busybox/
+[CoreOS Apache Docker Hub 镜像]: https://registry.hub.docker.com/u/coreos/apache/
 [Azure 上的 Linux 和开源计算]: /documentation/articles/virtual-machines-linux-opensource
 <!---HONumber=70-->
