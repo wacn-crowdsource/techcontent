@@ -19,13 +19,13 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。你可
 
 ![本地网络](./media/virtual-networks-overview/figure01.png)
 
-上图显示了通过路由器连接到公共 Internet 的本地网络。你还可以看到路由器与托管 DNS 服务器和 Web 服务器场的外围网络之间的防火墙。Web 服务器场使用向 Internet 公开的硬件负载平衡器进行负载平衡，并使用内部子网中的资源。内部子网由另一个防火墙与外围网络隔开，并托管 Active Directory 域控制器服务器、数据库服务器和应用程序服务器。
+上图显示了通过路由器连接到公共 Internet 的本地网络。你还可以看到路由器与托管 DNS 服务器和 Web 服务器场的外围网络之间的防火墙。Web 服务器场使用向 Internet 公开的硬件负载均衡器进行负载平衡，并使用内部子网中的资源。内部子网由另一个防火墙与外围网络隔开，并托管 Active Directory 域控制器服务器、数据库服务器和应用程序服务器。
 
 可以在 Azure 中托管同一网络，如下图所示。
 
 ![Azure 虚拟网络](./media/virtual-networks-overview/figure02.png)
 
-请注意 Azure 基础结构如何起着路由器作用，允许从 VNet 访问公共 Internet 而无需进行任何配置。防火墙可由应用于每个单独子网的网络安全组 (NSG) 替代。而物理负载平衡器可由 Azure 中面向 Internet 的负载平衡器和内部负载平衡器替代。
+请注意 Azure 基础结构如何起着路由器作用，允许从 VNet 访问公共 Internet 而无需进行任何配置。防火墙可由应用于每个单独子网的网络安全组 (NSG) 替代。而物理负载均衡器可由 Azure 中面向 Internet 的负载均衡器和内部负载均衡器替代。
 
 ## 虚拟网络
 
@@ -57,15 +57,15 @@ VNet 为部署到它们的 IaaS VM 和 PaaS 角色的角色实例提供以下服
 
 这些 IP 地址是动态的，意味着它们可以随时更改。你可能希望确保某些服务的 IP 地址始终保持不变。为此，可以保留一个 IP 地址，将设为静态。
 
-## Azure 负载平衡器
+## Azure 负载均衡器
 
-在 Azure 中可以使用两种类型的负载平衡器：
+在 Azure 中可以使用两种类型的负载均衡器：
 
-- **外部负载平衡器**。可以使用外部负载平衡器为从公共 Internet 访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
+- **外部负载均衡器**。可以使用外部负载均衡器为从公共 Internet 访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
 
-- **内部负载平衡器**。可以使用内部负载平衡器为从 VNet 中的其他服务访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
+- **内部负载均衡器**。可以使用内部负载均衡器为从 VNet 中的其他服务访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
 
-<!--若要了解有关 Azure 中的负载平衡的详细信息，请访问[负载平衡器概述](/documentation/articles/load-balancer-overview)。-->
+<!--若要了解有关 Azure 中的负载平衡的详细信息，请访问[负载均衡器概述](/documentation/articles/load-balancer-overview)。-->
 
 ## 网络安全组 (NSG)
 
@@ -84,7 +84,7 @@ VNet 为部署到它们的 IaaS VM 和 PaaS 角色的角色实例提供以下服
 - [创建 VNet](/documentation/articles/virtual-networks-create-a-vnet) 和子网。
 - [在 VNet 中创建 VM](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。
 - 了解 [NSG](/documentation/articles/virtual-networks-nsg)。
-<!--- 了解[负载平衡器](/documentation/articles/load-balancer-overview)。-->
+<!--- 了解[负载均衡器](/documentation/articles/load-balancer-overview)。-->
 - [保留内部 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip)
 - [保留公共 IP 地址](/documentation/articles/virtual-networks-reserved-public-ip)。
 - 了解[用户定义的路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview)。

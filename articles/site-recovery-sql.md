@@ -115,7 +115,7 @@ SQL Server 2008 R2 | Enterprise 或 Standard | 独立 | 使用本地镜像进行
 3. 在网络中创建一个新的 SQL Server Azure 虚拟机，并将其配置为异步可用性组副本。如果您在故障转移到 Azure 后需要 SQL Server 层的高可用性，请在 Azure 中配置两个异步副本。
 4. 在虚拟网络中设置域控制器的副本。
 5. 确保已在虚拟机上启用虚拟机扩展。只有这样，才能在恢复计划中推送 SQL Server 特定的脚本。
-6. 使用 Azure 的内部负载平衡器配置可用性组的 SQL Server 侦听器。
+6. 使用 Azure 的内部负载均衡器配置可用性组的 SQL Server 侦听器。
 7. 将应用程序层配置为使用侦听器访问数据库层。对于使用分布式事务的应用程序，建议您使用站点恢复进行 SAN 复制或 VMWare 站点到站点复制。
 
 ### 为 SQL Server 群集设置保护（Standard 或 2008 R2）

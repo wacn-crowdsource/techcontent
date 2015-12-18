@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="为 AlwaysOn 可用性组配置 ILB 侦听器 | Windows Azure"
-	description="本教程使用通过经典部署模型创建的资源，并使用内部负载平衡器 (ILB) 在 Azure 中创建 AlwaysOn 可用性组侦听器。"
+	description="本教程使用通过经典部署模型创建的资源，并使用内部负载均衡器 (ILB) 在 Azure 中创建 AlwaysOn 可用性组侦听器。"
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
@@ -20,7 +20,7 @@
 
 ## 概述
 
-本主题说明如何使用**内部负载平衡器 (ILB)** 为 AlwaysOn 可用性组配置侦听器。
+本主题说明如何使用**内部负载均衡器 (ILB)** 为 AlwaysOn 可用性组配置侦听器。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
@@ -32,17 +32,17 @@
 
 - 客户端应用程序必须位于与包含你的可用性组 VM 的云服务不同的云服务中。Azure 不支持客户端和服务器位于同一个云服务中的直接服务器返回。
 
-- 每个云服务只支持一个可用性组侦听器，因为该侦听器将配置为使用云服务 VIP 地址或内部负载平衡器的 VIP 地址。尽管 Azure 现在支持在给定的云服务中创建多个 VIP 地址，但此限制仍然有效。
+- 每个云服务只支持一个可用性组侦听器，因为该侦听器将配置为使用云服务 VIP 地址或内部负载均衡器的 VIP 地址。尽管 Azure 现在支持在给定的云服务中创建多个 VIP 地址，但此限制仍然有效。
 
 ## 确定侦听器的可访问性
 
 [AZURE.INCLUDE [ag-listener-accessibility](../includes/virtual-machines-ag-listener-determine-accessibility.md)]
 
-本文重点介绍如何创建使用**内部负载平衡器 (ILB)** 的侦听器。如果你需要一个公共/外部侦听器，请参阅本文的另一个版本，其中提供了有关设置[外部侦听器](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener)的步骤
+本文重点介绍如何创建使用**内部负载均衡器 (ILB)** 的侦听器。如果你需要一个公共/外部侦听器，请参阅本文的另一个版本，其中提供了有关设置[外部侦听器](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener)的步骤
 
 ## 创建支持直接服务器返回的负载平衡 VM 终结点
 
-对于 ILB，必须先创建内部负载平衡器。以下脚本将执行此操作。
+对于 ILB，必须先创建内部负载均衡器。以下脚本将执行此操作。
 
 [AZURE.INCLUDE [load-balanced-endpoints](../includes/virtual-machines-ag-listener-load-balanced-endpoints.md)]
 
@@ -58,7 +58,7 @@
 
 11. 选择一个可用地址，并在以下脚本的 **$ILBStaticIP** 参数中使用它。
 
-12. 将以下 PowerShell 脚本复制到文本编辑器中，并根据你的环境设置变量值（注意，这里为某些参数提供了默认值）。请注意，使用地缘组的现有部署不能添加 ILB。<!--有关 ILB 要求的详细信息，请参阅[内部负载平衡器](/documentation/articles/load-balancer-internal-overview)。-->此外，如果可用性组跨 Azure 区域，则你必须在每个数据中心内对云服务和节点运行该脚本一次。
+12. 将以下 PowerShell 脚本复制到文本编辑器中，并根据你的环境设置变量值（注意，这里为某些参数提供了默认值）。请注意，使用地缘组的现有部署不能添加 ILB。<!--有关 ILB 要求的详细信息，请参阅[内部负载均衡器](/documentation/articles/load-balancer-internal-overview)。-->此外，如果可用性组跨 Azure 区域，则你必须在每个数据中心内对云服务和节点运行该脚本一次。
 
 		# Define variables
 		$ServiceName = "<MyCloudService>" # the name of the cloud service that contains the availability group nodes
@@ -78,7 +78,7 @@
 
 13. 设置变量后，将脚本从文本编辑器复制到 Azure PowerShell 会话中运行。如果提示符仍然显示 >>，请再次按 Enter，以确保脚本开始运行。注意：
 
->[AZURE.NOTE]Azure 管理门户目前不支持内部负载平衡器，因此你在门户中看不到 ILB 或终结点。但是，如果负载平衡器在某个内部 IP 地址上运行，则 **Get-AzureEndpoint** 将返回该地址。否则，将返回 null。
+>[AZURE.NOTE]Azure 管理门户目前不支持内部负载均衡器，因此你在门户中看不到 ILB 或终结点。但是，如果负载均衡器在某个内部 IP 地址上运行，则 **Get-AzureEndpoint** 将返回该地址。否则，将返回 null。
 
 ## 如果需要，请验证是否已安装 KB2854082
 
@@ -92,7 +92,7 @@
 
 [AZURE.INCLUDE [防火墙](../includes/virtual-machines-ag-listener-create-listener.md)]
 
-10. 对于 ILB，必须使用前面创建的内部负载平衡器 (ILB) 的 IP 地址。在 PowerShell 中使用以下脚本获取此 IP 地址。
+10. 对于 ILB，必须使用前面创建的内部负载均衡器 (ILB) 的 IP 地址。在 PowerShell 中使用以下脚本获取此 IP 地址。
 
 		# Define variables
 		$ServiceName="<MyServiceName>" # the name of the cloud service that contains the AG nodes

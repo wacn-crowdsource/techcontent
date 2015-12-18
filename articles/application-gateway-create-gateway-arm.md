@@ -153,7 +153,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 	$rule = New-AzureApplicationGatewayRequestRoutingRule -Name rule01 -RuleType Basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
 
-创建名为“rule01”的负载平衡器路由规则，并配置负载平衡器的行为。
+创建名为“rule01”的负载均衡器路由规则，并配置负载均衡器的行为。
 
 ### 步骤 8
 
@@ -390,7 +390,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl)。
 
-如果你想要将应用程序网关配置为与 ILB 配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb)。
+如果你想要将应用程序网关配置为与 ILB 配合使用，请参阅[创建具有内部负载均衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb)。
 
 如需负载平衡选项的其他常规信息，请参阅：
 

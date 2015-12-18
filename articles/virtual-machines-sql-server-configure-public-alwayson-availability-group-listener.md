@@ -42,7 +42,7 @@
 
 ## 创建支持直接服务器返回的负载平衡 VM 终结点
 
-外部负载平衡使用托管 VM 的云服务的公共虚拟 IP 地址。因此，在这种情况下，你不需要创建或配置负载平衡器。
+外部负载平衡使用托管 VM 的云服务的公共虚拟 IP 地址。因此，在这种情况下，你不需要创建或配置负载均衡器。
 
 [AZURE.INCLUDE [load-balanced-endpoints](../includes/virtual-machines-ag-listener-load-balanced-endpoints.md)]
 

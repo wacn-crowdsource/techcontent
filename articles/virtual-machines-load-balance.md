@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure 基础结构服务的负载平衡"
-	description="介绍 Azure 所支持的两种不同类型的负载平衡：适用于云服务的负载平衡器，以及适用于客户端流量的 Azure 流量管理器。"
+	description="介绍 Azure 所支持的两种不同类型的负载平衡：适用于云服务的负载均衡器，以及适用于客户端流量的 Azure 流量管理器。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="joaoma"
@@ -18,7 +18,7 @@
 为 Azure 基础结构服务提供两个级别的负载平衡：
 
 - **DNS 级别**：使到以下位置的流量实现负载平衡：位于不同数据中心的不同云服务、位于不同数据中心的不同 Azure 网站，或者外部终结点。这是通过 Azure 流量管理器和轮循机制负载平衡方法完成的。
-- **网络级别**：使传入一个云服务的不同虚拟机中的 Internet 流量实现负载平衡，或使一个云服务或虚拟网络中的虚拟机之间的流量实现负载平衡。这是通过 Azure 负载平衡器完成的。
+- **网络级别**：使传入一个云服务的不同虚拟机中的 Internet 流量实现负载平衡，或使一个云服务或虚拟网络中的虚拟机之间的流量实现负载平衡。这是通过 Azure 负载均衡器完成的。
 
 ## 使用流量管理器针对云服务和网站实现负载平衡##
 
@@ -51,18 +51,18 @@
 
 位于同一云服务或虚拟网络中的虚拟机可以使用其专用 IP 地址直接相互通信。该云服务或虚拟网络以外的计算机和服务仅可通过已配置好的终结点与某个云服务或虚拟网络中的虚拟机通信。终结点是公用 IP 地址和端口到 Azure 云服务中的虚拟机或 Web 角色的该专用 IP 地址和端口的映射。
 
-在名为“负载平衡集”的配置中，Azure 负载平衡器将特定类型的传入流量随机分发到多个虚拟机或服务中。例如，你可将 Web 请求流量负载分配到多个 Web 服务器或 Web 角色。
+在名为“负载平衡集”的配置中，Azure 负载均衡器将特定类型的传入流量随机分发到多个虚拟机或服务中。例如，你可将 Web 请求流量负载分配到多个 Web 服务器或 Web 角色。
 
 下图显示了公用和专用 TCP 端口 80 的标准（未加密）Web 流量的负载平衡终结点，由三个虚拟机共享。这三个虚拟机位于一个负载平衡集中。
 
 ![loadbalancing](./media/virtual-machines-load-balance/LoadBalancing.png)
 
-有关详细信息，请参阅<!-- [-->Azure 负载平衡器<!--](/documentation/articles/load-balancer-overview)-->。有关创建负载平衡集的步骤，请参阅<!--[-->配置负载平衡集<!--](/documentation/articles/load-balancer-internet-getstarted)-->。
+有关详细信息，请参阅<!-- [-->Azure 负载均衡器<!--](/documentation/articles/load-balancer-overview)-->。有关创建负载平衡集的步骤，请参阅<!--[-->配置负载平衡集<!--](/documentation/articles/load-balancer-internet-getstarted)-->。
 
 Azure 还可以在云服务或虚拟网络内部实现负载平衡。这称为“内部负载平衡”并可以通过以下方式使用：
 
 - 在多层应用程序的不同层（例如，在 Web 层和数据库层之间）的服务器之间实现负载平衡。
-- 使托管在 Azure 中的业务线 \(LOB\) 应用程序实现负载平衡，而无需额外的负载平衡器硬件或软件。
+- 使托管在 Azure 中的业务线 \(LOB\) 应用程序实现负载平衡，而无需额外的负载均衡器硬件或软件。
 - 将本地服务器包含在一组流量已实现负载平衡的计算机中。
 
 与 Azure 负载平衡类似，可以通过配置内部负载平衡集来实现内部负载平衡。
@@ -75,6 +75,6 @@ Azure 还可以在云服务或虚拟网络内部实现负载平衡。这称为�
 
 有关创建负载平衡集的步骤，请参阅<!--[-->配置内部负载平衡集<!--](/documentation/articles/load-balancer-internal-getstarted)-->。
 
-有关负载平衡器的详细信息，请参阅<!--[-->内部负载平衡<!--](/documentation/articles/load-balancer-internal-overview)-->。
+有关负载均衡器的详细信息，请参阅<!--[-->内部负载平衡<!--](/documentation/articles/load-balancer-internal-overview)-->。
 
 <!-- LINKS -->

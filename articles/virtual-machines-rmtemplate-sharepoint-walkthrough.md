@@ -134,7 +134,7 @@
 
 ### Microsoft.Network/loadBalancers
 
-这些节为每个虚拟机创建负载平衡器实例，以便为来自 Internet 的入站流量提供网络地址转换 (NAT) 和流量筛选。对于每个负载平衡器，设置将配置前端、后端和入站 NAT 规则。例如，每个虚拟机都有远程桌面通信规则，而 SharePoint Server 则有允许接收来自 Internet 的入站 Web 流量（TCP 端口 80）的规则。下面是 SharePoint Server 的示例：
+这些节为每个虚拟机创建负载均衡器实例，以便为来自 Internet 的入站流量提供网络地址转换 (NAT) 和流量筛选。对于每个负载均衡器，设置将配置前端、后端和入站 NAT 规则。例如，每个虚拟机都有远程桌面通信规则，而 SharePoint Server 则有允许接收来自 Internet 的入站 Web 流量（TCP 端口 80）的规则。下面是 SharePoint Server 的示例：
 
 
 	{
@@ -236,7 +236,7 @@
 
 第一个节创建并配置域控制器，它：
 
-- 指定存储帐户、可用性集、网络接口和负载平衡器实例。
+- 指定存储帐户、可用性集、网络接口和负载均衡器实例。
 - 添加额外的磁盘。
 - 运行 PowerShell 脚本，以配置域控制器。
 
@@ -339,24 +339,24 @@
 
 下一个 **"type":"Microsoft.Compute/virtualMachines"** 节在部署中创建 SQL Server 虚拟机并：
 
-- 指定存储帐户、可用性集、负载平衡器、虚拟网络和网络接口。
+- 指定存储帐户、可用性集、负载均衡器、虚拟网络和网络接口。
 - 添加额外的磁盘。
 
 其他**“Microsoft.Compute/virtualMachines/extensions”**节调用 PowerShell 脚本以配置 SQL Server。
 
-下一个 **"type":"Microsoft.Compute/virtualMachines"** 节在部署中创建 SharePoint 虚拟机，并指定存储帐户、可用性集、负载平衡器、虚拟网络和网络接口。其他**“Microsoft.Compute/virtualMachines/extensions”**节调用 PowerShell 脚本以配置 SharePoint 场。
+下一个 **"type":"Microsoft.Compute/virtualMachines"** 节在部署中创建 SharePoint 虚拟机，并指定存储帐户、可用性集、负载均衡器、虚拟网络和网络接口。其他**“Microsoft.Compute/virtualMachines/extensions”**节调用 PowerShell 脚本以配置 SharePoint 场。
 
 请注意 JSON 文件的**“resources”**节的子节的整体结构：
 
-1.	创建支持多个虚拟机所需的 Azure 基础结构元素（存储帐户、公共 IP 地址、可用性集、虚拟网络、网络接口和负载平衡器实例）。
+1.	创建支持多个虚拟机所需的 Azure 基础结构元素（存储帐户、公共 IP 地址、可用性集、虚拟网络、网络接口和负载均衡器实例）。
 2.	创建域控制器虚拟机，后者使用先前创建的 Azure 基础结构的公用和特定元素、添加数据磁盘，并运行 PowerShell 脚本。此外，还更新虚拟网络以使用域控制器的静态 IP 地址。
 3.	创建 SQL Server 虚拟机，后者使用先前为域控制器创建的 Azure 基础结构的公用和特定元素、添加数据磁盘，并运行 PowerShell 脚本以配置 SQL Server。
 4.	创建 SharePoint Server 虚拟机，后者使用先前创建的 Azure 基础结构的公用和特定元素并运行 PowerShell 脚本以配置 SharePoint 场。
 
 你自己的用于在 Azure 中构建多层基础结构的 JSON 模板应遵循相同的步骤：
 
-1.	创建部署所需的 Azure 基础结构的公用元素（存储帐户、虚拟网络）、特定于层的元素（可用性集）和特定于虚拟机的元素（公共 IP 地址、可用性集、网络接口、负载平衡器实例）。
-2.	对于应用程序中的每个层（例如，身份验证、数据库、Web），使用公用元素（存储帐户、虚拟网络）、特定于层的元素（可用性集）和特定于虚拟机的元素（公共 IP 地址、网络接口、负载平衡器实例）在该层中创建并配置服务器。
+1.	创建部署所需的 Azure 基础结构的公用元素（存储帐户、虚拟网络）、特定于层的元素（可用性集）和特定于虚拟机的元素（公共 IP 地址、可用性集、网络接口、负载均衡器实例）。
+2.	对于应用程序中的每个层（例如，身份验证、数据库、Web），使用公用元素（存储帐户、虚拟网络）、特定于层的元素（可用性集）和特定于虚拟机的元素（公共 IP 地址、网络接口、负载均衡器实例）在该层中创建并配置服务器。
 
 有关详细信息，请参阅 [Azure 资源管理器模板语言](https://msdn.microsoft.com/zh-CN/library/azure/dn835138.aspx)。
 

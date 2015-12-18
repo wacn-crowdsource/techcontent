@@ -136,7 +136,7 @@
 
 ## 配置内部负载平衡
 
-可配置内部负载平衡，使到 SharePoint 场的客户端流量平均分布到两个前端 Web 服务器上。这需要你指定内部负载平衡实例，该实例由名称和它自己的 IP 地址（从子网地址空间中分配）组成。若要确定为内部负载平衡器选择的 IP 地址是否可用，请使用以下 Azure PowerShell 命令：
+可配置内部负载平衡，使到 SharePoint 场的客户端流量平均分布到两个前端 Web 服务器上。这需要你指定内部负载平衡实例，该实例由名称和它自己的 IP 地址（从子网地址空间中分配）组成。若要确定为内部负载均衡器选择的 IP 地址是否可用，请使用以下 Azure PowerShell 命令：
 
 	$vnet="<Table V – Item 1 – Value column>"
 	$testIP="<a chosen IP address from the subnet address space, Table S - Item 1 – Subnet address space column>"
@@ -165,7 +165,7 @@
 	$vmname="<Table M – Item 9 – Virtual machine name column>"
 	Get-AzureVM –ServiceName $serviceName –Name $vmname | Add-AzureEndpoint -Name $epname -LBSetName $ilb -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
-接下来，将 DNS 地址记录添加到你组织的 DNS 基础结构中，以便将 SharePoint 场的完全限定域名（例如 sp.corp.contoso.com）解析为分配给内部负载平衡器实例的 IP 地址（前面的 Azure PowerShell 命令块中 **$IP** 的值）。
+接下来，将 DNS 地址记录添加到你组织的 DNS 基础结构中，以便将 SharePoint 场的完全限定域名（例如 sp.corp.contoso.com）解析为分配给内部负载均衡器实例的 IP 地址（前面的 Azure PowerShell 命令块中 **$IP** 的值）。
 
 这是成功完成此阶段后生成的配置。
 

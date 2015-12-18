@@ -128,7 +128,7 @@
 
 ### NAT 规则	
 	
-使用入站 NAT 规则可以设置基于资源管理器的虚拟机，允许来自 Internet 的传入流量并将其放入负载平衡集。在这两种情况下，都必须指定负载平衡器实例和其他设置。
+使用入站 NAT 规则可以设置基于资源管理器的虚拟机，允许来自 Internet 的传入流量并将其放入负载平衡集。在这两种情况下，都必须指定负载均衡器实例和其他设置。
 
 使用资源管理器部署模型创建的 VM 需要资源管理器虚拟网络。如果需要，请使用新虚拟机的至少一个子网创建基于资源管理器的新虚拟网络。以下示例显示了名为 **TestNet** 的新虚拟网络，其中包含名为 **frontendSubnet** 和 **backendSubnet** 的两个子网。
 
@@ -204,12 +204,12 @@ frontendSubnet 的子网索引为 0，backendSubnet 的子网索引为 1。
 	$pip = New-AzureRmPublicIpAddress -Name $nicName -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
 	$nic = New-AzureRmNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[$subnetIndex].Id -PublicIpAddressId $pip.Id -PrivateIpAddress $staticIP
 
-### 选项 4：指定 NIC 名称和入站 NAT 规则的负载平衡器实例。
+### 选项 4：指定 NIC 名称和入站 NAT 规则的负载均衡器实例。
 
-若要创建 NIC 并将其添加到入站 NAT 规则的负载平衡器实例，你需要：
+若要创建 NIC 并将其添加到入站 NAT 规则的负载均衡器实例，你需要：
 
-- 前面创建的、针对转发到虚拟机的流量创建了入站 NAT 规则的负载平衡器实例的名称。
-- 要分配给 NIC 的负载平衡器实例的后端地址池的索引编号。
+- 前面创建的、针对转发到虚拟机的流量创建了入站 NAT 规则的负载均衡器实例的名称。
+- 要分配给 NIC 的负载均衡器实例的后端地址池的索引编号。
 - 要分配给 NIC 的入站 NAT 规则的索引编号。
 
 将以下几行复制到命令集，并指定所需的名称和索引编号。
@@ -223,14 +223,14 @@ frontendSubnet 的子网索引为 0，backendSubnet 的子网索引为 1。
 
 $nicName 字符串必须是资源组中唯一的字符串。最佳实践是将虚拟机名称合并在字符串中，例如“LOB07-NIC”。
 
-### 选项 5：为负载平衡集指定 NIC 名称和负载平衡器实例。
+### 选项 5：为负载平衡集指定 NIC 名称和负载均衡器实例。
 
-若要创建 NIC 并将其添加到负载平衡集的负载平衡器实例，你需要：
+若要创建 NIC 并将其添加到负载平衡集的负载均衡器实例，你需要：
 
-- 前面创建的、针对负载平衡流量创建了规则的负载平衡器实例的名称。
-- 要分配给 NIC 的负载平衡器实例的后端地址池的索引编号。
+- 前面创建的、针对负载平衡流量创建了规则的负载均衡器实例的名称。
+- 要分配给 NIC 的负载均衡器实例的后端地址池的索引编号。
 
-有关如何创建具有针对负载平衡流量的规则的负载平衡器实例的信息，请参阅[使用 Azure 资源管理器创建负载平衡器](/documentation/articles/load-balancer-arm-powershell)。
+有关如何创建具有针对负载平衡流量的规则的负载均衡器实例的信息，请参阅[使用 Azure 资源管理器创建负载均衡器](/documentation/articles/load-balancer-arm-powershell)。
 
 将以下几行复制到命令集，并指定所需的名称和索引编号。
 
