@@ -40,20 +40,13 @@ Azure Linux 代理已预安装在 Linux 库映像中，并通常可从分发的�
 			源：<a href="http://go.microsoft.com/fwlink/p/?LinkID=250998">GitHub</a></td>
  		
 	</tr>
-	<!--tr>
-		<th> <a href="https://coreos.com/docs/running-coreos/cloud-providers/azure/">CoreOS</a> </th>
-		<td> 494.4.0+ </td>
-        <td> 在内核中 </td>
-		<td> 源：<a href="https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent">GitHub</a></td>
-		
-	</tr-->
 	<tr>
-		<th> Oracle Linux </th>
-		<td> 6.4+</td>
+		<th> Debian by Credativ </th>
+		<td> 7.8+,8.2+</td>
         <td>在内核中</td>
 		<td>包：在“WALinuxAgent”下的存储库中<br />
 			源：<a href="http://go.microsoft.com/fwlink/p/?LinkID=250998">GitHub</a></td>
-		
+
 	</tr>
 	<tr>
 		<th> SUSE Linux Enterprise </th>
@@ -88,11 +81,10 @@ Canonical 工程和开放社区监管对 Ubuntu 在客户端、服务器和云�
 
 OpenLogic 是针对云和数据中心的企业开放源解决方案的行业领先的提供商。OpenLogic 帮助各个行业数以百计的领先企业安全获取、支持和控制开源软件。OpenLogic 为 OpenLogic 专家社区支持的 600 个开放源包提供商业级技术支持和保护（包括针对 CentOS 的企业级支持），同时作为在 Azure 上提供基于 CentOS 的映像的产品发布合作伙伴。
 
+### Credativ
+[http://www.credativ.co.uk/credativ-blog/debian-images-microsoft-azure](http://www.credativ.co.uk/credativ-blog/debian-images-microsoft-azure)
 
-### Oracle
-[http://www.oracle.com/technetwork/topics/cloud/faq-1963009.html](http://www.oracle.com/technetwork/topics/cloud/faq-1963009.html)
-
-Oracle 的策略是为公有和私有云提供广泛的解决方案，同时针对如何在 Oracle 云以及其他云中部署 Oracle 软件方面给予客户选择权和灵活性。通过 Oracle 与 Microsoft 的合作关系，客户可以凭借可信的证书和 Oracle 支持在 Microsoft 公有和私有云中部署 Oracle 软件。Oracle 对 Oracle 公有和私有云的承诺和投资保持不变。
+Credativ是一家独立咨询和服务公司，专注于通过使用免费软件来提供专业的解决方案。作为领导开源技术厂商，有很多跨国大公司都在使用Credativ的支持和服务。在于微软的合作中，Credativ提供Debian的镜像包括 Debian 8 (Jessie) 和 Debian before 7 (Wheezy)，这些是专门为在微软Azure运行而设计的。Credativ会通过它的开源支持中心对这些镜像文件提供长期的维护和更新服务。
 
 
 ### SUSE
