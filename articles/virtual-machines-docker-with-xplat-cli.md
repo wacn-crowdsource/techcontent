@@ -30,7 +30,7 @@
 
 在 Azure 上使用 Docker 的整个过程相当简单：
 
-+ 在要从中控制 Azure 的计算机上安装 Azure CLI 及其依赖项（在 Windows 上，这是作为虚拟机运行的 Linux 分发版）
++ 在要从中控制 Azure 的计算机上安装 Azure CLI 及其依赖项（在 Windows 上，这是作为虚拟机运行的 Linux 发行版）
 + 使用 Azure CLI Docker 命令在 Azure 中创建 VM Docker 主机
 + 使用本地 Docker 命令在 Azure 中的 Docker VM 内管理 Docker 容器。
 
