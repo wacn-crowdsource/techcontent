@@ -49,7 +49,7 @@
 
 若要解决使用资源管理器部署模型创建的虚拟机的常见 SSH 问题，请尝试以下步骤。
 
-1. 使用 Azure CLI 或 Azure PowerShell，在命令行上为 Linux VM **重置 SSH 连接**。确保已安装 <!--[-->Microsoft Azure Linux 代理<!--](virtual-machines-linux-agent-user-guide.md)--> 2.0.5 或更高版本。
+1. 使用 Azure CLI 或 Azure PowerShell，在命令行上为 Linux VM **重置 SSH 连接**。确保已安装 <!--[-->Microsoft Azure Linux Agent<!--](virtual-machines-linux-agent-user-guide.md)--> 2.0.5 或更高版本。
 
 	**使用 Azure CLI**
 

@@ -18,9 +18,9 @@
 
 - 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果首选，LVM 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid) 可以在数据磁盘上使用。
 
-- 由于低于 2.6.37 的 Linux 内核版本中的 bug，更大的 VM 不支持 NUMA。此问题主要影响使用上游 Red Hat 2.6.32 内核的分发。手动安装的 Azure Linux 代理 (waagent) 将自动在 Linux 内核的 GRUB 配置中禁用 NUMA。可以在下面的步骤中找到有关此内容的详细信息。
+- 由于低于 2.6.37 的 Linux 内核版本中的 bug，更大的 VM 不支持 NUMA。此问题主要影响使用上游 Red Hat 2.6.32 内核的分发。手动安装的 Azure Linux Agent (waagent) 将自动在 Linux 内核的 GRUB 配置中禁用 NUMA。可以在下面的步骤中找到有关此内容的详细信息。
 
-- 不要在操作系统磁盘上配置交换分区。可以配置 Linux 代理，以在临时资源磁盘上创建交换文件。可以在下面的步骤中找到有关此内容的详细信息。
+- 不要在操作系统磁盘上配置交换分区。可以配置 Linux Agent，以在临时资源磁盘上创建交换文件。可以在下面的步骤中找到有关此内容的详细信息。
 
 - 所有 VHD 的大小必须是 1 MB 的倍数。
 
@@ -82,7 +82,7 @@
 
 10.  请确保已安装 SSH 服务器且已将其配置为在引导时启动。这通常是默认设置。
 
-11.  通过运行以下命令来安装 Azure Linux 代理：
+11.  通过运行以下命令来安装 Azure Linux Agent：
 
 		# sudo yum install WALinuxAgent
 
@@ -90,7 +90,7 @@
 
 12.  不要在 OS 磁盘上创建交换空间。
 
-	Azure Linux 代理可使用在 Azure 上预配后附加到 VM 的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消预配 VM 时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
+	Azure Linux Agent可使用在 Azure 上预配后附加到 VM 的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消预配 VM 时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
 		ResourceDisk.Format=y
 
@@ -117,7 +117,7 @@
 
 -   在 Azure 中同时支持 Red Hat 兼容内核和 Oracle 的 UEK3。建议使用 UEK3 内核。
 
--   NetworkManager 包不再与 Azure Linux 代理冲突。默认情况下将安装此包，建议你不要删除它。
+-   NetworkManager 包不再与 Azure Linux Agent冲突。默认情况下将安装此包，建议你不要删除它。
 
 -   GRUB2 现在用作默认引导加载程序，因此用于编辑内核参数的过程已更改（请参见下文）。
 
@@ -181,13 +181,13 @@
 
 11.  请确保已安装 SSH 服务器且已将其配置为在引导时启动。这通常是默认设置。
 
-12.  通过运行以下命令来安装 Azure Linux 代理：
+12.  通过运行以下命令来安装 Azure Linux Agent：
 
 		# sudo yum install WALinuxAgent
 
 13.  不要在 OS 磁盘上创建交换空间。
 
-	Azure Linux 代理可使用在 Azure 上预配后附加到 VM 的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消预配 VM 时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
+	Azure Linux Agent可使用在 Azure 上预配后附加到 VM 的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消预配 VM 时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4

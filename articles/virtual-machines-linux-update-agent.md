@@ -1,6 +1,6 @@
 <properties
-	pageTitle="如何从 Github 将 Azure Linux 代理更新到最新版本"
-	description="了解如何从 Github 为 Azure 中的 Linux VM 更新 Azure Linux 代理。"
+	pageTitle="如何从 Github 将 Azure Linux Agent更新到最新版本"
+	description="了解如何从 Github 为 Azure 中的 Linux VM 更新 Azure Linux Agent。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="SuperScottz"
@@ -13,16 +13,16 @@
 	wacn.date="09/18/2015"/>
 
 
-# 如何从 Github 将 Azure Linux 代理更新到最新版本
+# 如何从 Github 将 Azure Linux Agent更新到最新版本
 
-若要更新 [Azure Linux 代理](https://github.com/Azure/WALinuxAgent)，你必须已具备以下条件：
+若要更新 [Azure Linux Agent](https://github.com/Azure/WALinuxAgent)，你必须已具备以下条件：
 
 1. 在 Azure 中运行的 Linux VM
 2. 已使用 SSH 连接到该 Linux VM
 
 > [AZURE.NOTE]如果你将从 Windows 计算机执行此任务，则可以使用 Putty 通过 SSH 登录到 Linux 计算机。有关详细信息，请参阅[如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-how-to-log-on)。
 
-Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中，因此，请先从该发行版存储库中查找并安装最新版本（如果可能）。
+Azure 支持的 Linux 发行版已将 Azure Linux Agent包放入其存储库中，因此，请先从该发行版存储库中查找并安装最新版本（如果可能）。
 
 对于 Ubuntu，只需键入：
      
@@ -48,7 +48,7 @@ Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中
 
 ## 下载最新版本
 
-在网页中打开 [Github 中的 Azure Linux 代理版本](https://github.com/Azure/WALinuxAgent/releases)，并找到最新的版本号。（可以通过键入 `#waagent --version` 查明你的当前版本。）
+在网页中打开 [Github 中的 Azure Linux Agent版本](https://github.com/Azure/WALinuxAgent/releases)，并找到最新的版本号。（可以通过键入 `#waagent --version` 查明你的当前版本。）
 
 ###对于版本 2.0.x，请键入：
 
@@ -70,7 +70,7 @@ Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中
     #unzip WALinuxAgent-2.1.0.zip  
     #cd WALinuxAgent-2.1.0
 
-##安装 Linux 代理
+##安装 Linux Agent
 
 ###对于版本 2.0.x，请使用：
 
@@ -108,14 +108,14 @@ Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中
 
     #sudo systemctl restart waagent 
 
-## 确认 Azure Linux 代理版本
+## 确认 Azure Linux Agent版本
    
     #waagent -version
 
 对于 CoreOS，上面的命令可能无法工作。
 
-你将看到 Linux 代理版本已更新为新版本。
+你将看到 Linux Agent版本已更新为新版本。
 
-有关 Azure Linux 代理的详细信息，请参阅 [Azure Linux 代理自述文件](https://github.com/Azure/WALinuxAgent)。
+有关 Azure Linux Agent的详细信息，请参阅 [Azure Linux 代理自述文件](https://github.com/Azure/WALinuxAgent)。
 
 <!---HONumber=70-->
