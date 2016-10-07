@@ -21,11 +21,11 @@
 
 所有订户都可以在 Azure 虚拟机上运行服务器软件。此外，MSDN 订户还可以访问由 Azure 提供的某些 Windows 客户端映像。
 
-对于服务器软件，你可以运行 Windows Server 的最新版本以及各种 Linux 分发版，并在其上托管各种服务器工作负荷和服务。有关支持详细信息，请参阅：
+对于服务器软件，你可以运行 Windows Server 的最新版本以及各种 Linux 发行版，并在其上托管各种服务器工作负荷和服务。有关支持详细信息，请参阅：
 
 • 对于 Windows VM — [Azure 虚拟机的 Microsoft 服务器软件支持](https://support.microsoft.com/zh-cn/kb/2721672)
 
-• 对于 Linux VM — [Azure 上的 Linux — 认可的分发版](http://www.windowsazure.cn/documentation/articles/virtual-machines-linux-endorsed-distributions/)
+• 对于 Linux VM — [Azure 上的 Linux — 认可的发行版](http://www.windowsazure.cn/documentation/articles/virtual-machines-linux-endorsed-distributions/)
 
 对于 Windows 客户端映像，可为 MSDN Azure 权益订户以及 MSDN 即用即付开发和测试订户提供 Windows 7 和 Windows 8.1 的特定版本，用于各种开发和测试任务。有关详细信息，包括说明和限制，请参阅[面向 MSDN 订户的 Windows 客户端映像](http://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/)。
 
@@ -86,7 +86,7 @@ Azure 支持固定的、VHD 格式的虚拟硬盘。如果想在 Azure 中使用
 
 升级一词通常意味着，在同一个硬件上迁移到更高版本的操作系统。对于 Linux 和 Windows，将 Azure VM 迁移到更高版本的过程有所不同：
 
-- 对于 Linux VM，使用适合于分发版的包管理工具和过程。
+- 对于 Linux VM，使用适合于发行版的包管理工具和过程。
 - 对于 Windows 虚拟机，使用 Windows Server 迁移工具。当来宾 OS 位于 Azure 上时，不要尝试对其升级。不支持升级是因为这样做会有丢失对虚拟机的访问权限的风险。如果在升级过程中出现问题，则可能无法启动远程桌面会话并且无法排除这些问题。有关工具和过程的一般详细信息，请参阅[将角色和功能迁移到 Windows Server](https://technet.microsoft.com/zh-cn/library/jj134039.aspx)。有关升级到 Windows Server 2012 R2 的详细信息，请参阅[适用于 Windows Server 2012 R2 的升级选项](https://technet.microsoft.com/zh-cn/library/dn303416.aspx)。
 
 ## 虚拟机上的默认用户名和密码是什么？

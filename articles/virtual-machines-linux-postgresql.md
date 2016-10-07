@@ -32,7 +32,7 @@ PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库�
 
 		# sudo su -
 
-2. 某些分发版具有在安装 PostgreSQL 之前必须安装的依赖项。查看此列表中的分发版并运行相应的命令：
+2. 某些发行版具有在安装 PostgreSQL 之前必须安装的依赖项。查看此列表中的发行版并运行相应的命令：
 
 	- 基于 Red Hat 的 Linux：
 

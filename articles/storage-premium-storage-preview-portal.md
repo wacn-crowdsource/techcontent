@@ -201,11 +201,11 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 - 对于缓存设置为“ReadWrite”的高级存储磁盘，应该启用屏障以实现写入持久性。
 - 要在重新启动 VM 后保留卷标，你必须使用对磁盘的 UUID 引用来更新 /etc/fstab。另请参阅 [如何将数据磁盘附加到 Linux 虚拟机。](/documentation/articles/virtual-machines-linux-how-to-attach-disk)
 
-以下是我们使用高级存储验证过的 Linux 分发版。我们建议将 VM 升级到其中至少一个版本（或更新版本），以改进高级存储的性能和稳定性。此外，某些版本需要最新的 LIS（适用于 Windows Azure 的 Linux Integration Services v4.0）。请使用下面提供的链接进行下载和安装。在我们完成其他验证后，将陆续在列表中添加更多映像。请注意，我们的验证表明，性能根据映像而有所不同，并且还取决于工作负荷特征和映像上的设置。不同的映像已针对不同种类的工作负荷进行优化。
+以下是我们使用高级存储验证过的 Linux 发行版。我们建议将 VM 升级到其中至少一个版本（或更新版本），以改进高级存储的性能和稳定性。此外，某些版本需要最新的 LIS（适用于 Windows Azure 的 Linux Integration Services v4.0）。请使用下面提供的链接进行下载和安装。在我们完成其他验证后，将陆续在列表中添加更多映像。请注意，我们的验证表明，性能根据映像而有所不同，并且还取决于工作负荷特征和映像上的设置。不同的映像已针对不同种类的工作负荷进行优化。
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
 <tbody>
 <tr>
-	<td><strong>分发版</strong></td>
+	<td><strong>发行版</strong></td>
 	<td><strong>版本</strong></td>
 	<td><strong>支持的内核</strong></td>
 	<td><strong>支持的映像</strong></td>

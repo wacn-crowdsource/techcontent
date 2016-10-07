@@ -21,7 +21,7 @@
 此应用程序提供简单的测试环境，可测试许多外围网络示例，以及终结点、NSG、UDR 及防火墙规则的更改如何影响流量。
 
 ## 允许 ICMP 的防火墙规则
-这个简单的 PowerShell 语句可以在任何 Windows VM 上运行，以允许 ICMP (Ping) 流量。由于这可允许 ping 协议通过 Windows 防火墙，因此让测试和疑难解答变得更轻松（ICMP 在多数的 Linux 分发版上默认为打开）。
+这个简单的 PowerShell 语句可以在任何 Windows VM 上运行，以允许 ICMP (Ping) 流量。由于这可允许 ping 协议通过 Windows 防火墙，因此让测试和疑难解答变得更轻松（ICMP 在多数的 Linux 发行版上默认为打开）。
 
 	# Turn On ICMPv4
 	New-NetFirewallRule -Name Allow_ICMPv4 -DisplayName "Allow ICMPv4" `
