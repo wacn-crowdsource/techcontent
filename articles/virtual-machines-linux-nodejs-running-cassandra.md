@@ -281,7 +281,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 <tr><td>endpoint_snitch </td><td> org.apache.cassandra.locator.GossipingPropertyFileSnitch </td><td> 此字段由 NetworkTopologyStrateg 用来推断数据中心以及 VM 的机架</td></tr>
 </table>
 
-####步骤 6：捕获 VM 映像
+####步骤 6：捕获 VM 镜像
 使用以前创建的主机名 (hk-cas-template.chinacloudapp.cn) 和 SSH 私钥登录到虚拟机。请参阅“如何在 Azure 上通过 Linux 使用 SSH”，以详细了解如何使用命令 ssh 或 putty.exe 登录。
 
 执行以下顺序的操作以捕获映像：

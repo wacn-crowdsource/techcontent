@@ -24,7 +24,7 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。文件存
 
 请注意，由于 Linux SMB 客户端尚不支持加密，从 Linux 装载文件共享仍需要客户端与文件共享在同一 Azure 区域中。但是，Linux 的加密支持已经在负责 SMB 功能的 Linux 开发人员的路线图上。将来支持加密的 Linux 分发也将能够从任何位置装载 Azure 文件共享。
 
-## 选择要使用的 Linux 分发 ##
+## 选择要使用的 Linux 发行版 ##
 
 在 Azure 中创建 Linux 虚拟机时，可以从 Azure 映像库指定支持 SMB 2.1 或更高版本的 Linux 映像。下面是建议的 Linux 映像的列表：
 
@@ -53,7 +53,7 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。文件存
 
     //myaccountname.file.core.chinacloudapi.cn/mysharename /mymountpoint cifs vers=3.0,username= myaccountname,password= StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
 
-例如，如果你是使用 Linux 映像 Ubuntu Server 15.04（可从 Azure 映像库中获得）创建的 Azure VM，则可以按如下所示装载文件：
+例如，如果你是使用 Linux 镜像 Ubuntu Server 15.04（可从 Azure 映像库中获得）创建的 Azure VM，则可以按如下所示装载文件：
 
     azureuser@azureconubuntu:~$ sudo apt-get install apt-file
     azureuser@azureconubuntu:~$ sudo mkdir /mnt/mountpoint

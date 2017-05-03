@@ -43,8 +43,8 @@
 禁用 VM 扩展 | `azure  vm extension set [options] –b <vm-name> <extension-name> <publisher-name> <version>` | 不可用
 删除 VM 扩展 | `azure  vm extension set [options] –u <vm-name> <extension-name> <publisher-name> <version>` | `azure  vm extension set [options] –u <resource-group> <vm-name> <name> <publisher-name> <version>`
 列出 VM 扩展 | `azure vm extension list [options]` | `azure  vm extension get [options] <resource-group> <vm-name>`
-列出 VM 映像 | `azure vm image list [options]` | `azure vm image list [options] <location> <publisher> [offer] [sku]` -或- <br/> `azure vm image list-publishers [options] <location>` -或- <br/> `azure vm image list-offers [options] <location>` -或- <br/> `azure vm image list-skus [options] <location>`
-显示 VM 映像 | `azure vm image show [options]` | 不可用
+列出 VM 镜像 | `azure vm image list [options]` | `azure vm image list [options] <location> <publisher> [offer] [sku]` -或- <br/> `azure vm image list-publishers [options] <location>` -或- <br/> `azure vm image list-offers [options] <location>` -或- <br/> `azure vm image list-skus [options] <location>`
+显示 VM 镜像 | `azure vm image show [options]` | 不可用
 获取 VM 资源的使用情况 | 不可用 | `azure vm list-usage [options] <location>`
 获取所有可用 VM 大小 | 不可用 | `azure vm sizes [options]`
 
